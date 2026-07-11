@@ -55,7 +55,7 @@ const CounterFour = () => {
                   data-perc='99%'
                 >
                   <div className='h-50-px position-relative w-100 d-flex'>
-                    <span 
+                    <span
                       className='floating-label position-absolute text-xl text-main-600 fw-semibold radius-8 h-32-px z-1 d-flex justify-content-center align-items-center'
                       style={{ left: '99%', transform: 'translateX(-100%)', whiteSpace: 'nowrap', minWidth: '60px' }}
                     >
@@ -203,7 +203,7 @@ const CounterFour = () => {
         channel='youtube'
         autoplay
         isOpen={isOpen}
-        videoId='XxVg_s8xAms'
+        videoId='BM3w4n7GWaY'
         onClose={() => setIsOpen(false)}
         allowFullScreen
       />
