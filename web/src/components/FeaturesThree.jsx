@@ -40,26 +40,22 @@ const FeaturesThree = () => {
 
       <div className='container'>
         <div>
-          <div className='d-flex justify-content-between mb-60 align-items-start flex-wrap gap-20'>
-            <div>
-              <div
-                className='fw-semibold text-main-800 text-xl d-flex align-items-start gap-8 mb-16 flex-wrap'
-                data-aos='fade-down'
-              >
-                <span>
-                  <i className='ph-bold ph-book-open' />
-                </span>
-                <span>Khởi Dậy Tiềm Năng Con Trẻ</span>
-              </div>
-              <h2 className='fw-semibold heading-three text-neutral-700 mb-2 wow bounceIn'>
-                Triết Lý Giáo Dục Tại ABA
-              </h2>
+          <div className='text-center mb-60 max-w-646 mx-auto'>
+            <div
+              className='fw-semibold text-main-800 text-xl d-flex align-items-center justify-content-center gap-8 mb-16 flex-wrap'
+              data-aos='fade-down'
+            >
+              <span>
+                <i className='ph-bold ph-book-open' />
+              </span>
+              <span>Khởi Dậy Tiềm Năng Con Trẻ</span>
             </div>
-            <div className='max-w-416-px'>
-              <p className='tw-text-base fw-medium text-neutral-700 mb-0 wow bounceInUp'>
-                Mọi chương trình trải nghiệm của ABA đều được xây dựng trên nền tảng giáo dục hiện đại, lấy sự thấu hiểu tâm lý và thực hành kỹ năng thực tế làm trọng tâm.
-              </p>
-            </div>
+            <h2 className='fw-semibold heading-three text-neutral-700 mb-20 wow bounceIn'>
+              Triết Lý Giáo Dục Tại ABA
+            </h2>
+            <p className='tw-text-base fw-medium text-neutral-700 mb-0 wow bounceInUp mx-auto' style={{ fontSize: '16px', lineHeight: '1.6' }}>
+              Mọi chương trình trải nghiệm của ABA đều được xây dựng trên nền tảng giáo dục hiện đại, lấy sự thấu hiểu tâm lý và thực hành kỹ năng thực tế làm trọng tâm.
+            </p>
           </div>
           
           <div className='row gy-4 gx-3 gx-sm-4'>
