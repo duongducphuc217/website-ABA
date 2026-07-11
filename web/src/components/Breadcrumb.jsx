@@ -3,6 +3,16 @@ import Link from "next/link";
 const Breadcrumb = ({ title }) => {
   return (
     <section className='breadcrumb py-120 bg-main-25 position-relative z-1 overflow-hidden mb-0'>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (max-width: 991px) {
+            .breadcrumb {
+              padding-top: 130px !important;
+              padding-bottom: 50px !important;
+            }
+          }
+        `
+      }} />
       <img
         src='/assets/images/shapes/shape1.png'
         alt=''
