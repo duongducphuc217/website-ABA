@@ -42,7 +42,7 @@ const CounterFour = () => {
                   Trung tâm ABA tự hào là đối tác chiến lược hàng đầu của các nhà trường, mang đến giải pháp giáo dục kỹ năng sống thực chất, các chuyến dã ngoại trải nghiệm an toàn và tràn đầy năng lượng.
                 </p>
               </div>
-              
+
               {/* Thanh tiến độ sự hài lòng */}
               <div className='mb-40'>
                 <div className='mb-16'>
@@ -56,8 +56,8 @@ const CounterFour = () => {
                 >
                   <div className='h-50-px position-relative w-100 d-flex'>
                     <span 
-                      className='floating-label position-absolute text-xl text-main-600 fw-semibold radius-8 w-50-px h-32-px z-1 d-flex justify-content-center align-items-center'
-                      style={{ left: '99%', transform: 'translateX(-100%)' }}
+                      className='floating-label position-absolute text-xl text-main-600 fw-semibold radius-8 h-32-px z-1 d-flex justify-content-center align-items-center'
+                      style={{ left: '99%', transform: 'translateX(-100%)', whiteSpace: 'nowrap', minWidth: '60px' }}
                     >
                       99%
                     </span>
@@ -137,7 +137,7 @@ const CounterFour = () => {
                       <span className='text-14 d-inline-flex mb-4 text-neutral-400'>
                         Hotline hỗ trợ 24/7
                       </span>
-                      <h6 className='text-neutral-700 mb-0' style={{ fontSize: '18px', fontWeight: '700' }}>0966 886 111</h6>
+                      <h6 className='text-neutral-700 mb-0' style={{ fontSize: '18px', fontWeight: '700' }}>0912 08 6996</h6>
                     </div>
                   </div>
                 </div>
