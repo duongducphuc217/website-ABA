@@ -49,21 +49,21 @@ const FeaturesThree = () => {
                 <span>
                   <i className='ph-bold ph-book-open' />
                 </span>
-                <span>Đánh Thức Tương Lai Con Trẻ</span>
+                <span>Khởi Dậy Tiềm Năng Con Trẻ</span>
               </div>
               <h2 className='fw-semibold heading-three text-neutral-700 mb-2 wow bounceIn'>
-                Giá Trị Cốt Lõi Tại ABA
+                Triết Lý Giáo Dục Tại ABA
               </h2>
             </div>
             <div className='max-w-416-px'>
               <p className='tw-text-base fw-medium text-neutral-700 mb-0 wow bounceInUp'>
-                Chúng tôi không ngừng kiến tạo các chương trình dã ngoại, sự kiện giáo dục và chuyên đề kỹ năng sống thực chất, an toàn, tràn đầy niềm vui.
+                Mọi chương trình trải nghiệm của ABA đều được xây dựng trên nền tảng giáo dục hiện đại, lấy sự thấu hiểu tâm lý và thực hành kỹ năng thực tế làm trọng tâm.
               </p>
             </div>
           </div>
           
           <div className='row gy-4 gx-3 gx-sm-4'>
-            {/* Cột 1: THỰC TIỄN & HIỆU QUẢ */}
+            {/* Cột 1: MỤC TIÊU */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -79,15 +79,15 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-compass' />
+                  <i className='ph-bold ph-target' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
-                    01 / Thực tiễn
+                    01 / Khát vọng
                   </span>
-                  <h4 className='mb-16'>THỰC TIỄN & HIỆU QUẢ</h4>
+                  <h4 className='mb-16'>MỤC TIÊU</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Đề cao triết lý "Lấy thực hành làm trung tâm". Các chương trình của ABA được thiết kế thực chất, giúp học sinh chủ động chiếm lĩnh tri thức, rèn luyện kỹ năng thích ứng và kiến tạo năng lực thực tế theo định hướng GDPT 2018.
+                    Khơi dậy, phát huy tối ưu tiềm năng và phát triển năng lực toàn diện cho học sinh. Rèn luyện tinh thần chủ động, tích cực và thích ứng linh hoạt trong mọi hoàn cảnh để tự tin làm chủ cuộc sống và tương lai.
                   </p>
                 </div>
                 <img
@@ -98,7 +98,7 @@ const FeaturesThree = () => {
               </div>
             </div>
 
-            {/* Cột 2: AN TOÀN LÀ SỐ 1 */}
+            {/* Cột 2: PHƯƠNG PHÁP */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -114,15 +114,15 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-shield-check' />
+                  <i className='ph-bold ph-strategy' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
-                    02 / Chuyên nghiệp
+                    02 / Hành động
                   </span>
-                  <h4 className='mb-16'>AN TOÀN LÀ SỐ 1</h4>
+                  <h4 className='mb-16'>PHƯƠNG PHÁP</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Sự an tâm của nhà trường và phụ huynh là ưu tiên cao nhất. ABA cam kết quy trình vận chuyển, điều phối sự kiện và y tế khép kín, an toàn tuyệt đối dưới sự quản lý và giám sát chặt chẽ của đội ngũ giàu kinh nghiệm.
+                    Tiên phong ứng dụng phương pháp giáo dục tiên tiến 4.0. Đề cao sự tương tác và trải nghiệm thực tế với phương châm lấy việc chiếm lĩnh tri thức và thực hành kỹ năng làm trung tâm của hoạt động huấn luyện.
                   </p>
                 </div>
                 <img
@@ -133,7 +133,7 @@ const FeaturesThree = () => {
               </div>
             </div>
 
-            {/* Cột 3: HLV TRUYỀN CẢM HƯNG */}
+            {/* Cột 3: HUẤN LUYỆN VIÊN */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -149,15 +149,15 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-user-circle-gear' />
+                  <i className='ph-bold ph-graduation-cap' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
-                    03 / Nhân sự cốt lõi
+                    03 / Con người
                   </span>
-                  <h4 className='mb-16'>HLV TRUYỀN CẢM HƯNG</h4>
+                  <h4 className='mb-16'>HUẤN LUYỆN VIÊN</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Đội ngũ giảng viên và huấn luyện viên là các chuyên gia giáo dục giàu kinh nghiệm, nắm vững tâm lý lứa tuổi. Với lòng yêu trẻ và đam mê hoạt động kỹ năng sống, họ khơi gợi năng lượng tích cực và cảm hứng khám phá tự nhiên.
+                    Đội ngũ giảng viên, huấn luyện viên là những chuyên gia giáo dục có đầy đủ phẩm chất, năng lực và kinh nghiệm thực tiễn. Luôn nắm vững tâm lý học lứa tuổi, giàu lòng yêu trẻ và đam mê hoạt động kỹ năng sống.
                   </p>
                 </div>
                 <img
@@ -168,7 +168,7 @@ const FeaturesThree = () => {
               </div>
             </div>
 
-            {/* Cột 4: ĐỒNG HÀNH & KẾT NỐI */}
+            {/* Cột 4: ĐỘT PHÁ */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -184,15 +184,15 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-handshake' />
+                  <i className='ph-bold ph-lightbulb' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
-                    04 / Kết nối
+                    04 / Tầm nhìn
                   </span>
-                  <h4 className='mb-16'>ĐỒNG HÀNH & KẾT NỐI</h4>
+                  <h4 className='mb-16'>ĐỘT PHÁ</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Tạo dựng mối liên kết bền vững và tương tác đa chiều giữa Trung tâm – Học sinh – Gia đình – Nhà trường. ABA đồng hành cùng thầy cô và bố mẹ để kiến tạo môi trường phát triển toàn diện, hạnh phúc cho các em.
+                    Không ngừng sáng tạo không gian và hình thức huấn luyện mới, tối ưu hóa tính hiệu quả bền vững của giáo dục trải nghiệm. Thắt chặt liên kết tương tác đa chiều giữa Trung tâm – Học sinh – Gia đình – Nhà trường.
                   </p>
                 </div>
                 <img
