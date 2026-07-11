@@ -204,8 +204,7 @@ const FooterFour = () => {
                   className='mb-24'
                 />
                 <p className='mb-24 text-neutral-30'>
-                  EduAll exceeded all my expectations! The instructors were not
-                  only experts.
+                  Trung tâm ABA - Hành động vì hạnh phúc hàng triệu gia đình Việt Nam.
                 </p>
                 <ul className='d-flex align-items-center gap-12 justify-content-center'>
                   <li>
@@ -252,9 +251,8 @@ const FooterFour = () => {
           <div className='d-flex align-items-center justify-content-between flex-wrap gap-24'>
             <div data-aos='fade-right'>
               <p className='text-md text-white'>
-                Copyright ©2025
-                <span className='text-warning-600'>Eduall</span>. Designed By
-                Wowtheme7
+                Copyright ©2026
+                <span className='text-warning-600'> Trung tâm ABA</span>. All Rights Reserved.
               </p>
             </div>
             <div data-aos='fade-left'>
