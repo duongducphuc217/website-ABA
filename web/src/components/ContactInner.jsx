@@ -1,3 +1,5 @@
+"use client";
+
 const ContactInner = () => {
   return (
     <>
@@ -8,12 +10,11 @@ const ContactInner = () => {
               <span className='text-main-600 text-2xl d-flex'>
                 <i className='ph-bold ph-book' />
               </span>
-              <h5 className='text-main-600 mb-0'>Get In Touch</h5>
+              <h5 className='text-main-600 mb-0'>Thông tin liên hệ</h5>
             </div>
-            <h2 className='mb-24'>Let us help you</h2>
-            <p className=''>
-              Our platform is built on the principles of innovation, quality,
-              and inclusivity, aiming to provide a seamless learning
+            <h2 className='mb-24'>Chúng tôi luôn sẵn sàng hỗ trợ bạn</h2>
+            <p className='text-neutral-500 max-w-700 mx-auto'>
+              ABA cam kết mang đến những chương trình giáo dục trải nghiệm, dã ngoại thực tế, sự kiện học đường và trại hè kỹ năng sống sáng tạo, chất lượng và an toàn hàng đầu tại Việt Nam.
             </p>
           </div>
           <div className='row gy-4'>
@@ -23,15 +24,17 @@ const ContactInner = () => {
                   <i className='ph ph-map-pin-line' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Main Office</h4>
-                  <p className='text-neutral-500'>
-                    2972 Westheimer Rd. Santa Ana, Illinois 85486{" "}
-                  </p>
+                  <h4 className='mb-12'>Địa chỉ văn phòng</h4>
+                  <p className='text-neutral-800 fw-medium mb-4'>Trụ sở chính:</p>
+                  <p className='text-neutral-500 mb-12'>Số 40 ngõ 1 Phạm Tuấn Tài, Phường Nghĩa Đô, Hà Nội</p>
+
                   <a
-                    href='#'
+                    href='https://maps.google.com/?q=40+ngõ+1+Phạm+Tuấn+Tài,+Cầu+Giấy,+Hà+Nội'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Find Location
+                    Xem bản đồ
                   </a>
                 </div>
               </div>
@@ -42,14 +45,14 @@ const ContactInner = () => {
                   <i className='ph ph-envelope-open' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Email Address</h4>
-                  <p className='text-neutral-500'>infoexample@gmail.com</p>
-                  <p className='text-neutral-500'>example@gmail.com</p>
+                  <h4 className='mb-12'>Địa chỉ Email</h4>
+                  <p className='text-neutral-500 mb-4'>info@aba.edu.vn</p>
+                  <p className='text-neutral-500 mb-24'>namduong@aba.edu.vn</p>
                   <a
-                    href='mailto:infoexample@gmail.com'
+                    href='mailto:info@aba.edu.vn'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Get In Touch
+                    Gửi email ngay
                   </a>
                 </div>
               </div>
@@ -60,14 +63,14 @@ const ContactInner = () => {
                   <i className='ph ph-phone-call' />
                 </span>
                 <div className='flex-grow-1'>
-                  <h4 className='mb-12'>Phone Number</h4>
-                  <p className='text-neutral-500'>(505) 555-0125</p>
-                  <p className='text-neutral-500'>(406) 555-0120</p>
+                  <h4 className='mb-12'>Đường dây nóng</h4>
+                  <p className='text-neutral-500 mb-4'>Điện thoại: 0912 08 6996</p>
+                  <p className='text-neutral-500 mb-24'>Hotline hỗ trợ 24/7</p>
                   <a
-                    href='tel:(406)555-0120'
+                    href='tel:0963443918'
                     className='text-main-600 fw-semibold text-decoration-underline mt-16'
                   >
-                    Contact Us Today!
+                    Gọi điện tư vấn ngay
                   </a>
                 </div>
               </div>
@@ -89,51 +92,17 @@ const ContactInner = () => {
                   <span className='text-main-600 text-2xl d-flex'>
                     <i className='ph-bold ph-book' />
                   </span>
-                  <h5 className='text-main-600 mb-0'>Contact Us</h5>
+                  <h5 className='text-main-600 mb-0'>Gửi liên hệ</h5>
                 </div>
                 <h2 className='mb-24'>
-                  Have questions? don't hesitate to contact us
+                  Bạn có câu hỏi? Đừng ngần ngại liên hệ với ABA
                 </h2>
-                <p className='text-neutral-500 text-line-3 max-w-636'>
-                  We are passionate about transforming lives through education.
-                  Founded with a vision to make learning accessible to all, we
-                  believe in the power of knowledge to unlock opportunities and
-                  shape the future.
+                <p className='text-neutral-500 text-line-3 max-w-636' style={{ textAlign: "justify" }}>
+                  Chúng tôi luôn nhiệt tình lắng nghe và sẵn sàng đồng hành cùng nhà trường, phụ huynh để mang đến những chương trình giáo dục bổ ích, giúp học sinh khám phá bản thân và phát triển kỹ năng toàn diện.
                 </p>
               </div>
               <div className='flex-align gap-40 flex-wrap'>
-                <div className='enrolled-students mt-12 d-block'>
-                  <img
-                    src='assets/images/thumbs/enroll-student-img1.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                  <img
-                    src='assets/images/thumbs/enroll-student-img2.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                  <img
-                    src='assets/images/thumbs/enroll-student-img3.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                  <img
-                    src='assets/images/thumbs/enroll-student-img4.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                  <img
-                    src='assets/images/thumbs/enroll-student-img5.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                  <img
-                    src='assets/images/thumbs/enroll-student-img6.png'
-                    alt=''
-                    className='w-48 h-48 rounded-circle object-fit-cover transition-2'
-                  />
-                </div>
+
                 <div className=''>
                   <ul className='flex-align gap-4 mb-10'>
                     <li className='text-warning-600 text-2xl d-flex'>
@@ -154,7 +123,7 @@ const ContactInner = () => {
                   </ul>
                   <span className='text-neutral-700 fw-medium'>
                     {" "}
-                    2.5k+ reviews (4.95 of 5)
+                    Hơn 10.000+ học viên tin tưởng đồng hành
                   </span>
                 </div>
               </div>
@@ -162,21 +131,21 @@ const ContactInner = () => {
             <div className='col-xl-5 col-lg-6'>
               <div className='p-24 bg-white rounded-12 box-shadow-md'>
                 <div className='border border-neutral-30 rounded-8 bg-main-25 p-24'>
-                  <form action='#' id='commentForm'>
-                    <h4 className='mb-0'>Get In Touch</h4>
+                  <form action='#' id='commentForm' onSubmit={(e) => e.preventDefault()}>
+                    <h4 className='mb-0'>Nhận tư vấn chương trình</h4>
                     <span className='d-block border border-neutral-30 my-24 border-dashed' />
                     <div className='mb-24'>
                       <label
                         htmlFor='name'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Name{" "}
+                        Họ và tên
                       </label>
                       <input
                         type='text'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='name'
-                        placeholder='Enter Name...'
+                        placeholder='Nhập họ và tên...'
                       />
                     </div>
                     <div className='mb-24'>
@@ -184,13 +153,13 @@ const ContactInner = () => {
                         htmlFor='email'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Email{" "}
+                        Địa chỉ Email
                       </label>
                       <input
                         type='email'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='email'
-                        placeholder='Enter Email...'
+                        placeholder='Nhập địa chỉ email...'
                       />
                     </div>
                     <div className='mb-24'>
@@ -198,13 +167,13 @@ const ContactInner = () => {
                         htmlFor='phone'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Phone{" "}
+                        Số điện thoại
                       </label>
                       <input
                         type='tel'
                         className='common-input rounded-pill border-transparent focus-border-main-600'
                         id='phone'
-                        placeholder='Enter Your Number...'
+                        placeholder='Nhập số điện thoại...'
                       />
                     </div>
                     <div className='mb-24'>
@@ -212,12 +181,12 @@ const ContactInner = () => {
                         htmlFor='desc'
                         className='text-neutral-700 text-lg fw-medium mb-12'
                       >
-                        Message
+                        Nội dung yêu cầu / Góp ý
                       </label>
                       <textarea
                         id='desc'
                         className='common-input rounded-24 border-transparent focus-border-main-600 h-110'
-                        placeholder='Enter Your Message...'
+                        placeholder='Nhập nội dung yêu cầu chi tiết...'
                         defaultValue={""}
                       />
                     </div>
@@ -226,7 +195,7 @@ const ContactInner = () => {
                         type='submit'
                         className='btn btn-main rounded-pill flex-center gap-8 mt-40'
                       >
-                        Send Message
+                        Gửi thông tin liên hệ
                         <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                       </button>
                     </div>

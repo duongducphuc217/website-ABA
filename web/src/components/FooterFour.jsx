@@ -59,43 +59,16 @@ const FooterFour = () => {
                 data-aos='fade-up'
                 data-aos-duration={700}
               >
-                <h4 className='text-white mb-24'>Quick Link</h4>
+                <h4 className='text-white mb-24'>Thông tin chung</h4>
                 <div>
                   <ul>
                     <li className='item-hover position-relative mb-16'>
                       <Link
-                        href='/about'
+                        href='/ve-aba'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        About us
-                      </Link>
-                    </li>
-                    <li className='item-hover position-relative mb-16'>
-                      <Link
-                        href='/courses'
-                        className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
-                      >
-                        <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Courses
-                      </Link>
-                    </li>
-                    <li className='item-hover position-relative mb-16'>
-                      <Link
-                        href='/instructor'
-                        className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
-                      >
-                        <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Instructor
-                      </Link>
-                    </li>
-                    <li className='item-hover position-relative mb-16'>
-                      <Link
-                        href='/faqs'
-                        className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
-                      >
-                        <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        FAQs
+                        Giới Thiệu ABA
                       </Link>
                     </li>
                     <li className='item-hover position-relative mb-16'>
@@ -107,6 +80,16 @@ const FooterFour = () => {
                         Blog
                       </Link>
                     </li>
+                    <li className='item-hover position-relative mb-16'>
+                      <Link
+                        href='/lien-he'
+                        className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
+                      >
+                        <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
+                        Liên Hệ
+                      </Link>
+                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -115,52 +98,52 @@ const FooterFour = () => {
                 data-aos='fade-up'
                 data-aos-duration={800}
               >
-                <h4 className='text-white mb-24'>Category</h4>
+                <h4 className='text-white mb-24'>Sản phẩm</h4>
                 <div>
                   <ul>
                     <li className='item-hover position-relative mb-16'>
                       <a
-                        href='#'
+                        href='/trai-nghiem'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        UI/UX Design
+                        Trải Nghiệm Tại Trường
                       </a>
                     </li>
                     <li className='item-hover position-relative mb-16'>
                       <a
-                        href='#'
+                        href='/da-ngoai'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Web Development
+                        Dã Ngoại & Teambuilding
                       </a>
                     </li>
                     <li className='item-hover position-relative mb-16'>
                       <a
-                        href='#'
+                        href='/su-kien'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Python Development
+                        Sự Kiện & Thiết Bị
                       </a>
                     </li>
                     <li className='item-hover position-relative mb-16'>
                       <a
-                        href='#'
+                        href='/chuyen-de'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Digital Marketing
+                        Chuyên Đề KNS
                       </a>
                     </li>
                     <li className='item-hover position-relative mb-16'>
                       <a
-                        href='#'
+                        href='/trai-he'
                         className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
                       >
                         <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
-                        Graphic Design
+                        Trại Hè
                       </a>
                     </li>
                   </ul>
@@ -173,7 +156,7 @@ const FooterFour = () => {
               >
                 <h4 className='text-white mb-24'>Contact</h4>
                 <p className='text-neutral-30 mb-32'>
-                  Subscribe our newsletter to get our latest update &amp; news
+                  Theo dõi chúng tôi để nhận thông tin về chương trình
                 </p>
                 <div>
                   <form action='#' className='position-relative'>
@@ -201,7 +184,10 @@ const FooterFour = () => {
                 <img
                   src='assets/images/logo/logo-white.png'
                   alt=''
-                  className='mb-24'
+                  className='mb-24 mx-auto d-block'
+                  width={100}
+                  height={100}
+                  style={{ objectFit: "contain" }}
                 />
                 <p className='mb-24 text-neutral-30'>
                   Trung tâm ABA - Hành động vì hạnh phúc hàng triệu gia đình Việt Nam.
@@ -251,8 +237,8 @@ const FooterFour = () => {
           <div className='d-flex align-items-center justify-content-between flex-wrap gap-24'>
             <div data-aos='fade-right'>
               <p className='text-md text-white'>
-                Copyright ©2026
-                <span className='text-warning-600'> Trung tâm ABA</span>. All Rights Reserved.
+                Copyright © 2026{' '}
+                <span className='text-warning-600'>Trung tâm ABA</span>. All Rights Reserved.
               </p>
             </div>
 

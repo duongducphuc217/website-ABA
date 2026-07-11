@@ -1,36 +1,27 @@
+import HeaderThree from "@/components/HeaderThree";
+import FooterFour from "@/components/FooterFour";
 import Breadcrumb from "@/components/Breadcrumb";
-import CertificateOne from "@/components/CertificateOne";
 import ContactInner from "@/components/ContactInner";
-import FooterOne from "@/components/FooterOne";
-import HeaderOne from "@/components/HeaderOne";
-import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "EduAll - LMS, Tutors, Education & Online Course NEXT JS Template",
-  description:
-    "EduAll is a comprehensive and modern NEXT JS template designed for online education platforms, learning management systems (LMS), tutors, educational institutions, and online courses. It’s the perfect solution for creating an engaging and interactive online learning experience for students, educators, and institutions. Whether you’re offering online courses, running a tutoring platform, or managing an educational website, EduAll provides the tools to help you succeed. This template is tailored to meet the needs of educators, administrators, and students, providing a seamless and engaging user experience.",
+  title: "Liên Hệ Trung Tâm ABA - Tư vấn dã ngoại, sự kiện và trại hè học đường",
+  description: "Thông tin liên hệ chính thức của Trung tâm Đào tạo và Phát triển ABA tại Hà Nội và Lào Cai. Hotline tư vấn dịch vụ: 0963 443 918.",
 };
 
 const page = () => {
   return (
     <>
-      {/* Animation */}
-      <Animation />
-
-      {/* HeaderTwo */}
-      <HeaderOne />
+      {/* HeaderThree */}
+      <HeaderThree />
 
       {/* Breadcrumb */}
-      <Breadcrumb title={"Contact"} />
+      <Breadcrumb title={"Liên Hệ"} />
 
       {/* ContactInner */}
       <ContactInner />
 
-      {/* CertificateOne */}
-      <CertificateOne />
-
-      {/* FooterOne */}
-      <FooterOne />
+      {/* FooterFour */}
+      <FooterFour />
     </>
   );
 };

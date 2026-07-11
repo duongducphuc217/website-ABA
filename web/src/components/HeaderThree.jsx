@@ -61,79 +61,27 @@ const HeaderThree = () => {
   };
 
   const menuItems = [
+    { href: "/", label: "Trang Chủ" },
     { href: "/gioi-thieu", label: "Về ABA" },
 
-    {
-      href: "/trai-nghiem", label: "Trải nghiệm",
-      links: [
-        { href: "/le-hoi-nuoc", label: "Lễ Hội Nước" },
-        { href: "/course-list-view", label: "Course List View" },
-        { href: "/course-details", label: "Course Details" },
-        { href: "/lesson-details", label: "Lesson Details" },
-      ],
-    },
-    {
-      href: "/da-ngoai", label: "Dã ngoại",
-      links: [
-        { href: "/about", label: "About" },
-        { href: "/gioi-thieu", label: "Về ABA" },
-        { href: "/about-three", label: "About Three" },
-        { href: "/about-four", label: "About Four" },
-        { href: "/product", label: "Product" },
-        { href: "/product-details", label: "Product Details" },
-      ],
-    },
-    {
-      href: "/su-kien", label: "Sự kiện",
-      links: [
-        { href: "/le-hoi-banh-chung", label: "Lễ Hội Bánh Chưng" },
-        { href: "/gioi-thieu", label: "Về ABA" },
-        { href: "/about-three", label: "About Three" },
-        { href: "/about-four", label: "About Four" },
-        { href: "/product", label: "Product" },
-        { href: "/product-details", label: "Product Details" },
-      ],
-    },
+    { href: "/trai-nghiem", label: "Trải Nghiệm" },
 
-    {
-      href: "/chuyen-de-kns", label: "Chuyên đề KNS",
-      links: [
-        { href: "/em-an-toan", label: "Em An Toàn" },
-        { href: "/gioi-thieu", label: "Về ABA" },
-        { href: "/about-three", label: "About Three" },
-        { href: "/about-four", label: "About Four" },
-        { href: "/product", label: "Product" },
-        { href: "/product-details", label: "Product Details" },
-      ],
-    },
+    { href: "/da-ngoai", label: "Dã Ngoại" },
+    { href: "/su-kien", label: "Sự Kiện" },
 
-    {
-      href: "/trai-he", label: "Trại hè",
-      links: [
-        { href: "/song-y-nghia", label: "Sống Ý Nghĩa" },
-        { href: "/gioi-thieu", label: "Về ABA" },
-        { href: "/about-three", label: "About Three" },
-        { href: "/about-four", label: "About Four" },
-        { href: "/product", label: "Product" },
-        { href: "/product-details", label: "Product Details" },
-      ],
-    },
+    { href: "/chuyen-de", label: "Chuyên Đề KNS" },
 
-    {
-      href: "/blog", label: "Blog",
-      links: [
-        { href: "/blog", label: "Blog Grid" },
-        { href: "/blog-list", label: "Blog List" },
-        { href: "/blog-classic", label: "Blog Classic" },
-        { href: "/blog-details", label: "Blog Details" },
-      ],
-    },
-    { href: "/contact", label: "Liên hệ" },
+    { href: "/trai-he", label: "Trại Hè" },
+
+    { href: "/blog", label: "Blog" },
+
+    { href: "/contact", label: "Liên Hệ" },
   ];
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         /* Hide CSS absolute pseudo-element arrows */
         .header-menu .has-submenu::before,
         .header-menu .has-submenu > span::before,

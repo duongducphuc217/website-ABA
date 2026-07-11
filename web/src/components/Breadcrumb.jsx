@@ -4,32 +4,32 @@ const Breadcrumb = ({ title }) => {
   return (
     <section className='breadcrumb py-120 bg-main-25 position-relative z-1 overflow-hidden mb-0'>
       <img
-        src='assets/images/shapes/shape1.png'
+        src='/assets/images/shapes/shape1.png'
         alt=''
         className='shape one animation-rotation d-md-block d-none'
       />
       <img
-        src='assets/images/shapes/shape2.png'
+        src='/assets/images/shapes/shape2.png'
         alt=''
         className='shape two animation-scalation d-md-block d-none'
       />
       <img
-        src='assets/images/shapes/shape3.png'
+        src='/assets/images/shapes/shape3.png'
         alt=''
         className='shape eight animation-walking d-md-block d-none'
       />
       <img
-        src='assets/images/shapes/shape5.png'
+        src='/assets/images/shapes/shape5.png'
         alt=''
         className='shape six animation-walking d-md-block d-none'
       />
       <img
-        src='assets/images/shapes/shape4.png'
+        src='/assets/images/shapes/shape4.png'
         alt=''
         className='shape four animation-scalation'
       />
       <img
-        src='assets/images/shapes/shape4.png'
+        src='/assets/images/shapes/shape4.png'
         alt=''
         className='shape nine animation-scalation'
       />
@@ -48,7 +48,7 @@ const Breadcrumb = ({ title }) => {
                     className='breadcrumb__link text-neutral-500 hover-text-main-600 fw-medium'
                   >
                     <i className='text-lg d-inline-flex ph-bold ph-house' />{" "}
-                    Home
+                    Trang chủ
                   </Link>
                 </li>
 
