@@ -61,7 +61,7 @@ const HeaderThree = () => {
   };
 
   const menuItems = [
-    { href: "/ve-aba", label: "Về ABA" },
+    { href: "/gioi-thieu", label: "Về ABA" },
 
     {
       href: "/trai-nghiem", label: "Trải nghiệm",
@@ -76,7 +76,7 @@ const HeaderThree = () => {
       href: "/da-ngoai", label: "Dã ngoại",
       links: [
         { href: "/about", label: "About" },
-        { href: "/about-two", label: "About Two" },
+        { href: "/gioi-thieu", label: "Về ABA" },
         { href: "/about-three", label: "About Three" },
         { href: "/about-four", label: "About Four" },
         { href: "/product", label: "Product" },
@@ -87,7 +87,7 @@ const HeaderThree = () => {
       href: "/su-kien", label: "Sự kiện",
       links: [
         { href: "/le-hoi-banh-chung", label: "Lễ Hội Bánh Chưng" },
-        { href: "/about-two", label: "About Two" },
+        { href: "/gioi-thieu", label: "Về ABA" },
         { href: "/about-three", label: "About Three" },
         { href: "/about-four", label: "About Four" },
         { href: "/product", label: "Product" },
@@ -99,7 +99,7 @@ const HeaderThree = () => {
       href: "/chuyen-de-kns", label: "Chuyên đề KNS",
       links: [
         { href: "/em-an-toan", label: "Em An Toàn" },
-        { href: "/about-two", label: "About Two" },
+        { href: "/gioi-thieu", label: "Về ABA" },
         { href: "/about-three", label: "About Three" },
         { href: "/about-four", label: "About Four" },
         { href: "/product", label: "Product" },
@@ -111,7 +111,7 @@ const HeaderThree = () => {
       href: "/trai-he", label: "Trại hè",
       links: [
         { href: "/song-y-nghia", label: "Sống Ý Nghĩa" },
-        { href: "/about-two", label: "About Two" },
+        { href: "/gioi-thieu", label: "Về ABA" },
         { href: "/about-three", label: "About Three" },
         { href: "/about-four", label: "About Four" },
         { href: "/product", label: "Product" },
@@ -128,11 +128,32 @@ const HeaderThree = () => {
         { href: "/blog-details", label: "Blog Details" },
       ],
     },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Liên hệ" },
   ];
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* Hide CSS absolute pseudo-element arrows */
+        .header-menu .has-submenu::before,
+        .header-menu .has-submenu > span::before,
+        .header-menu .has-submenu > a::before,
+        .mobile-menu .has-submenu::before,
+        .mobile-menu .has-submenu > span::before,
+        .mobile-menu .has-submenu > a::before {
+          display: none !important;
+          content: none !important;
+        }
+
+        /* Hover transition for the inline caret arrow */
+        .nav-menu__item .ph-caret-down {
+          display: inline-block;
+          transition: transform 0.2s ease;
+        }
+        .nav-menu__item:hover .ph-caret-down {
+          transform: rotate(180deg);
+        }
+      `}} />
       <div className={`side-overlay ${isMenuActive ? "show" : ""}`}></div>
       <header
         className={`header position-absolute z-2 w-100 top-0 ${scroll ? "fixed-header" : ""
@@ -140,60 +161,58 @@ const HeaderThree = () => {
       >
         <div className='container container--xl'>
           <nav className='header-inner flex-between gap-8'>
-            <div className='header-content-wrapper flex-align flex-grow-1'>
-              {/* Logo Start */}
-              <div className='logo'>
-                <Link href='/' className='link'>
-                  <img src='assets/images/logo/logo.png' alt='Logo' />
-                </Link>
-              </div>
-              {/* Logo End  */}
-
-              {/* Menu Start  */}
-              <div className='header-menu d-lg-block d-none'>
-                <ul className='nav-menu flex-align'>
-                  {menuItems.map((item, index) =>
-                    item.links ? (
-                      <li
-                        key={`menu-item-${index}`}
-                        className='nav-menu__item has-submenu'
-                      >
-                        <span href='#' className='nav-menu__link'>
-                          {item.label}
-                        </span>
-                        <ul className={`nav-submenu scroll-sm`}>
-                          {item.links.map((link, linkIndex) => (
-                            <li
-                              key={`submenu-item-${linkIndex}`}
-                              className={`nav-submenu__item ${pathname === link.href && "activePage"
-                                }`}
-                            >
-                              <Link
-                                href={link.href}
-                                className='nav-submenu__link hover-bg-neutral-30'
-                              >
-                                {link.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ) : (
-                      <li
-                        key={`menu-contact-${index}`}
-                        className={`nav-menu__item ${pathname === item.href && "activePage"
-                          }`}
-                      >
-                        <Link href={item.href} className='nav-menu__link'>
-                          {item.label}
-                        </Link>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-              {/* Menu End  */}
+            {/* Logo Start */}
+            <div className='logo flex-shrink-0'>
+              <Link href='/' className='link'>
+                <img src='assets/images/logo/logo.png' alt='Logo' />
+              </Link>
             </div>
+            {/* Logo End  */}
+
+            {/* Menu Start  */}
+            <div className='header-menu d-lg-block d-none mx-auto'>
+              <ul className='nav-menu flex-align'>
+                {menuItems.map((item, index) =>
+                  item.links ? (
+                    <li
+                      key={`menu-item-${index}`}
+                      className='nav-menu__item has-submenu'
+                    >
+                      <span href='#' className='nav-menu__link flex-align gap-4'>
+                        {item.label} <i className='ph-bold ph-caret-down text-xs' style={{ fontSize: '10px' }} />
+                      </span>
+                      <ul className={`nav-submenu scroll-sm`}>
+                        {item.links.map((link, linkIndex) => (
+                          <li
+                            key={`submenu-item-${linkIndex}`}
+                            className={`nav-submenu__item ${pathname === link.href && "activePage"
+                              }`}
+                          >
+                            <Link
+                              href={link.href}
+                              className='nav-submenu__link hover-bg-neutral-30'
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li
+                      key={`menu-contact-${index}`}
+                      className={`nav-menu__item ${pathname === item.href && "activePage"
+                        }`}
+                    >
+                      <Link href={item.href} className='nav-menu__link'>
+                        {item.label}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+            {/* Menu End  */}
             {/* Header Right start */}
             <div className='header-right flex-align'>
               <form
@@ -248,7 +267,9 @@ const HeaderThree = () => {
                       }`}
                     onClick={() => handleSubmenuClick(index)}
                   >
-                    <span className='nav-menu__link'>{item.label}</span>
+                    <span className='nav-menu__link flex-align gap-4'>
+                      {item.label} <i className='ph-bold ph-caret-down text-xs' style={{ fontSize: '10px' }} />
+                    </span>
                     <ul className={`nav-submenu scroll-sm`}>
                       {item.links.map((link, linkIndex) => (
                         <li key={linkIndex} className='nav-submenu__item'>
