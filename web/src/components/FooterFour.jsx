@@ -13,17 +13,17 @@ const FooterFour = () => {
                 data-aos='fade-up'
                 data-aos-duration={600}
               >
-                <h4 className='text-white mb-24'>Contact</h4>
+                <h4 className='text-white mb-24'>Liên hệ</h4>
                 <div className='mb-16'>
                   <div className='d-flex align-items-center gap-16'>
                     <span className='w-40 h-40 border-main-600 border rounded-circle text-white justify-content-center align-items-center d-flex flex-shrink-0'>
                       <i className='ph-bold ph-phone' />
                     </span>
                     <a
-                      href='tel:(207)555-0119'
+                      href='tel:0912086996'
                       className='text-neutral-30 hover-text-warning-800'
                     >
-                      (252) 555-0126
+                      0912 08 6996
                     </a>
                   </div>
                 </div>
@@ -33,10 +33,10 @@ const FooterFour = () => {
                       <i className='ph-bold ph-envelope-open' />
                     </span>
                     <a
-                      href='tel:info@example.com'
+                      href='tel:info@aba.edu.vn'
                       className='text-neutral-30 hover-text-warning-800'
                     >
-                      info@example.com
+                      info@aba.edu.vn
                     </a>
                   </div>
                 </div>
@@ -49,7 +49,7 @@ const FooterFour = () => {
                       href='#'
                       className='text-neutral-30 hover-text-warning-800'
                     >
-                      8502 Preston Rd. Inglewood.
+                      40 Ngõ 1 Phạm Tuấn Tài, Phường Nghĩa Đô, Hà Nội.
                     </a>
                   </div>
                 </div>
