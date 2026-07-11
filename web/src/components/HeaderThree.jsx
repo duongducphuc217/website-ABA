@@ -68,7 +68,7 @@ const HeaderThree = () => {
       ],
     },
     {
-      label: "Courses",
+      label: "Trải nghiệm",
       links: [
         { href: "/course", label: "Course Grid View" },
         { href: "/course-list-view", label: "Course List View" },
@@ -77,7 +77,7 @@ const HeaderThree = () => {
       ],
     },
     {
-      label: "Pages",
+      label: "Dã ngoại",
       links: [
         { href: "/about", label: "About" },
         { href: "/about-two", label: "About Two" },
@@ -85,24 +85,17 @@ const HeaderThree = () => {
         { href: "/about-four", label: "About Four" },
         { href: "/product", label: "Product" },
         { href: "/product-details", label: "Product Details" },
-        { href: "/cart", label: "Cart" },
-        { href: "/checkout", label: "Checkout" },
-        { href: "/pricing-plan", label: "Pricing Plan" },
-        { href: "/instructor", label: "Instructor" },
-        { href: "/instructor-two", label: "Instructor Two" },
-        { href: "/instructor-details", label: "Instructor Details" },
-        { href: "/tutor", label: "Premium Tutors" },
-        { href: "/tutor-details", label: "Premium Tutors Details" },
-        { href: "/faq", label: "FAQ" },
-        { href: "/tuition-jobs", label: "Tuition Jobs" },
-        { href: "/events", label: "Events" },
-        { href: "/event-details", label: "Event Details" },
-        { href: "/apply-admission", label: "Apply Admission" },
-        { href: "/gallery", label: "Gallery" },
-        { href: "/privacy-policy", label: "Privacy Policy" },
-        { href: "/favorite-course", label: "Favorite Course" },
-        { href: "/find-tutors", label: "Find Best Tutors" },
-        { href: "/book-online-class", label: "Book Online Class" },
+      ],
+    },
+    {
+      label: "Sự kiện",
+      links: [
+        { href: "/le-hoi-banh-chung", label: "Lễ Hội Bánh Chưng" },
+        { href: "/about-two", label: "About Two" },
+        { href: "/about-three", label: "About Three" },
+        { href: "/about-four", label: "About Four" },
+        { href: "/product", label: "Product" },
+        { href: "/product-details", label: "Product Details" },
       ],
     },
 
