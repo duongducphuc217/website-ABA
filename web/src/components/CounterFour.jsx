@@ -151,6 +151,7 @@ const CounterFour = () => {
                   <img
                     src='assets/images/thumbs/about-us-five-img3.png'
                     alt=''
+                    style={{ objectFit: 'cover', aspectRatio: '1/1', width: '140px', height: '140px' }}
                   />
                 </span>
               </div>
@@ -160,6 +161,7 @@ const CounterFour = () => {
                     src='assets/images/thumbs/about-us-five-img2.png'
                     alt=''
                     className=''
+                    style={{ objectFit: 'cover', aspectRatio: '1/1', width: '140px', height: '140px' }}
                   />
                 </div>
               </div>
@@ -169,6 +171,7 @@ const CounterFour = () => {
                     src='assets/images/thumbs/about-us-five-img1.png'
                     alt=''
                     className='choose-us__img rounded-12 w-100'
+                    style={{ objectFit: 'cover', aspectRatio: '416/520' }}
                     data-tilt=''
                     data-tilt-max={16}
                     data-tilt-speed={500}
@@ -185,11 +188,12 @@ const CounterFour = () => {
                   src='assets/images/thumbs/about-us-five-img4.png'
                   alt=''
                   className='border border-white rounded-circle border-3'
+                  style={{ objectFit: 'cover', aspectRatio: '1/1', width: '260px', height: '260px' }}
                   data-tilt=''
                 />
                 <span
                   onClick={() => setIsOpen(true)}
-                  className='play-button w-48 h-48 flex-center bg-warning-800 text-white rounded-circle text-xl position-absolute top-50 start-50 translate-middle cursor-pointer'
+                  className='play-button w-72 h-72 flex-center bg-warning-800 text-white rounded-circle text-2xl position-absolute top-50 start-50 translate-middle cursor-pointer'
                   style={{ cursor: 'pointer' }}
                 >
                   <i className='ph-fill ph-play' />
