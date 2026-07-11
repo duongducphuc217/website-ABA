@@ -36,7 +36,7 @@ const CounterFour = () => {
                   <h5 className='mb-0 text-main-600'>Về Chúng Tôi</h5>
                 </div>
                 <h2 className='mb-24 wow bounceIn'>
-                  Kiến Tạo Thế Thế Hệ Trẻ Bản Lĩnh & Tự Lập
+                  Kiến Tạo Thế Hệ Trẻ Bản Lĩnh & Tự Lập
                 </h2>
                 <p className='text-neutral-500 text-line-2 wow bounceInUp'>
                   Trung tâm ABA tự hào là đối tác chiến lược hàng đầu của các nhà trường, mang đến giải pháp giáo dục kỹ năng sống thực chất, các chuyến dã ngoại trải nghiệm an toàn và tràn đầy năng lượng.
