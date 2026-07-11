@@ -255,34 +255,7 @@ const FooterFour = () => {
                 <span className='text-warning-600'> Trung tâm ABA</span>. All Rights Reserved.
               </p>
             </div>
-            <div data-aos='fade-left'>
-              <ul className='d-flex align-items-center gap-24 flex-wrap'>
-                <li>
-                  <a
-                    href='#'
-                    className='text-white text-md fw-normal hover-text-warning-800'
-                  >
-                    Help &amp; Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='#'
-                    className='text-white text-md fw-normal hover-text-warning-800'
-                  >
-                    Privacy policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='#'
-                    className='text-white text-md fw-normal hover-text-warning-800'
-                  >
-                    Terms &amp; Conditions
-                  </a>
-                </li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </div>
