@@ -63,7 +63,7 @@ const FeaturesThree = () => {
           </div>
           
           <div className='row gy-4 gx-3 gx-sm-4'>
-            {/* Cột 1: TRẢI NGHIỆM THỰC TIỄN */}
+            {/* Cột 1: THỰC TIỄN & HIỆU QUẢ */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -85,9 +85,9 @@ const FeaturesThree = () => {
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
                     01 / Thực tiễn
                   </span>
-                  <h4 className='mb-16'>TRẢI NGHIỆM THỰC TẾ</h4>
+                  <h4 className='mb-16'>THỰC TIỄN & HIỆU QUẢ</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Đề cao triết lý "Học qua trải nghiệm". Các chuyến dã ngoại, hướng nghiệp hay kỹ năng hè của ABA được thiết kế sinh động, thiết thực phát triển phẩm chất và năng lực của học sinh, nói không với việc đi chơi thông thường.
+                    Đề cao triết lý "Lấy thực hành làm trung tâm". Các chương trình của ABA được thiết kế thực chất, giúp học sinh chủ động chiếm lĩnh tri thức, rèn luyện kỹ năng thích ứng và kiến tạo năng lực thực tế theo định hướng GDPT 2018.
                   </p>
                 </div>
                 <img
@@ -122,7 +122,7 @@ const FeaturesThree = () => {
                   </span>
                   <h4 className='mb-16'>AN TOÀN LÀ SỐ 1</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Sự an tâm của nhà trường và phụ huynh là ưu tiên cao nhất. Quy trình vận chuyển, điều phối sự kiện, y tế và giám sát học sinh được vận hành chặt chẽ, chuyên nghiệp bởi đội ngũ giàu kinh nghiệm của ABA.
+                    Sự an tâm của nhà trường và phụ huynh là ưu tiên cao nhất. ABA cam kết quy trình vận chuyển, điều phối sự kiện và y tế khép kín, an toàn tuyệt đối dưới sự quản lý và giám sát chặt chẽ của đội ngũ giàu kinh nghiệm.
                   </p>
                 </div>
                 <img
@@ -133,7 +133,7 @@ const FeaturesThree = () => {
               </div>
             </div>
 
-            {/* Cột 3: NIỀM VUI & KHÁM PHÁ */}
+            {/* Cột 3: HLV TRUYỀN CẢM HƯNG */}
             <div
               className='col-lg-3 col-6'
               data-aos='fade-up'
@@ -149,15 +149,15 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-smiley' />
+                  <i className='ph-bold ph-user-circle-gear' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
-                    03 / Truyền cảm hứng
+                    03 / Nhân sự cốt lõi
                   </span>
-                  <h4 className='mb-16'>NIỀM VUI & KHÁM PHÁ</h4>
+                  <h4 className='mb-16'>HLV TRUYỀN CẢM HƯNG</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Khơi gợi năng lượng tích cực, niềm hứng thú học tập và gắn kết tình bạn. Các sự kiện lễ hội trường học như Lễ hội nước, trại kỹ năng được tổ chức năng động, vui tươi, giúp các em khám phá tối đa tiềm năng bản thân.
+                    Đội ngũ giảng viên và huấn luyện viên là các chuyên gia giáo dục giàu kinh nghiệm, nắm vững tâm lý lứa tuổi. Với lòng yêu trẻ và đam mê hoạt động kỹ năng sống, họ khơi gợi năng lượng tích cực và cảm hứng khám phá tự nhiên.
                   </p>
                 </div>
                 <img
@@ -184,7 +184,7 @@ const FeaturesThree = () => {
                 <div
                   className='why-feature-icon mb-40 d-flex align-items-center justify-content-center text-main-600 border border-main-100 rounded-circle bg-main-25 animate__wobble'
                 >
-                  <i className='ph-bold ph-users' />
+                  <i className='ph-bold ph-handshake' />
                 </div>
                 <div>
                   <span className='fw-semibold text-main-600 mb-12 d-block'>
@@ -192,7 +192,7 @@ const FeaturesThree = () => {
                   </span>
                   <h4 className='mb-16'>ĐỒNG HÀNH & KẾT NỐI</h4>
                   <p className='tw-text-sm d-none d-sm-block' style={{ textAlign: 'justify', lineHeight: '1.6', marginBottom: 0 }}>
-                    Chúng tôi tin rằng giáo dục tốt nhất cần có sự đồng hành của cả gia đình và nhà trường. Các chương trình của ABA thiết lập cầu nối thông tin hai chiều, chia sẻ kỹ năng nuôi dạy và kết nối trái tim.
+                    Tạo dựng mối liên kết bền vững và tương tác đa chiều giữa Trung tâm – Học sinh – Gia đình – Nhà trường. ABA đồng hành cùng thầy cô và bố mẹ để kiến tạo môi trường phát triển toàn diện, hạnh phúc cho các em.
                   </p>
                 </div>
                 <img
