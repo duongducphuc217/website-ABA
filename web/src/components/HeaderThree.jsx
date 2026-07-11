@@ -70,7 +70,7 @@ const HeaderThree = () => {
     {
       label: "Trải nghiệm",
       links: [
-        { href: "/course", label: "Course Grid View" },
+        { href: "/le-hoi-nuoc", label: "Lễ Hội Nước" },
         { href: "/course-list-view", label: "Course List View" },
         { href: "/course-details", label: "Course Details" },
         { href: "/lesson-details", label: "Lesson Details" },
@@ -91,6 +91,30 @@ const HeaderThree = () => {
       label: "Sự kiện",
       links: [
         { href: "/le-hoi-banh-chung", label: "Lễ Hội Bánh Chưng" },
+        { href: "/about-two", label: "About Two" },
+        { href: "/about-three", label: "About Three" },
+        { href: "/about-four", label: "About Four" },
+        { href: "/product", label: "Product" },
+        { href: "/product-details", label: "Product Details" },
+      ],
+    },
+
+    {
+      label: "Chuyên đề KNS",
+      links: [
+        { href: "/em-an-toan", label: "Em An Toàn" },
+        { href: "/about-two", label: "About Two" },
+        { href: "/about-three", label: "About Three" },
+        { href: "/about-four", label: "About Four" },
+        { href: "/product", label: "Product" },
+        { href: "/product-details", label: "Product Details" },
+      ],
+    },
+
+    {
+      label: "Trại hè",
+      links: [
+        { href: "/song-y-nghia", label: "Sống Ý Nghĩa" },
         { href: "/about-two", label: "About Two" },
         { href: "/about-three", label: "About Three" },
         { href: "/about-four", label: "About Four" },
