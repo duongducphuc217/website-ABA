@@ -65,7 +65,10 @@ const TestimonialsFour = () => {
         
         {/* Nhận xét 1 */}
         <div data-aos='zoom-in' data-aos-duration={400} className="px-8">
-          <div className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 p-12 border border-neutral-30 hover-border-main-600 border px-32 py-32 hover-bg-main-05 transition-04' style={{ height: '380px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div 
+            className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 border border-neutral-30 hover-border-main-600 hover-bg-main-05 transition-04' 
+            style={{ height: '420px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <div>
               <ul className='d-flex align-items-center gap-8 mb-16'>
                 <li className='text-20 text-warning-400'><i className='ph-fill ph-star' /></li>
@@ -97,7 +100,10 @@ const TestimonialsFour = () => {
 
         {/* Nhận xét 2 */}
         <div data-aos='zoom-in' data-aos-duration={800} className="px-8">
-          <div className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 p-12 border border-neutral-30 hover-border-main-600 border px-32 py-32 hover-bg-main-05 transition-04' style={{ height: '380px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div 
+            className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 border border-neutral-30 hover-border-main-600 hover-bg-main-05 transition-04' 
+            style={{ height: '420px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <div>
               <ul className='d-flex align-items-center gap-8 mb-16'>
                 <li className='text-20 text-warning-400'><i className='ph-fill ph-star' /></li>
@@ -129,7 +135,10 @@ const TestimonialsFour = () => {
 
         {/* Nhận xét 3 */}
         <div data-aos='zoom-in' data-aos-duration={1200} className="px-8">
-          <div className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 p-12 border border-neutral-30 hover-border-main-600 border px-32 py-32 hover-bg-main-05 transition-04' style={{ height: '380px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div 
+            className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 border border-neutral-30 hover-border-main-600 hover-bg-main-05 transition-04' 
+            style={{ height: '420px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <div>
               <ul className='d-flex align-items-center gap-8 mb-16'>
                 <li className='text-20 text-warning-400'><i className='ph-fill ph-star' /></li>
@@ -161,7 +170,10 @@ const TestimonialsFour = () => {
 
         {/* Nhận xét 4 */}
         <div data-aos='zoom-in' data-aos-duration={400} className="px-8">
-          <div className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 p-12 border border-neutral-30 hover-border-main-600 border px-32 py-32 hover-bg-main-05 transition-04' style={{ height: '380px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div 
+            className='instructor-item max-w-636-px scale-hover-item bg-white rounded-16 border border-neutral-30 hover-border-main-600 hover-bg-main-05 transition-04' 
+            style={{ height: '420px', padding: '32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <div>
               <ul className='d-flex align-items-center gap-8 mb-16'>
                 <li className='text-20 text-warning-400'><i className='ph-fill ph-star' /></li>
