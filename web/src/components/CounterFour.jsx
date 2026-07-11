@@ -38,7 +38,7 @@ const CounterFour = () => {
                 <h2 className='mb-24 wow bounceIn'>
                   Kiến Tạo Thế Hệ Trẻ Bản Lĩnh & Tự Lập
                 </h2>
-                <p className='text-neutral-500 text-line-2 wow bounceInUp'>
+                <p className='text-neutral-500 wow bounceInUp' style={{ fontSize: '16px', lineHeight: '1.6' }}>
                   Trung tâm ABA tự hào là đối tác chiến lược hàng đầu của các nhà trường, mang đến giải pháp giáo dục kỹ năng sống thực chất, các chuyến dã ngoại trải nghiệm an toàn và tràn đầy năng lượng.
                 </p>
               </div>
