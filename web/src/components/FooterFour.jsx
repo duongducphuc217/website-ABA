@@ -193,7 +193,7 @@ const FooterFour = () => {
               </div>
             </div>
             <div
-              className='px-40 py-40 bg-neutral-700 rounded-12 d-inline-block max-w-366-px justify-content-center text-center'
+              className='px-40 py-40 bg-neutral-700 rounded-12 d-none d-md-inline-block max-w-366-px justify-content-center text-center'
               data-aos='fade-up'
               data-aos-duration={1000}
             >
