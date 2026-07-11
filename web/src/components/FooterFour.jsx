@@ -55,7 +55,7 @@ const FooterFour = () => {
                 </div>
               </div>
               <div
-                className='col-lg-3 col-md-4 col-sm-2'
+                className='col-lg-3 col-md-4 col-sm-2 d-none d-md-block'
                 data-aos='fade-up'
                 data-aos-duration={700}
               >
@@ -111,7 +111,7 @@ const FooterFour = () => {
                 </div>
               </div>
               <div
-                className='col-lg-3 col-md-4 col-sm-2'
+                className='col-lg-3 col-md-4 col-sm-2 d-none d-md-block'
                 data-aos='fade-up'
                 data-aos-duration={800}
               >
@@ -167,7 +167,7 @@ const FooterFour = () => {
                 </div>
               </div>
               <div
-                className='col-lg-3 col-md-4 col-sm-2'
+                className='col-lg-3 col-md-4 col-sm-2 d-none d-md-block'
                 data-aos='fade-up'
                 data-aos-duration={900}
               >
