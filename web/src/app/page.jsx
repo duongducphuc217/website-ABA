@@ -45,12 +45,6 @@ const page = () => {
       {/* MarqueeOne */}
       <MarqueeOne />
 
-      {/* GallerySectionTwo */}
-      <GallerySectionTwo />
-
-      {/* InstructorTwo */}
-      <InstructorTwo />
-
       {/* PopularTwo */}
       <PopularTwo />
 

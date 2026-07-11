@@ -6,8 +6,69 @@ import VisibilitySensor from "react-visibility-sensor";
 const WhyChooseABA = () => {
   return (
     <section className='py-120 border-top border-neutral-30'>
+      {/* Thêm CSS tùy biến để tối ưu giao diện di động (Mobile) */}
+      <style>{`
+        .why-stats-card {
+          padding: 32px;
+          flex-grow: 1;
+        }
+        .why-count-text {
+          -webkit-text-stroke: 2.5px hsl(var(--main));
+          color: transparent;
+          font-size: 96px;
+          font-weight: 800;
+          line-height: 1;
+          min-width: 240px;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+        }
+        .why-label-text {
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          line-height: 1.4;
+          text-transform: uppercase;
+        }
+        
+        @media (max-width: 1199px) {
+          .why-count-text {
+            font-size: 72px;
+            min-width: 180px;
+          }
+        }
+        
+        @media (max-width: 991px) {
+          .why-stats-card {
+            padding: 20px 16px;
+          }
+          .why-count-text {
+            font-size: 48px;
+            min-width: auto;
+          }
+          .why-label-text {
+            font-size: 11px;
+            letter-spacing: 0.5px;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .why-stats-card {
+            padding: 16px 12px;
+            text-align: center;
+          }
+          .why-count-text {
+            font-size: 36px;
+            margin-bottom: 8px;
+          }
+          .why-label-text {
+            font-size: 10px;
+            line-height: 1.3;
+          }
+        }
+      `}</style>
+
       <div className='container'>
-        {/* Phần Title căn giữa giống như ảnh */}
+        {/* Phần Title căn giữa */}
         <div className='text-center mb-60'>
           <div
             className='fw-semibold text-main-800 text-xl d-flex align-items-center justify-content-center gap-8 mb-16 flex-wrap'
@@ -26,56 +87,57 @@ const WhyChooseABA = () => {
           </p>
         </div>
 
-        {/* Phần bên dưới là Row chia 2 cột */}
-        <div className='row gy-5 align-items-stretch'>
-          {/* Cột Trái - Số liệu thống kê đồng bộ CSS */}
+        {/* Phần bên dưới chia 2 cột */}
+        <div className='row gy-4 align-items-stretch'>
+          {/* Cột Trái - 2 Số liệu thống kê đồng bộ CSS */}
           <div className='col-lg-5 d-flex' data-aos='fade-right'>
-            <div className='d-flex flex-column justify-content-between w-100 gap-24'>
+            {/* Trên mobile (< 992px) chuyển thành flex-row đứng song song */}
+            <div className='d-flex flex-row flex-lg-column justify-content-between w-100 gap-3 gap-sm-4'>
               {/* Card 1: 15+ Năm */}
               <div
-                className='animation-item px-32 py-32 border rounded-16 hover-border-main-600 transition-03 bg-img position-relative overflow-hidden d-flex align-items-center gap-32 flex-grow-1'
+                className='animation-item why-stats-card border rounded-16 hover-border-main-600 transition-03 bg-img position-relative overflow-hidden d-flex flex-column flex-sm-row align-items-center align-items-sm-center gap-3 gap-sm-32'
                 style={{
                   backgroundImage: "url(assets/images/shapes/child-future-bg-img1.png)",
                 }}
               >
                 <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                   {({ isVisible }) => (
-                    <span style={{ WebkitTextStroke: '2.5px hsl(var(--main))', color: 'transparent', fontSize: '96px', fontWeight: '800', lineHeight: '1', minWidth: '240px', whiteSpace: 'nowrap' }}>
+                    <span className='why-count-text'>
                       {isVisible ? <CountUp end={15} /> : 0}+
                     </span>
                   )}
                 </VisibilitySensor>
-                <span className='text-neutral-700 fw-bold text-sm' style={{ textTransform: 'uppercase', fontSize: '12px', letterSpacing: '1px', lineHeight: '1.4' }}>
+                <span className='text-neutral-700 why-label-text'>
                   Năm đồng hành cùng nhà trường & phụ huynh
                 </span>
                 <img
                   src='assets/images/shapes/child-icon.png'
                   alt=''
-                  className='child-future-icon position-absolute top-0 end-0'
+                  className='child-future-icon position-absolute top-0 end-0 d-none d-sm-block'
                 />
               </div>
 
               {/* Card 2: 99% Sự hài lòng */}
               <div
-                className='animation-item px-32 py-32 border rounded-16 hover-border-main-600 transition-03 bg-img position-relative overflow-hidden d-flex align-items-center gap-32 flex-grow-1'
+                className='animation-item why-stats-card border rounded-16 hover-border-main-600 transition-03 bg-img position-relative overflow-hidden d-flex flex-column flex-sm-row align-items-center align-items-sm-center gap-3 gap-sm-32'
                 style={{
                   backgroundImage: "url(assets/images/shapes/child-future-bg-img1.png)",
                 }}
               >
                 <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                   {({ isVisible }) => (
-                    <span style={{ WebkitTextStroke: '2.5px hsl(var(--main))', color: 'transparent', fontSize: '96px', fontWeight: '800', lineHeight: '1', minWidth: '240px', whiteSpace: 'nowrap' }}>
+                    <span className='why-count-text'>
                       {isVisible ? <CountUp end={99} /> : 0}%
                     </span>
                   )}
                 </VisibilitySensor>
-                <span className='text-neutral-700 fw-bold text-sm' style={{ textTransform: 'uppercase', fontSize: '12px', letterSpacing: '1px', lineHeight: '1.4' }}>
+                <span className='text-neutral-700 why-label-text'>
                   Học sinh hào hứng & phụ huynh an tâm tuyệt đối
                 </span>
                 <img
                   src='assets/images/shapes/child-icon.png'
                   alt=''
-                  className='child-future-icon position-absolute top-0 end-0'
+                  className='child-future-icon position-absolute top-0 end-0 d-none d-sm-block'
                 />
               </div>
             </div>
@@ -84,8 +146,8 @@ const WhyChooseABA = () => {
           {/* Cột Phải - Ảnh minh họa & Checklist */}
           <div className='col-lg-7' data-aos='fade-left'>
             <div className='row gy-4 align-items-stretch h-100'>
-              {/* Hình ảnh minh họa */}
-              <div className='col-md-6'>
+              {/* Hình ảnh minh họa - Ẩn trên mobile & tablet nhỏ (< 768px) để thu gọn chiều dọc */}
+              <div className='col-md-6 d-none d-md-block'>
                 <div className='position-relative rounded-16 overflow-hidden border border-neutral-30 hover-border-main-600 transition-03 h-100 shadow-sm'>
                   <img
                     src='assets/images/thumbs/choose-us-img1.png'
