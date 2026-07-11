@@ -2,6 +2,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
+
 const CounterFour = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -22,7 +25,7 @@ const CounterFour = () => {
         className='animation-walking bottom-5-percent left-70-percent position-absolute'
       />
       <div className='container'>
-        <div className='row gy-4'>
+        <div className='row gy-4 align-items-center'>
           <div className='col-xl-6'>
             <div className='choose-us__content'>
               <div className='mb-40'>
@@ -30,92 +33,98 @@ const CounterFour = () => {
                   <span className='text-16 text-main-600'>
                     <i className='ph-bold ph-book' />
                   </span>
-                  <h5 className='mb-0 text-main-600'>About Us</h5>
+                  <h5 className='mb-0 text-main-600'>Về Chúng Tôi</h5>
                 </div>
                 <h2 className='mb-24 wow bounceIn'>
-                  The Creating lifelong learners, pioneering a better future
+                  Kiến Tạo Thế Thế Hệ Trẻ Bản Lĩnh & Tự Lập
                 </h2>
-                <p className='text-neutral-500 text-line-2  wow bounceInUp'>
-                  We are dedicated to shaping the leaders of tomorrow by
-                  delivering innovative and impactful learning experiences.
+                <p className='text-neutral-500 text-line-2 wow bounceInUp'>
+                  Trung tâm ABA tự hào là đối tác chiến lược hàng đầu của các nhà trường, mang đến giải pháp giáo dục kỹ năng sống thực chất, các chuyến dã ngoại trải nghiệm an toàn và tràn đầy năng lượng.
                 </p>
               </div>
+              
+              {/* Thanh tiến độ sự hài lòng */}
               <div className='mb-40'>
                 <div className='mb-16'>
                   <span className='text-neutral-700 text-20 fw-medium'>
-                    Course Loading
+                    Mức độ hài lòng & an tâm tuyệt đối
                   </span>
                 </div>
                 <div
                   className='progress-wrapper d-flex align-items-center flex-column gap-4'
-                  data-perc='85%'
+                  data-perc='99%'
                 >
                   <div className='h-50-px position-relative w-100 d-flex'>
-                    <span className='floating-label position-absolute text-xl text-main-600 fw-normal radius-8 w-50-px h-32-px z-1 d-flex justify-content-center align-items-center'>
-                      85%
+                    <span 
+                      className='floating-label position-absolute text-xl text-main-600 fw-semibold radius-8 w-50-px h-32-px z-1 d-flex justify-content-center align-items-center'
+                      style={{ left: '99%', transform: 'translateX(-100%)' }}
+                    >
+                      99%
                     </span>
                     <div
                       className='progress mt-auto h-8-px w-100 bg-primary-50 rounded-pill'
                       role='progressbar'
                       aria-label='Basic example'
-                      aria-valuenow={85}
+                      aria-valuenow={99}
                       aria-valuemin={0}
                       aria-valuemax={100}
                     >
                       <div
                         className='progress-bar animated-bar rounded-pill bg-primary-gradien overflow-visible'
-                        style={{ width: "85%" }}
+                        style={{ width: "99%" }}
                       ></div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* Sứ mệnh & Tầm nhìn */}
               <div className='d-flex gap-24 flex-wrap'>
                 <div className='max-w-306'>
-                  <div className='d-flex gap-12' data-aos='fade-right'>
+                  <div className='d-flex gap-12 mb-12 align-items-center' data-aos='fade-right'>
                     <span>
                       <img
                         src='assets/images/icons/about-us-five-checkbox.png'
-                        alt=''
+                        alt='Sứ Mệnh'
                       />
                     </span>
-                    <h5>Our Mission</h5>
+                    <h5 className='mb-0 text-neutral-700 fw-bold'>Sứ Mệnh Của ABA</h5>
                   </div>
-                  <p className='text-14 fw-normal wow bounceIn'>
-                    There are many variations of passages of Lorem Ipsum
-                    available.
+                  <p className='text-14 fw-normal text-neutral-500 wow bounceIn' style={{ textAlign: 'justify', lineHeight: '1.5' }}>
+                    Hành động vì nụ cười trẻ thơ và hạnh phúc của hàng triệu gia đình Việt thông qua các hoạt động giáo dục thực nghiệm giàu tính giáo dục và nhân văn.
                   </p>
                 </div>
                 <div className='max-w-306'>
-                  <div className='d-flex gap-12' data-aos='fade-left'>
+                  <div className='d-flex gap-12 mb-12 align-items-center' data-aos='fade-left'>
                     <span>
                       <img
                         src='assets/images/icons/about-us-five-checkbox.png'
-                        alt=''
+                        alt='Tầm Nhìn'
                       />
                     </span>
-                    <h5>Our Mission</h5>
+                    <h5 className='mb-0 text-neutral-700 fw-bold'>Tầm Nhìn Chiến Lược</h5>
                   </div>
-                  <p className='text-14 fw-normal wow bounceIn'>
-                    There are many variations of passages of Lorem Ipsum
-                    available.
+                  <p className='text-14 fw-normal text-neutral-500 wow bounceIn' style={{ textAlign: 'justify', lineHeight: '1.5' }}>
+                    Trở thành đơn vị tiên phong dẫn đầu về giáo dục kỹ năng sống toàn diện và chuyển giao tài nguyên giáo dục kỹ năng thực chất tại Việt Nam.
                   </p>
                 </div>
               </div>
-              <div className='d-flex gap-24 flex-wrap mt-40'>
+
+              {/* Action Buttons & Hotline */}
+              <div className='d-flex gap-32 flex-wrap mt-40 align-items-center'>
                 <div>
                   <Link
                     href='/about'
                     className='btn btn-main rounded-pill flex-align d-inline-flex gap-8'
                     data-aos='fade-right'
                   >
-                    Read More
+                    Tìm hiểu thêm
                     <i className='ph-bold ph-arrow-up-right d-flex text-lg' />
                   </Link>
                 </div>
                 <div>
                   <div
-                    className='d-flex align-content-center gap-16'
+                    className='d-flex align-items-center gap-16'
                     data-aos='fade-left'
                   >
                     <span className='bg-warning-800 w-54 h-54 rounded-circle justify-content-center text-center align-items-center d-flex text-white'>
@@ -125,10 +134,10 @@ const CounterFour = () => {
                       />
                     </span>
                     <div>
-                      <span className='text-16 d-inline-flex mb-4'>
-                        Support us
+                      <span className='text-14 d-inline-flex mb-4 text-neutral-400'>
+                        Hotline hỗ trợ 24/7
                       </span>
-                      <h6 className='text-neutral-700'>(704) 555-0127</h6>
+                      <h6 className='text-neutral-700 mb-0' style={{ fontSize: '18px', fontWeight: '700' }}>0966 886 111</h6>
                     </div>
                   </div>
                 </div>
@@ -180,7 +189,8 @@ const CounterFour = () => {
                 />
                 <span
                   onClick={() => setIsOpen(true)}
-                  className='play-button w-48 h-48 flex-center bg-warning-800 text-white rounded-circle text-xl position-absolute top-50 start-50 translate-middle'
+                  className='play-button w-48 h-48 flex-center bg-warning-800 text-white rounded-circle text-xl position-absolute top-50 start-50 translate-middle cursor-pointer'
+                  style={{ cursor: 'pointer' }}
                 >
                   <i className='ph-fill ph-play' />
                 </span>
