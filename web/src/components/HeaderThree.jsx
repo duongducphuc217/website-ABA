@@ -61,14 +61,10 @@ const HeaderThree = () => {
   };
 
   const menuItems = [
+    { href: "/ve-aba", label: "Về ABA" },
+
     {
-      label: "Về ABA",
-      links: [
-        { href: "/ve-aba", label: "Về ABA" },
-      ],
-    },
-    {
-      label: "Trải nghiệm",
+      href: "/trai-nghiem", label: "Trải nghiệm",
       links: [
         { href: "/le-hoi-nuoc", label: "Lễ Hội Nước" },
         { href: "/course-list-view", label: "Course List View" },
@@ -77,7 +73,7 @@ const HeaderThree = () => {
       ],
     },
     {
-      label: "Dã ngoại",
+      href: "/da-ngoai", label: "Dã ngoại",
       links: [
         { href: "/about", label: "About" },
         { href: "/about-two", label: "About Two" },
@@ -88,7 +84,7 @@ const HeaderThree = () => {
       ],
     },
     {
-      label: "Sự kiện",
+      href: "/su-kien", label: "Sự kiện",
       links: [
         { href: "/le-hoi-banh-chung", label: "Lễ Hội Bánh Chưng" },
         { href: "/about-two", label: "About Two" },
@@ -100,7 +96,7 @@ const HeaderThree = () => {
     },
 
     {
-      label: "Chuyên đề KNS",
+      href: "/chuyen-de-kns", label: "Chuyên đề KNS",
       links: [
         { href: "/em-an-toan", label: "Em An Toàn" },
         { href: "/about-two", label: "About Two" },
@@ -112,7 +108,7 @@ const HeaderThree = () => {
     },
 
     {
-      label: "Trại hè",
+      href: "/trai-he", label: "Trại hè",
       links: [
         { href: "/song-y-nghia", label: "Sống Ý Nghĩa" },
         { href: "/about-two", label: "About Two" },
@@ -124,7 +120,7 @@ const HeaderThree = () => {
     },
 
     {
-      label: "Blog",
+      href: "/blog", label: "Blog",
       links: [
         { href: "/blog", label: "Blog Grid" },
         { href: "/blog-list", label: "Blog List" },
