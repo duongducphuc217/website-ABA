@@ -6,8 +6,9 @@ const PopularTwo = () => {
       <div className='lg-w-50-percent wow bounceIn' data-wow-duration='3s'>
         <img
           src='assets/images/thumbs/faq-five-img1.png'
-          alt=''
+          alt='Học sinh ABA dã ngoại trải nghiệm'
           className='h-100 w-100'
+          style={{ objectFit: "cover", minHeight: "600px" }}
         />
       </div>
 
@@ -17,21 +18,22 @@ const PopularTwo = () => {
             <div className='mb-40'>
               <div className='flex-align d-inline-flex flex-wrap gap-8 mb-16 wow bounceInDown'>
                 <span className='text-main-600 text-2xl d-flex'>
-                  <i className='ph-bold ph-book' />
+                  <i className='ph-bold ph-question' />
                 </span>
                 <h5 className='text-main-600 mb-0'>
-                  Frequently Asked Questions (FAQs)
+                  Giải Đáp Thắc Mắc (FAQs)
                 </h5>
               </div>
               <h2 className='mb-24 wow bounceIn'>
-                Find Answers to Your Questions
+                Những Câu Hỏi Thường Gặp
               </h2>
-              <p className='text-neutral-500 text-line-2  wow bounceInUp'>
-                Welcome to our FAQs section! Here, we've compiled answers to
-                some of the most common questions our users ask.
+              <p className='text-neutral-500 wow bounceInUp' style={{ fontSize: '16px', lineHeight: '1.6' }}>
+                ABA luôn sẵn sàng lắng nghe và giải đáp mọi băn khoăn của Ban giám hiệu nhà trường, Thầy Cô giáo và Quý Phụ Huynh về các hoạt động trải nghiệm dã ngoại & giáo dục kỹ năng.
               </p>
             </div>
             <div className='accordion common-accordion' id='accordionExample'>
+              
+              {/* Câu hỏi 1 */}
               <div
                 className='accordion-item'
                 data-aos='fade-up-left'
@@ -46,7 +48,7 @@ const PopularTwo = () => {
                     aria-expanded='true'
                     aria-controls='collapseOne'
                   >
-                    How do I enroll in a course?
+                    ABA tổ chức những chương trình trải nghiệm nào cho học sinh?
                   </button>
                 </h2>
                 <div
@@ -55,14 +57,14 @@ const PopularTwo = () => {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <p className='accordion-body__desc'>
-                      Once you enroll in a course, you'll have unlimited access
-                      to the course materials for as long as the course is
-                      available on our platform.
+                    <p className='accordion-body__desc' style={{ textAlign: 'justify', lineHeight: '1.6' }}>
+                      ABA chuyên thiết kế và tổ chức trọn gói các chương trình: dã ngoại trải nghiệm hướng nghiệp (trong & ngoài nhà trường), sự kiện giáo dục quy mô lớn (Lễ hội nước, Trung thu, Hội khóa), các chuyên đề kỹ năng sống (Hành trình Con trưởng thành) và chuyển giao tài nguyên đạo cụ, giáo trình giảng dạy kỹ năng sống cho các nhà trường đối tác.
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* Câu hỏi 2 */}
               <div
                 className='accordion-item'
                 data-aos='fade-up-left'
@@ -77,7 +79,7 @@ const PopularTwo = () => {
                     aria-expanded='false'
                     aria-controls='collapseTwo'
                   >
-                    Can I access my courses on mobile devices?
+                    ABA cam kết thế nào về độ an toàn cho học sinh khi đi dã ngoại?
                   </button>
                 </h2>
                 <div
@@ -86,14 +88,14 @@ const PopularTwo = () => {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <p className='accordion-body__desc'>
-                      Once you enroll in a course, you'll have unlimited access
-                      to the course materials for as long as the course is
-                      available on our platform.
+                    <p className='accordion-body__desc' style={{ textAlign: 'justify', lineHeight: '1.6' }}>
+                      "An toàn là số 1" là nguyên tắc tuyệt đối tại ABA. Mọi chuyến đi đều tuân thủ quy trình vận hành khép kín chặt chẽ: phương tiện đưa đón đời mới chất lượng cao, đội ngũ nhân viên y tế túc trực 24/7, thực đơn ăn uống đảm bảo vệ sinh ATTP, và huấn luyện viên/điều phối viên theo sát quản lý các em với tỷ lệ nhân sự cao nhất ngành.
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* Câu hỏi 3 */}
               <div
                 className='accordion-item'
                 data-aos='fade-up-left'
@@ -108,7 +110,7 @@ const PopularTwo = () => {
                     aria-expanded='false'
                     aria-controls='collapseThree'
                   >
-                    How long do I have access to a course?
+                    Đội ngũ huấn luyện viên và giảng viên của ABA có trình độ ra sao?
                   </button>
                 </h2>
                 <div
@@ -117,14 +119,14 @@ const PopularTwo = () => {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <p className='accordion-body__desc'>
-                      Once you enroll in a course, you'll have unlimited access
-                      to the course materials for as long as the course is
-                      available on our platform.
+                    <p className='accordion-body__desc' style={{ textAlign: 'justify', lineHeight: '1.6' }}>
+                      Đội ngũ huấn luyện viên và giảng viên tại ABA đều là các chuyên gia giáo dục kỹ năng sống, giảng viên sư phạm giàu kinh nghiệm, thấu hiểu tâm lý học lứa tuổi học sinh, yêu trẻ và tràn đầy lòng đam mê, nhiệt huyết. Đội ngũ được đào tạo và kiểm tra nghiệp vụ định kỳ nghiêm ngặt nhằm mang lại trải nghiệm huấn luyện truyền cảm hứng nhất cho các em.
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* Câu hỏi 4 */}
               <div
                 className='accordion-item'
                 data-aos='fade-up-left'
@@ -139,7 +141,7 @@ const PopularTwo = () => {
                     aria-expanded='false'
                     aria-controls='collapseFour'
                   >
-                    What if I need help or have questions during the course?
+                    Chi phí một chuyến trải nghiệm dã ngoại tại ABA gồm những gì?
                   </button>
                 </h2>
                 <div
@@ -148,14 +150,14 @@ const PopularTwo = () => {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <p className='accordion-body__desc'>
-                      Once you enroll in a course, you'll have unlimited access
-                      to the course materials for as long as the course is
-                      available on our platform.
+                    <p className='accordion-body__desc' style={{ textAlign: 'justify', lineHeight: '1.6' }}>
+                      Chi phí dã ngoại của ABA là chi phí trọn gói và minh bạch, cam kết không phát sinh. Chi phí bao gồm: Xe du lịch đưa đón, vé vào cổng khu du lịch/trải nghiệm, các bữa ăn chính theo tiêu chuẩn dinh dưỡng, bảo hiểm du lịch bắt buộc, đội ngũ huấn luyện viên điều phối, âm thanh đạo cụ trò chơi và quà tặng/phần thưởng kỹ năng cho học sinh.
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* Câu hỏi 5 */}
               <div
                 className='accordion-item'
                 data-aos='fade-up-left'
@@ -170,7 +172,7 @@ const PopularTwo = () => {
                     aria-expanded='false'
                     aria-controls='collapseFive'
                   >
-                    Do you offer refunds if I'm not satisfied with a course?
+                    Làm thế nào để nhà trường chuyển giao chương trình kỹ năng sống của ABA?
                   </button>
                 </h2>
                 <div
@@ -179,14 +181,13 @@ const PopularTwo = () => {
                   data-bs-parent='#accordionExample'
                 >
                   <div className='accordion-body'>
-                    <p className='accordion-body__desc'>
-                      Once you enroll in a course, you'll have unlimited access
-                      to the course materials for as long as the course is
-                      available on our platform.
+                    <p className='accordion-body__desc' style={{ textAlign: 'justify', lineHeight: '1.6' }}>
+                      Quý nhà trường/thầy cô có thể liên hệ trực tiếp qua số Hotline 0912 08 6996 hoặc để lại thông tin tư vấn. ABA sẽ khảo sát thực tế, tư vấn xây dựng khung chương trình bám sát định hướng đầu ra GDPT 2018 của Bộ GD&ĐT, đồng thời hỗ trợ tập huấn giảng dạy trực tiếp cho thầy cô tại nhà trường để đảm bảo chuyển giao hiệu quả nhất.
                     </p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
