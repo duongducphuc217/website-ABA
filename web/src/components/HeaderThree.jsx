@@ -62,14 +62,9 @@ const HeaderThree = () => {
 
   const menuItems = [
     {
-      label: "Home",
+      label: "Về ABA",
       links: [
-        { href: "/", label: "Home LMS" },
-        { href: "/index-2", label: "Home Online Course" },
-        { href: "/index-3", label: "Home University" },
-        { href: "/index-4", label: "Home Tutor" },
-        { href: "/index-5", label: "Home Kindergarten" },
-        { href: "/index-6", label: " Home Kindergarten two" },
+        { href: "/ve-aba", label: "Về ABA" },
       ],
     },
     {
@@ -127,9 +122,8 @@ const HeaderThree = () => {
     <>
       <div className={`side-overlay ${isMenuActive ? "show" : ""}`}></div>
       <header
-        className={`header position-absolute z-2 w-100 top-0 ${
-          scroll ? "fixed-header" : ""
-        }`}
+        className={`header position-absolute z-2 w-100 top-0 ${scroll ? "fixed-header" : ""
+          }`}
       >
         <div className='container container--xl'>
           <nav className='header-inner flex-between gap-8'>
@@ -158,9 +152,8 @@ const HeaderThree = () => {
                           {item.links.map((link, linkIndex) => (
                             <li
                               key={`submenu-item-${linkIndex}`}
-                              className={`nav-submenu__item ${
-                                pathname === link.href && "activePage"
-                              }`}
+                              className={`nav-submenu__item ${pathname === link.href && "activePage"
+                                }`}
                             >
                               <Link
                                 href={link.href}
@@ -175,9 +168,8 @@ const HeaderThree = () => {
                     ) : (
                       <li
                         key={`menu-contact-${index}`}
-                        className={`nav-menu__item ${
-                          pathname === item.href && "activePage"
-                        }`}
+                        className={`nav-menu__item ${pathname === item.href && "activePage"
+                          }`}
                       >
                         <Link href={item.href} className='nav-menu__link'>
                           {item.label}
@@ -223,9 +215,8 @@ const HeaderThree = () => {
       </header>
 
       <div
-        className={`mobile-menu scroll-sm d-lg-none d-block ${
-          isMenuActive ? "active" : ""
-        }`}
+        className={`mobile-menu scroll-sm d-lg-none d-block ${isMenuActive ? "active" : ""
+          }`}
       >
         <button type='button' className='close-button' onClick={closeMenu}>
           <i className='ph ph-x' />{" "}
@@ -240,9 +231,8 @@ const HeaderThree = () => {
                 item.links ? (
                   <li
                     key={`menu-item-${index}`}
-                    className={`nav-menu__item has-submenu ${
-                      activeSubmenu === index ? "activePage" : ""
-                    }`}
+                    className={`nav-menu__item has-submenu ${activeSubmenu === index ? "activePage" : ""
+                      }`}
                     onClick={() => handleSubmenuClick(index)}
                   >
                     <span className='nav-menu__link'>{item.label}</span>
@@ -261,9 +251,8 @@ const HeaderThree = () => {
                   </li>
                 ) : (
                   <li
-                    className={`nav-menu__item ${
-                      pathname === item.href && "activePage"
-                    }`}
+                    className={`nav-menu__item ${pathname === item.href && "activePage"
+                      }`}
                     key={index}
                   >
                     <Link href={item.href} className='nav-menu__link'>
