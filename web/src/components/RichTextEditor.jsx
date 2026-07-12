@@ -37,10 +37,13 @@ export default function RichTextEditor({ value, onChange, placeholder }) {
     },
   });
 
-  // Đồng bộ hóa dữ liệu từ ngoài vào editor (phục vụ sửa bài viết)
+  // Đồng bộ hóa dữ liệu từ ngoài vào editor (chỉ thực hiện khi editor không trong trạng thái focus để tránh giật con trỏ và vòng lặp vô hạn khi gõ chữ)
   useEffect(() => {
-    if (editor && value !== undefined && editor.getHTML() !== value) {
-      editor.commands.setContent(value || "");
+    if (editor && value !== undefined) {
+      const isSame = editor.getHTML() === value || (value === "" && editor.isEmpty);
+      if (!isSame && !editor.isFocused) {
+        editor.commands.setContent(value || "");
+      }
     }
   }, [value, editor]);
 
