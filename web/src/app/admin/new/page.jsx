@@ -2,7 +2,26 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import RichTextEditor from "@/components/RichTextEditor";
+import dynamic from "next/dynamic";
+
+const RichTextEditor = dynamic(() => import("@/components/RichTextEditor"), {
+  ssr: false,
+  loading: () => (
+    <div style={{
+      padding: "24px",
+      border: "1px dashed #cbd5e1",
+      borderRadius: "10px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "#f8fafc"
+    }}>
+      <span style={{ fontSize: "14px", color: "#64748b", fontWeight: "500" }}>
+        Đang tải trình soạn thảo văn bản...
+      </span>
+    </div>
+  ),
+});
 
 export default function NewBlogPost() {
   const router = useRouter();
