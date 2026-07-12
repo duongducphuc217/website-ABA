@@ -354,7 +354,7 @@ export default function LeHoiNuocTieuHoc() {
               <p className="lh-hero-subtitle">
                 Trải nghiệm đỉnh cao của các hoạt động dã ngoại giáo dục tích hợp kỹ năng sống trong tháng 7 và tháng 8. Giải pháp sự kiện giáo dục học đường toàn diện và trọn gói.
               </p>
-              <button 
+              <button
                 onClick={() => {
                   const contactSec = document.getElementById("contact-section");
                   if (contactSec) {
@@ -453,7 +453,7 @@ export default function LeHoiNuocTieuHoc() {
       <section className="lh-section lh-bg-dark-navy">
         <div className="container">
           <div className="lh-section-title-box" data-aos="fade-up">
-            <span className="lh-section-tag" style={{ color: "#f26e3a" }}>Hạ Tầng Đồng Bộ</span>
+            <span className="lh-section-tag" style={{ color: "#f26e3a" }}>Cho Thuê Trang Thiết Bị</span>
             <h2 className="lh-section-title">DỊCH VỤ TRỌN GÓI – GIẢI PHÁP TOÀN DIỆN CHO TRƯỜNG HỌC</h2>
             <p className="lh-section-desc">
               Chúng tôi sở hữu kho đạo cụ khổng lồ và đội ngũ vận hành từ A-Z. Nhà trường chỉ cần lên lịch, toàn bộ khâu chuẩn bị, đảm bảo an toàn và tổ chức hãy để ABA lo!
