@@ -185,14 +185,78 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} className="admin-dashboard-wrapper">
+      <style>{`
+        @media (max-width: 991px) {
+          .admin-dashboard-wrapper {
+            flex-direction: column !important;
+          }
+          .admin-sidebar {
+            width: 100% !important;
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+          }
+          .admin-sidebar-nav {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            width: 100% !important;
+            gap: 8px !important;
+          }
+          .admin-sidebar-nav button, .admin-sidebar-nav a {
+            flex-grow: 1 !important;
+            text-align: center !important;
+            padding: 10px !important;
+            font-size: 13px !important;
+          }
+          .admin-main {
+            padding: 20px !important;
+            gap: 24px !important;
+          }
+          .admin-stats-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .admin-header {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 16px !important;
+          }
+          .admin-header a {
+            width: 100% !important;
+            text-align: center !important;
+          }
+          .admin-users-layout {
+            flex-direction: column !important;
+            gap: 24px !important;
+          }
+          .admin-user-list-card, .admin-user-form-card {
+            width: 100% !important;
+          }
+          .admin-user-list-card {
+            order: 2 !important;
+          }
+          .admin-user-form-card {
+            order: 1 !important;
+          }
+          .admin-blog-table-container {
+            overflow-x: auto !important;
+            width: 100% !important;
+          }
+          .admin-blog-table {
+            min-width: 700px !important;
+          }
+        }
+      `}</style>
       {/* Sidebar */}
-      <aside style={styles.sidebar}>
+      <aside style={styles.sidebar} className="admin-sidebar">
         <div style={styles.sidebarBrand}>
           <span style={{ fontSize: "24px" }}>🎒</span>
           <span style={styles.brandText}>ABA Academy</span>
         </div>
-        <nav style={styles.nav}>
+        <nav style={styles.nav} className="admin-sidebar-nav">
           <button
             onClick={() => setActiveTab("blogs")}
             style={{
@@ -224,8 +288,8 @@ export default function AdminDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main style={styles.main}>
-        <header style={styles.header}>
+      <main style={styles.main} className="admin-main">
+        <header style={styles.header} className="admin-header">
           <div>
             <h1 style={styles.pageTitle}>
               {activeTab === "blogs" ? "Dashboard Quản trị Blog" : "Quản lý tài khoản Admin/Editor"}
@@ -244,7 +308,7 @@ export default function AdminDashboard() {
         {activeTab === "blogs" ? (
           <>
             {/* Stats Grid */}
-            <section style={styles.statsGrid}>
+            <section style={styles.statsGrid} className="admin-stats-grid">
               <div style={styles.statCard}>
                 <div style={{ ...styles.statIconBox, backgroundColor: "rgba(99, 102, 241, 0.1)", color: "#6366f1" }}>📝</div>
                 <div>
@@ -269,7 +333,7 @@ export default function AdminDashboard() {
             </section>
 
             {/* Manage Section */}
-            <section style={styles.tableCard}>
+            <section style={styles.tableCard} className="admin-table-card">
               <div style={styles.tableHeader}>
                 <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách bài viết</h4>
                 <div style={styles.searchBox}>
@@ -284,8 +348,8 @@ export default function AdminDashboard() {
                 </div>
               </div>
 
-              <div style={{ overflowX: "auto" }}>
-                <table style={styles.table}>
+              <div style={{ overflowX: "auto" }} className="admin-blog-table-container">
+                <table style={styles.table} className="admin-blog-table">
                   <thead>
                     <tr style={styles.tableHeaderRow}>
                       <th style={styles.th}>Ảnh</th>
@@ -344,14 +408,14 @@ export default function AdminDashboard() {
             </section>
           </>
         ) : (
-          <div style={styles.usersLayout}>
+          <div style={styles.usersLayout} className="admin-users-layout">
             {/* Left box: users list */}
-            <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }}>
+            <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }} className="admin-user-list-card">
               <div style={styles.tableHeader}>
                 <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách tài khoản hệ thống</h4>
               </div>
-              <div style={{ overflowX: "auto" }}>
-                <table style={styles.table}>
+              <div style={{ overflowX: "auto" }} className="admin-blog-table-container">
+                <table style={styles.table} className="admin-blog-table">
                   <thead>
                     <tr style={styles.tableHeaderRow}>
                       <th style={styles.th}>Tên hiển thị</th>
@@ -407,7 +471,7 @@ export default function AdminDashboard() {
             </section>
 
             {/* Right box: create user form */}
-            <section style={{ ...styles.tableCard, flex: 1, height: "fit-content", paddingBottom: "24px" }}>
+            <section style={{ ...styles.tableCard, flex: 1, height: "fit-content", paddingBottom: "24px" }} className="admin-user-form-card">
               <div style={styles.tableHeader}>
                 <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Tạo tài khoản mới</h4>
               </div>

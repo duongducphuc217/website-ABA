@@ -12,6 +12,8 @@ const RouteScrollToTop = () => {
 
   useEffect(() => {
     const progressPath = document.querySelector(".progress-wrap path");
+    if (!progressPath) return;
+
     const pathLength = progressPath.getTotalLength();
     progressPath.style.transition = progressPath.style.WebkitTransition =
       "none";
@@ -32,14 +34,12 @@ const RouteScrollToTop = () => {
     window.addEventListener("scroll", updateProgress);
 
     const handleScroll = () => {
+      const progressWrap = document.querySelector(".progress-wrap");
+      if (!progressWrap) return;
       if (window.scrollY > 50) {
-        document
-          .querySelector(".progress-wrap")
-          .classList.add("active-progress");
+        progressWrap.classList.add("active-progress");
       } else {
-        document
-          .querySelector(".progress-wrap")
-          .classList.remove("active-progress");
+        progressWrap.classList.remove("active-progress");
       }
     };
 
@@ -50,16 +50,17 @@ const RouteScrollToTop = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    document
-      .querySelector(".progress-wrap")
-      .addEventListener("click", handleClick);
+    const progressWrap = document.querySelector(".progress-wrap");
+    if (progressWrap) {
+      progressWrap.addEventListener("click", handleClick);
+    }
 
     return () => {
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("scroll", handleScroll);
-      document
-        .querySelector(".progress-wrap")
-        .removeEventListener("click", handleClick);
+      if (progressWrap) {
+        progressWrap.removeEventListener("click", handleClick);
+      }
     };
   }, []);
 

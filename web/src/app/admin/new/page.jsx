@@ -158,14 +158,63 @@ export default function NewBlogPost() {
   };
 
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} className="admin-dashboard-wrapper">
+      <style>{`
+        @media (max-width: 991px) {
+          .admin-dashboard-wrapper {
+            flex-direction: column !important;
+          }
+          .admin-sidebar {
+            width: 100% !important;
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+          }
+          .admin-sidebar-nav {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            width: 100% !important;
+            gap: 8px !important;
+          }
+          .admin-sidebar-nav button, .admin-sidebar-nav a {
+            flex-grow: 1 !important;
+            text-align: center !important;
+            padding: 10px !important;
+            font-size: 13px !important;
+          }
+          .admin-main {
+            padding: 20px !important;
+            gap: 24px !important;
+          }
+          .admin-header {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 16px !important;
+          }
+          .admin-header a {
+            width: 100% !important;
+            text-align: center !important;
+          }
+          .admin-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+          .admin-right-column {
+            border-left: none !important;
+            padding-left: 0 !important;
+            gap: 24px !important;
+          }
+        }
+      `}</style>
       {/* Sidebar */}
-      <aside style={styles.sidebar}>
+      <aside style={styles.sidebar} className="admin-sidebar">
         <div style={styles.sidebarBrand}>
           <span style={{ fontSize: "24px" }}>🎒</span>
           <span style={styles.brandText}>ABA Academy</span>
         </div>
-        <nav style={styles.nav}>
+        <nav style={styles.nav} className="admin-sidebar-nav">
           <Link href="/admin" style={styles.navLink}>
             📊 Tổng quan Dashboard
           </Link>
@@ -179,8 +228,8 @@ export default function NewBlogPost() {
       </aside>
 
       {/* Main Content */}
-      <main style={styles.main}>
-        <header style={styles.header}>
+      <main style={styles.main} className="admin-main">
+        <header style={styles.header} className="admin-header">
           <div>
             <h1 style={styles.pageTitle}>Viết bài viết mới</h1>
             <p style={{ color: "#64748b", margin: "4px 0 0 0" }}>Tạo một bài viết mới và xuất bản lên Website ABA</p>
@@ -192,10 +241,10 @@ export default function NewBlogPost() {
 
         {error && <div style={styles.errorAlert}>{error}</div>}
 
-        <form onSubmit={handleSubmit} style={styles.formCard}>
-          <div style={styles.formGrid}>
+         <form onSubmit={handleSubmit} style={styles.formCard}>
+          <div style={styles.formGrid} className="admin-form-grid">
             {/* Left Column (Main details) */}
-            <div style={styles.leftColumn}>
+            <div style={styles.leftColumn} className="admin-left-column">
               <div style={styles.formGroup}>
                 <label style={styles.label}>Tiêu đề bài viết <span style={{ color: "#ef4444" }}>*</span></label>
                 <input
@@ -243,7 +292,7 @@ export default function NewBlogPost() {
             </div>
 
             {/* Right Column (Side details) */}
-            <div style={styles.rightColumn}>
+            <div style={styles.rightColumn} className="admin-right-column">
               <div style={styles.formGroup}>
                 <label style={styles.label}>Danh mục <span style={{ color: "#ef4444" }}>*</span></label>
                 <select

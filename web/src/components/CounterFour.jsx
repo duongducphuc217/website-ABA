@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
 import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from "@/components/VisibilitySensor";
 
 const CounterFour = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 "use client";
 import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from "@/components/VisibilitySensor";
 
 const CounterThree = () => {
   return (
