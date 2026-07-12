@@ -8,6 +8,21 @@ export default function AdminDashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [deletingId, setDeletingId] = useState(null);
+  
+  // Tab states
+  const [activeTab, setActiveTab] = useState("blogs"); // "blogs" or "users"
+  
+  // User states
+  const [users, setUsers] = useState([]);
+  const [userLoading, setUserLoading] = useState(false);
+  const [newUserUsername, setNewUserUsername] = useState("");
+  const [newUserPasscode, setNewUserPasscode] = useState("");
+  const [newUserName, setNewUserName] = useState("");
+  const [newUserRole, setNewUserRole] = useState("editor");
+  const [userError, setUserError] = useState("");
+  const [userSuccess, setUserSuccess] = useState("");
+  const [deletingUsername, setDeletingUsername] = useState(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -20,6 +35,12 @@ export default function AdminDashboard() {
       }
     }
   }, [router]);
+
+  useEffect(() => {
+    if (activeTab === "users") {
+      fetchUsers();
+    }
+  }, [activeTab]);
 
   const fetchBlogs = async () => {
     try {
@@ -35,8 +56,31 @@ export default function AdminDashboard() {
     }
   };
 
+  const fetchUsers = async () => {
+    setUserLoading(true);
+    setUserError("");
+    setUserSuccess("");
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch("/api/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setUsers(data.users);
+      }
+    } catch (error) {
+      console.error("Lỗi lấy danh sách user:", error);
+    } finally {
+      setUserLoading(false);
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("admin_token");
+    localStorage.removeItem("admin_user");
     router.push("/admin/login");
   };
 
@@ -55,6 +99,63 @@ export default function AdminDashboard() {
         setDeletingId(null);
       } else {
         alert(data.error || "Không thể xóa bài viết!");
+      }
+    } catch (error) {
+      alert("Đã xảy ra lỗi khi kết nối API!");
+    }
+  };
+
+  const handleCreateUser = async (e) => {
+    e.preventDefault();
+    setUserError("");
+    setUserSuccess("");
+    const token = localStorage.getItem("admin_token");
+
+    try {
+      const response = await fetch("/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          username: newUserUsername,
+          passcode: newUserPasscode,
+          name: newUserName,
+          role: newUserRole,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setUserSuccess("Tạo tài khoản mới thành công!");
+        setNewUserUsername("");
+        setNewUserPasscode("");
+        setNewUserName("");
+        setNewUserRole("editor");
+        fetchUsers();
+      } else {
+        setUserError(data.error || "Không thể tạo tài khoản!");
+      }
+    } catch (error) {
+      setUserError("Đã xảy ra lỗi kết nối API!");
+    }
+  };
+
+  const handleDeleteUser = async (username) => {
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch(`/api/users?username=${username}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setUsers(users.filter((u) => u.username !== username));
+        setDeletingUsername(null);
+      } else {
+        alert(data.error || "Không thể xóa tài khoản!");
       }
     } catch (error) {
       alert("Đã xảy ra lỗi khi kết nối API!");
@@ -92,9 +193,24 @@ export default function AdminDashboard() {
           <span style={styles.brandText}>ABA Academy</span>
         </div>
         <nav style={styles.nav}>
-          <Link href="/admin" style={{ ...styles.navLink, ...styles.navLinkActive }}>
-            📊 Tổng quan Dashboard
-          </Link>
+          <button
+            onClick={() => setActiveTab("blogs")}
+            style={{
+              ...styles.navLinkButton,
+              ...(activeTab === "blogs" ? styles.navLinkActive : {}),
+            }}
+          >
+            📊 Quản lý Bài viết
+          </button>
+          <button
+            onClick={() => setActiveTab("users")}
+            style={{
+              ...styles.navLinkButton,
+              ...(activeTab === "users" ? styles.navLinkActive : {}),
+            }}
+          >
+            👥 Quản lý Tài khoản
+          </button>
           <Link href="/admin/new" style={styles.navLink}>
             ✍️ Viết bài mới
           </Link>
@@ -111,116 +227,252 @@ export default function AdminDashboard() {
       <main style={styles.main}>
         <header style={styles.header}>
           <div>
-            <h1 style={styles.pageTitle}>Dashboard Quản trị Blog</h1>
-            <p style={{ color: "#64748b", margin: "4px 0 0 0" }}>Quản lý các bài viết trên hệ thống Website ABA</p>
+            <h1 style={styles.pageTitle}>
+              {activeTab === "blogs" ? "Dashboard Quản trị Blog" : "Quản lý tài khoản Admin/Editor"}
+            </h1>
+            <p style={{ color: "#64748b", margin: "4px 0 0 0" }}>
+              {activeTab === "blogs"
+                ? "Quản lý các bài viết trên hệ thống Website ABA"
+                : "Tạo và phân quyền các tài khoản cộng tác viên đăng bài"}
+            </p>
           </div>
           <Link href="/admin/new" style={styles.createBtn}>
             ➕ Thêm bài viết mới
           </Link>
         </header>
 
-        {/* Stats Grid */}
-        <section style={styles.statsGrid}>
-          <div style={styles.statCard}>
-            <div style={{ ...styles.statIconBox, backgroundColor: "rgba(99, 102, 241, 0.1)", color: "#6366f1" }}>📝</div>
-            <div>
-              <span style={styles.statLabel}>Tổng số bài viết</span>
-              <h3 style={styles.statValue}>{blogs.length}</h3>
-            </div>
-          </div>
-          <div style={styles.statCard}>
-            <div style={{ ...styles.statIconBox, backgroundColor: "rgba(16, 185, 129, 0.1)", color: "#10b981" }}>👁️</div>
-            <div>
-              <span style={styles.statLabel}>Ước tính lượt xem</span>
-              <h3 style={styles.statValue}>{totalViews >= 1000 ? `${(totalViews / 1000).toFixed(1)}k` : totalViews}</h3>
-            </div>
-          </div>
-          <div style={styles.statCard}>
-            <div style={{ ...styles.statIconBox, backgroundColor: "rgba(245, 158, 11, 0.1)", color: "#f59e0b" }}>💬</div>
-            <div>
-              <span style={styles.statLabel}>Tổng số bình luận</span>
-              <h3 style={styles.statValue}>{totalComments}</h3>
-            </div>
-          </div>
-        </section>
+        {activeTab === "blogs" ? (
+          <>
+            {/* Stats Grid */}
+            <section style={styles.statsGrid}>
+              <div style={styles.statCard}>
+                <div style={{ ...styles.statIconBox, backgroundColor: "rgba(99, 102, 241, 0.1)", color: "#6366f1" }}>📝</div>
+                <div>
+                  <span style={styles.statLabel}>Tổng số bài viết</span>
+                  <h3 style={styles.statValue}>{blogs.length}</h3>
+                </div>
+              </div>
+              <div style={styles.statCard}>
+                <div style={{ ...styles.statIconBox, backgroundColor: "rgba(16, 185, 129, 0.1)", color: "#10b981" }}>👁️</div>
+                <div>
+                  <span style={styles.statLabel}>Ước tính lượt xem</span>
+                  <h3 style={styles.statValue}>{totalViews >= 1000 ? `${(totalViews / 1000).toFixed(1)}k` : totalViews}</h3>
+                </div>
+              </div>
+              <div style={styles.statCard}>
+                <div style={{ ...styles.statIconBox, backgroundColor: "rgba(245, 158, 11, 0.1)", color: "#f59e0b" }}>💬</div>
+                <div>
+                  <span style={styles.statLabel}>Tổng số bình luận</span>
+                  <h3 style={styles.statValue}>{totalComments}</h3>
+                </div>
+              </div>
+            </section>
 
-        {/* Manage Section */}
-        <section style={styles.tableCard}>
-          <div style={styles.tableHeader}>
-            <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách bài viết</h4>
-            <div style={styles.searchBox}>
-              <span style={{ marginRight: "8px" }}>🔍</span>
-              <input
-                type="text"
-                placeholder="Tìm kiếm tiêu đề hoặc danh mục..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={styles.searchInput}
-              />
-            </div>
-          </div>
+            {/* Manage Section */}
+            <section style={styles.tableCard}>
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách bài viết</h4>
+                <div style={styles.searchBox}>
+                  <span style={{ marginRight: "8px" }}>🔍</span>
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm tiêu đề hoặc danh mục..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={styles.searchInput}
+                  />
+                </div>
+              </div>
 
-          <div style={{ overflowX: "auto" }}>
-            <table style={styles.table}>
-              <thead>
-                <tr style={styles.tableHeaderRow}>
-                  <th style={styles.th}>Ảnh</th>
-                  <th style={styles.th}>Tiêu đề</th>
-                  <th style={styles.th}>Danh mục</th>
-                  <th style={styles.th}>Ngày đăng</th>
-                  <th style={styles.th}>Lượt xem</th>
-                  <th style={styles.th}>Hành động</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredBlogs.length === 0 ? (
-                  <tr>
-                    <td colSpan="6" style={styles.noDataCell}>
-                      Không tìm thấy bài viết nào phù hợp.
-                    </td>
-                  </tr>
-                ) : (
-                  filteredBlogs.map((blog) => (
-                    <tr key={blog.id} style={styles.tableRow}>
-                      <td style={styles.td}>
-                        <img
-                          src={blog.image.startsWith("http") || blog.image.startsWith("/") ? blog.image : `/${blog.image}`}
-                          alt={blog.title}
-                          style={styles.thumbnail}
-                          onError={(e) => {
-                            e.target.src = "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070";
-                          }}
-                        />
-                      </td>
-                      <td style={{ ...styles.td, fontWeight: "600", color: "#334155", maxWidth: "300px" }}>
-                        <div style={styles.titleText}>{blog.title}</div>
-                        <div style={styles.authorBadge}>Tác giả: {blog.author}</div>
-                      </td>
-                      <td style={styles.td}>
-                        <span style={styles.categoryBadge}>{blog.category}</span>
-                      </td>
-                      <td style={{ ...styles.td, color: "#64748b" }}>{blog.date}</td>
-                      <td style={{ ...styles.td, color: "#64748b" }}>{blog.views}</td>
-                      <td style={styles.td}>
-                        <div style={styles.actionsBox}>
-                          <Link href={`/admin/edit/${blog.id}`} style={styles.editBtn}>
-                            ✏️ Sửa
-                          </Link>
-                          <button onClick={() => setDeletingId(blog.id)} style={styles.deleteBtn}>
-                            🗑️ Xóa
-                          </button>
-                        </div>
-                      </td>
+              <div style={{ overflowX: "auto" }}>
+                <table style={styles.table}>
+                  <thead>
+                    <tr style={styles.tableHeaderRow}>
+                      <th style={styles.th}>Ảnh</th>
+                      <th style={styles.th}>Tiêu đề</th>
+                      <th style={styles.th}>Danh mục</th>
+                      <th style={styles.th}>Ngày đăng</th>
+                      <th style={styles.th}>Lượt xem</th>
+                      <th style={styles.th}>Hành động</th>
                     </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                    {filteredBlogs.length === 0 ? (
+                      <tr>
+                        <td colSpan="6" style={styles.noDataCell}>
+                          Không tìm thấy bài viết nào phù hợp.
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredBlogs.map((blog) => (
+                        <tr key={blog.id} style={styles.tableRow}>
+                          <td style={styles.td}>
+                            <img
+                              src={blog.image.startsWith("http") || blog.image.startsWith("/") ? blog.image : `/${blog.image}`}
+                              alt={blog.title}
+                              style={styles.thumbnail}
+                              onError={(e) => {
+                                e.target.src = "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070";
+                              }}
+                            />
+                          </td>
+                          <td style={{ ...styles.td, fontWeight: "600", color: "#334155", maxWidth: "300px" }}>
+                            <div style={styles.titleText}>{blog.title}</div>
+                            <div style={styles.authorBadge}>Tác giả: {blog.author}</div>
+                          </td>
+                          <td style={styles.td}>
+                            <span style={styles.categoryBadge}>{blog.category}</span>
+                          </td>
+                          <td style={{ ...styles.td, color: "#64748b" }}>{blog.date}</td>
+                          <td style={{ ...styles.td, color: "#64748b" }}>{blog.views}</td>
+                          <td style={styles.td}>
+                            <div style={styles.actionsBox}>
+                              <Link href={`/admin/edit/${blog.id}`} style={styles.editBtn}>
+                                ✏️ Sửa
+                              </Link>
+                              <button onClick={() => setDeletingId(blog.id)} style={styles.deleteBtn}>
+                                🗑️ Xóa
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </>
+        ) : (
+          <div style={styles.usersLayout}>
+            {/* Left box: users list */}
+            <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }}>
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách tài khoản hệ thống</h4>
+              </div>
+              <div style={{ overflowX: "auto" }}>
+                <table style={styles.table}>
+                  <thead>
+                    <tr style={styles.tableHeaderRow}>
+                      <th style={styles.th}>Tên hiển thị</th>
+                      <th style={styles.th}>Tên đăng nhập</th>
+                      <th style={styles.th}>Quyền hạn</th>
+                      <th style={styles.th}>Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {userLoading ? (
+                      <tr>
+                        <td colSpan="4" style={styles.noDataCell}>
+                          Đang tải danh sách tài khoản...
+                        </td>
+                      </tr>
+                    ) : users.length === 0 ? (
+                      <tr>
+                        <td colSpan="4" style={styles.noDataCell}>
+                          Không tìm thấy tài khoản người dùng nào.
+                        </td>
+                      </tr>
+                    ) : (
+                      users.map((u) => (
+                        <tr key={u.username} style={styles.tableRow}>
+                          <td style={{ ...styles.td, fontWeight: "600", color: "#334155" }}>{u.name}</td>
+                          <td style={{ ...styles.td, color: "#64748b" }}>@{u.username}</td>
+                          <td style={styles.td}>
+                            <span
+                              style={{
+                                ...styles.categoryBadge,
+                                backgroundColor: u.role === "admin" ? "#e0e7ff" : "#f1f5f9",
+                                color: u.role === "admin" ? "#4f46e5" : "#475569",
+                              }}
+                            >
+                              {u.role === "admin" ? "🔑 Admin" : "✍️ Editor"}
+                            </span>
+                          </td>
+                          <td style={styles.td}>
+                            {u.username !== "admin" ? (
+                              <button onClick={() => setDeletingUsername(u.username)} style={styles.deleteBtn}>
+                                🗑️ Xóa
+                              </button>
+                            ) : (
+                              <span style={{ color: "#94a3b8", fontSize: "13px" }}>Mặc định (Khóa)</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Right box: create user form */}
+            <section style={{ ...styles.tableCard, flex: 1, height: "fit-content", paddingBottom: "24px" }}>
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Tạo tài khoản mới</h4>
+              </div>
+              <form onSubmit={handleCreateUser} style={styles.userForm}>
+                {userError && <div style={styles.errorAlert}>{userError}</div>}
+                {userSuccess && <div style={styles.successAlert}>{userSuccess}</div>}
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Họ và tên</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Nhập họ tên (ví dụ: Đức Nam)..."
+                    value={newUserName}
+                    onChange={(e) => setNewUserName(e.target.value)}
+                    style={styles.formInput}
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Tên đăng nhập</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="viet_anh_123..."
+                    value={newUserUsername}
+                    onChange={(e) => setNewUserUsername(e.target.value)}
+                    style={styles.formInput}
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Mật khẩu</label>
+                  <input
+                    type="password"
+                    required
+                    placeholder="Nhập mật khẩu..."
+                    value={newUserPasscode}
+                    onChange={(e) => setNewUserPasscode(e.target.value)}
+                    style={styles.formInput}
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Vai trò (Quyền)</label>
+                  <select
+                    value={newUserRole}
+                    onChange={(e) => setNewUserRole(e.target.value)}
+                    style={styles.formSelect}
+                  >
+                    <option value="editor">Editor (Biên tập viên viết bài)</option>
+                    <option value="admin">Admin (Quản trị viên toàn hệ thống)</option>
+                  </select>
+                </div>
+
+                <button type="submit" style={styles.userSubmitBtn}>
+                  ➕ Tạo tài khoản
+                </button>
+              </form>
+            </section>
           </div>
-        </section>
+        )}
       </main>
 
-      {/* Confirmation Modal */}
+      {/* Confirmation Modal (Blogs) */}
       {deletingId && (
         <div style={styles.modalBackdrop}>
           <div style={styles.modalCard}>
@@ -233,6 +485,26 @@ export default function AdminDashboard() {
                 Hủy bỏ
               </button>
               <button onClick={() => handleDelete(deletingId)} style={styles.confirmDeleteBtn}>
+                Xác nhận Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Confirmation Modal (Users) */}
+      {deletingUsername && (
+        <div style={styles.modalBackdrop}>
+          <div style={styles.modalCard}>
+            <h3 style={{ margin: "0 0 12px 0", color: "#0f172a" }}>Xác nhận xóa tài khoản</h3>
+            <p style={{ color: "#64748b", fontSize: "15px", lineHeight: "1.5" }}>
+              Bạn có chắc chắn muốn xóa tài khoản <b>@{deletingUsername}</b> không? Người này sẽ không còn quyền truy cập vào trang quản trị.
+            </p>
+            <div style={styles.modalActions}>
+              <button onClick={() => setDeletingUsername(null)} style={styles.cancelBtn}>
+                Hủy bỏ
+              </button>
+              <button onClick={() => handleDeleteUser(deletingUsername)} style={styles.confirmDeleteBtn}>
                 Xác nhận Xóa
               </button>
             </div>
@@ -553,5 +825,91 @@ const styles = {
     fontWeight: "600",
     cursor: "pointer",
     boxShadow: "0 2px 8px rgba(225, 29, 72, 0.25)",
+  },
+  navLinkButton: {
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+    padding: "12px 16px",
+    borderRadius: "10px",
+    color: "#94a3b8",
+    fontSize: "14px",
+    fontWeight: "500",
+    textDecoration: "none",
+    transition: "all 0.2s ease",
+    border: "none",
+    background: "none",
+    textAlign: "left",
+    cursor: "pointer",
+  },
+  usersLayout: {
+    display: "flex",
+    gap: "24px",
+    flexWrap: "wrap",
+    width: "100%",
+  },
+  userForm: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+    padding: "0 24px",
+  },
+  formGroup: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+  },
+  formLabel: {
+    fontSize: "13px",
+    fontWeight: "600",
+    color: "#475569",
+  },
+  formInput: {
+    padding: "10px 14px",
+    borderRadius: "8px",
+    border: "1px solid #cbd5e1",
+    fontSize: "14px",
+    outline: "none",
+    color: "#334155",
+    transition: "all 0.2s ease",
+  },
+  formSelect: {
+    padding: "10px 14px",
+    borderRadius: "8px",
+    border: "1px solid #cbd5e1",
+    fontSize: "14px",
+    outline: "none",
+    color: "#334155",
+    backgroundColor: "#ffffff",
+  },
+  userSubmitBtn: {
+    padding: "12px",
+    borderRadius: "8px",
+    border: "none",
+    backgroundColor: "#6366f1",
+    color: "#ffffff",
+    fontWeight: "600",
+    cursor: "pointer",
+    transition: "all 0.2s ease",
+    marginTop: "12px",
+    boxShadow: "0 4px 10px rgba(99, 102, 241, 0.25)",
+  },
+  successAlert: {
+    padding: "12px",
+    borderRadius: "8px",
+    backgroundColor: "#ecfdf5",
+    border: "1px solid #a7f3d0",
+    color: "#065f46",
+    fontSize: "14px",
+    fontWeight: "500",
+  },
+  errorAlert: {
+    padding: "12px",
+    borderRadius: "8px",
+    backgroundColor: "#fef2f2",
+    border: "1px solid #fca5a5",
+    color: "#991b1b",
+    fontSize: "14px",
+    fontWeight: "500",
   },
 };

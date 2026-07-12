@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function AdminLogin() {
+  const [username, setUsername] = useState("");
   const [passcode, setPasscode] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,15 +27,17 @@ export default function AdminLogin() {
       const response = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ passcode }),
+        body: JSON.stringify({ username, passcode }),
       });
       const data = await response.json();
 
       if (data.success) {
         localStorage.setItem("admin_token", data.token);
+        // Lưu thông tin người dùng đăng nhập nếu cần
+        localStorage.setItem("admin_user", JSON.stringify(data.user));
         router.push("/admin");
       } else {
-        setError(data.error || "Mật khẩu không chính xác!");
+        setError(data.error || "Tài khoản hoặc mật khẩu không chính xác!");
       }
     } catch (err) {
       setError("Đã xảy ra lỗi kết nối!");
@@ -51,20 +54,35 @@ export default function AdminLogin() {
             <span style={styles.logoIcon}>🔐</span>
           </div>
           <h2 style={styles.title}>Quản trị hệ thống</h2>
-          <p style={styles.subtitle}>Nhập mật khẩu để truy cập trang quản trị bài viết</p>
+          <p style={styles.subtitle}>Đăng nhập để quản lý bài viết và tài khoản</p>
         </div>
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
+            <label style={styles.label} htmlFor="username">
+              Tên đăng nhập
+            </label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Nhập tên đăng nhập..."
+              required
+              style={styles.input}
+            />
+          </div>
+
+          <div style={styles.inputGroup}>
             <label style={styles.label} htmlFor="passcode">
-              Mật khẩu Admin
+              Mật khẩu
             </label>
             <input
               type="password"
               id="passcode"
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
-              placeholder="Nhập mật khẩu ..."
+              placeholder="Nhập mật khẩu..."
               required
               style={styles.input}
             />

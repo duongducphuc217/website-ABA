@@ -27,6 +27,16 @@ export default function NewBlogPost() {
       const token = localStorage.getItem("admin_token");
       if (token !== "admin_token_website_aba") {
         router.push("/admin/login");
+      } else {
+        const storedUser = localStorage.getItem("admin_user");
+        if (storedUser) {
+          try {
+            const user = JSON.parse(storedUser);
+            if (user.name) {
+              setAuthor(user.name);
+            }
+          } catch (e) {}
+        }
       }
     }
   }, [router]);
