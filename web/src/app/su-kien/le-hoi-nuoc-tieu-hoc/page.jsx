@@ -11,23 +11,23 @@ export default function LeHoiNuocTieuHoc() {
   const waterActivities = [
     {
       title: "Cầu trượt nước",
-      icon: "🌊",
+      image: "/assets/images/le-hoi-nuoc/cau-truot-nuoc.png",
       desc: "Trải nghiệm trượt nước mát lạnh đầy phấn khích trên phao trượt khổng lồ.",
     },
     {
       title: "Sân bóng nước",
-      icon: "⚽",
-      desc: "Trận bóng đá nước sôi động, kết nối đồng đội trên sân phao bơm hơi an toàn.",
+      image: "/assets/images/le-hoi-nuoc/san-bong-nuoc.png",
+      desc: "Trận bóng đá nước sôi động, kết nối đồng đội trên sân phao hơi an toàn.",
     },
     {
       title: "Bowling nước",
-      icon: "🎳",
+      image: "/assets/images/le-hoi-nuoc/bowling-nuoc.png",
       desc: "Trò chơi thử thách sự khéo léo, thăng bằng và kỹ năng ném bóng nước trúng đích.",
     },
     {
       title: "Máy tạo bọt",
-      icon: "🫧",
-      desc: "Không gian lễ hội ngập tràn bọt tuyết trắng xóa, mang lại tiếng cười mát mẻ ngày hè.",
+      image: "/assets/images/le-hoi-nuoc/may-tao-bot.png",
+      desc: "Không gian lễ hội ngập trạng bọt tuyết trắng xóa, mang lại tiếng cười mát mẻ ngày hè.",
     },
   ];
 
@@ -35,22 +35,22 @@ export default function LeHoiNuocTieuHoc() {
   const grade1Activities = [
     {
       title: "Mascot robot ấn tượng",
-      icon: "🤖",
+      image: "/assets/images/le-hoi-nuoc/mascot-robot.png",
       desc: "Chào đón hoành tráng từ các nhân vật robot khổng lồ, phá tan sự bỡ ngỡ đầu cấp.",
     },
     {
       title: "Chú hề lắm chiêu",
-      icon: "🤡",
+      image: "/assets/images/le-hoi-nuoc/chu-he.png",
       desc: "Các màn ảo thuật vui nhộn và tạo hình bong bóng nghệ thuật tặng các em nhỏ.",
     },
     {
       title: "Trò chơi hào hứng",
-      icon: "🏆",
+      image: "/assets/images/le-hoi-nuoc/tro-choi-hao-hung.png",
       desc: "Hệ thống trò chơi vận động tập thể xây dựng tinh thần tương tác và hòa nhập nhanh chóng.",
     },
     {
       title: "MC hoạt náo hài hước",
-      icon: "🎤",
+      image: "/assets/images/le-hoi-nuoc/mc-hoat-nao.png",
       desc: "Dẫn dắt dí dỏm, lôi cuốn, tạo sự gắn kết bền chặt giữa học sinh, thầy cô và bạn bè mới.",
     },
   ];
@@ -59,22 +59,22 @@ export default function LeHoiNuocTieuHoc() {
   const packageSolutions = [
     {
       title: "Thiết bị sự kiện hiện đại",
-      icon: "🔊",
+      image: "/assets/images/le-hoi-nuoc/thiet-bi-am-thanh.png",
       desc: "Hệ thống âm thanh công suất lớn, ánh sáng rực rỡ và sân khấu sự kiện thiết kế chuyên nghiệp.",
     },
     {
       title: "Đạo cụ Teambuilding đa dạng",
-      icon: "🏰",
+      image: "/assets/images/le-hoi-nuoc/dao-cu-teambuilding.png",
       desc: "Cung cấp đầy đủ đồ chơi phao hơi, bowling hơi khổng lồ, súng nước và các đạo cụ dã ngoại.",
     },
     {
       title: "Nhân sự vận hành chuyên nghiệp",
-      icon: "👷",
+      image: "/assets/images/le-hoi-nuoc/nhan-su-van-hanh.png",
       desc: "Đội ngũ kỹ thuật viên, huấn luyện viên hoạt náo và cứu hộ chuyên nghiệp, đảm bảo an toàn tuyệt đối.",
     },
     {
       title: "Photo, Video & Livestream",
-      icon: "📸",
+      image: "/assets/images/le-hoi-nuoc/photo-video.png",
       desc: "Lưu giữ những khoảnh khắc hạnh phúc, rạng rỡ của học sinh để gửi tặng phụ huynh và nhà trường.",
     },
   ];
@@ -182,43 +182,45 @@ export default function LeHoiNuocTieuHoc() {
           background-color: #ffffff;
           border: 1px solid #e2e8f0;
           border-radius: 20px;
-          padding: 32px;
+          padding: 20px;
           transition: all 0.3s ease;
           height: 100%;
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 12px;
         }
         .lh-card:hover {
           transform: translateY(-5px);
           box-shadow: 0 12px 30px rgba(9, 30, 54, 0.06);
           border-color: #0c65c4;
         }
-        .lh-card-icon {
-          font-size: 40px;
-          width: 70px;
-          height: 70px;
-          background-color: #f1f5f9;
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        .lh-card-image-box {
+          width: 100%;
+          height: 180px;
+          border-radius: 12px;
+          overflow: hidden;
+          background-color: #f8fafc;
+          margin-bottom: 4px;
+        }
+        .lh-card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
           transition: all 0.3s ease;
         }
-        .lh-card:hover .lh-card-icon {
-          background-color: #e2effe;
+        .lh-card:hover .lh-card-img {
           transform: scale(1.05);
         }
         .lh-card-title {
-          font-size: 20px;
+          font-size: 19px;
           font-weight: 700;
           color: #091e36;
-          margin: 0;
+          margin: 4px 0 0 0;
         }
         .lh-card-desc {
           color: #64748b;
-          font-size: 15px;
-          line-height: 1.6;
+          font-size: 14.5px;
+          line-height: 1.5;
           margin: 0;
         }
         
@@ -249,15 +251,9 @@ export default function LeHoiNuocTieuHoc() {
         .lh-bg-dark-navy .lh-card-desc {
           color: #cbd5e1;
         }
-        .lh-bg-dark-navy .lh-card-icon {
-          background-color: rgba(255, 255, 255, 0.05);
-        }
         .lh-bg-dark-navy .lh-card:hover {
           border-color: #f26e3a;
           background-color: rgba(255, 255, 255, 0.05);
-        }
-        .lh-bg-dark-navy .lh-card:hover .lh-card-icon {
-          background-color: rgba(242, 110, 58, 0.15);
         }
         
         .lh-bullet-list {
@@ -407,7 +403,9 @@ export default function LeHoiNuocTieuHoc() {
             {waterActivities.map((act, index) => (
               <div key={index} className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="lh-card">
-                  <div className="lh-card-icon">{act.icon}</div>
+                  <div className="lh-card-image-box">
+                    <img src={act.image} alt={act.title} className="lh-card-img" />
+                  </div>
                   <h3 className="lh-card-title">{act.title}</h3>
                   <p className="lh-card-desc">{act.desc}</p>
                 </div>
@@ -439,7 +437,9 @@ export default function LeHoiNuocTieuHoc() {
             {grade1Activities.map((act, index) => (
               <div key={index} className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="lh-card" style={{ borderColor: "#fed7aa" }}>
-                  <div className="lh-card-icon" style={{ backgroundColor: "#fff7ed" }}>{act.icon}</div>
+                  <div className="lh-card-image-box">
+                    <img src={act.image} alt={act.title} className="lh-card-img" />
+                  </div>
                   <h3 className="lh-card-title">{act.title}</h3>
                   <p className="lh-card-desc">{act.desc}</p>
                 </div>
@@ -464,7 +464,9 @@ export default function LeHoiNuocTieuHoc() {
             {packageSolutions.map((sol, index) => (
               <div key={index} className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="lh-card">
-                  <div className="lh-card-icon">{sol.icon}</div>
+                  <div className="lh-card-image-box">
+                    <img src={sol.image} alt={sol.title} className="lh-card-img" />
+                  </div>
                   <h3 className="lh-card-title">{sol.title}</h3>
                   <p className="lh-card-desc">{sol.desc}</p>
                 </div>
