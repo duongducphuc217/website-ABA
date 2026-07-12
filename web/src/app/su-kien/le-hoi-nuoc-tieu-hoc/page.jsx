@@ -107,6 +107,7 @@ export default function LeHoiNuocTieuHoc() {
           line-height: 1.3;
           margin-bottom: 20px;
           letter-spacing: -0.5px;
+          color: #ffffff;
         }
         .lh-hero-title span {
           color: #f26e3a;
@@ -230,30 +231,30 @@ export default function LeHoiNuocTieuHoc() {
         .lh-bg-light-orange {
           background-color: #fff8f3;
         }
-        .lh-bg-dark-navy {
-          background-color: #091e36;
-          color: #ffffff;
+        .lh-bg-light-cyan {
+          background-color: #e0f2fe;
+          color: #091e36;
         }
-        .lh-bg-dark-navy .lh-section-title {
-          color: #ffffff;
+        .lh-bg-light-cyan .lh-section-title {
+          color: #091e36;
         }
-        .lh-bg-dark-navy .lh-section-desc {
-          color: #94a3b8;
+        .lh-bg-light-cyan .lh-section-desc {
+          color: #64748b;
         }
-        .lh-bg-dark-navy .lh-card {
-          background-color: rgba(255, 255, 255, 0.03);
-          border-color: rgba(255, 255, 255, 0.08);
-          color: #ffffff;
+        .lh-bg-light-cyan .lh-card {
+          background-color: #ffffff;
+          border-color: #bae6fd;
+          color: #091e36;
         }
-        .lh-bg-dark-navy .lh-card-title {
-          color: #ffffff;
+        .lh-bg-light-cyan .lh-card-title {
+          color: #091e36;
         }
-        .lh-bg-dark-navy .lh-card-desc {
-          color: #cbd5e1;
+        .lh-bg-light-cyan .lh-card-desc {
+          color: #64748b;
         }
-        .lh-bg-dark-navy .lh-card:hover {
+        .lh-bg-light-cyan .lh-card:hover {
           border-color: #f26e3a;
-          background-color: rgba(255, 255, 255, 0.05);
+          box-shadow: 0 12px 30px rgba(9, 30, 54, 0.08);
         }
         
         .lh-bullet-list {
@@ -294,6 +295,11 @@ export default function LeHoiNuocTieuHoc() {
         .lh-stat-item {
           text-align: center;
         }
+        .lh-stat-item-middle {
+          border-left: 1px solid #e2e8f0;
+          border-right: 1px solid #e2e8f0;
+          padding: 0 40px;
+        }
         .lh-stat-num {
           font-size: 36px;
           font-weight: 800;
@@ -332,6 +338,14 @@ export default function LeHoiNuocTieuHoc() {
             flex-direction: column;
             margin-top: -30px;
             padding: 30px 20px;
+          }
+          .lh-stat-item-middle {
+            border-left: none !important;
+            border-right: none !important;
+            border-top: 1px solid #e2e8f0 !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+            padding: 20px 0 !important;
+            width: 100% !important;
           }
         }
       `}</style>
@@ -377,7 +391,7 @@ export default function LeHoiNuocTieuHoc() {
             <div className="lh-stat-num">15+ Năm</div>
             <div className="lh-stat-label">Đồng hành cùng các nhà trường</div>
           </div>
-          <div className="lh-stat-item" style={{ borderLeft: "1px solid #e2e8f0", borderRight: "1px solid #e2e8f0", padding: "0 40px" }}>
+          <div className="lh-stat-item lh-stat-item-middle">
             <div className="lh-stat-num">99%</div>
             <div className="lh-stat-label">Sự hài lòng từ giáo viên & học sinh</div>
           </div>
@@ -449,8 +463,8 @@ export default function LeHoiNuocTieuHoc() {
         </div>
       </section>
 
-      {/* Section 3: Giải pháp trọn gói (Dark Navy) */}
-      <section className="lh-section lh-bg-dark-navy">
+      {/* Section 3: Giải pháp trọn gói (Light Sky Blue) */}
+      <section className="lh-section lh-bg-light-cyan">
         <div className="container">
           <div className="lh-section-title-box" data-aos="fade-up">
             <span className="lh-section-tag" style={{ color: "#f26e3a" }}>Cho Thuê Trang Thiết Bị</span>

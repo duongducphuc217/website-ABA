@@ -112,7 +112,7 @@ const HeaderThree = () => {
             {/* Logo Start */}
             <div className='logo flex-shrink-0'>
               <Link href='/' className='link'>
-                <img src='assets/images/logo/logo.png' alt='Logo' />
+                <img src='/assets/images/logo/logo.png' alt='Logo' />
               </Link>
             </div>
             {/* Logo End  */}
@@ -203,7 +203,7 @@ const HeaderThree = () => {
         </button>
         <div className='mobile-menu__inner'>
           <Link href='/' className='mobile-menu__logo'>
-            <img src='assets/images/logo/logo.png' alt='Logo' />
+            <img src='/assets/images/logo/logo.png' alt='Logo' />
           </Link>
           <div className='mobile-menu__menu'>
             <ul className='nav-menu flex-align nav-menu--mobile'>
