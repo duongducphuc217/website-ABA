@@ -265,7 +265,7 @@ export default function NewBlogPost() {
                   ) : (
                     <label style={styles.uploadLabel}>
                       <div style={styles.uploadIcon}>📸</div>
-                      <span style={{ fontSize: "14px", fontWeight: "600", color: "#4f46e5" }}>
+                      <span style={{ fontSize: "14px", fontWeight: "600", color: "#0c65c4" }}>
                         {uploading ? "Đang tải lên..." : "Tải ảnh lên từ thiết bị"}
                       </span>
                       <span style={{ fontSize: "12px", color: "#64748b", marginTop: "4px" }}>
@@ -313,7 +313,7 @@ const styles = {
   },
   sidebar: {
     width: "260px",
-    backgroundColor: "#0f172a",
+    backgroundColor: "#091e36",
     color: "#ffffff",
     padding: "32px 24px",
     display: "flex",
@@ -349,9 +349,12 @@ const styles = {
     transition: "all 0.2s ease",
   },
   navLinkActive: {
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
-    color: "#ffffff",
+    backgroundColor: "rgba(255, 255, 255, 0.08)",
+    color: "#f26e3a",
     fontWeight: "600",
+    borderLeft: "3px solid #f26e3a",
+    borderTopLeftRadius: "0",
+    borderBottomLeftRadius: "0",
   },
   main: {
     flexGrow: 1,
@@ -514,13 +517,13 @@ const styles = {
   publishBtn: {
     padding: "14px 20px",
     borderRadius: "12px",
-    backgroundColor: "#6366f1",
+    backgroundColor: "#f26e3a",
     color: "#ffffff",
     border: "none",
     fontWeight: "600",
     fontSize: "15px",
     cursor: "pointer",
-    boxShadow: "0 4px 12px rgba(99, 102, 241, 0.25)",
+    boxShadow: "0 4px 12px rgba(242, 110, 58, 0.25)",
     transition: "all 0.2s ease",
     marginTop: "16px",
   },

@@ -2,11 +2,6 @@ import Link from "next/link";
 import HeaderThree from "@/components/HeaderThree";
 import FooterFour from "@/components/FooterFour";
 
-export const metadata = {
-  title: "Không tìm thấy trang - Trung tâm ABA",
-  description: "Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã bị thay đổi trên hệ thống Website ABA.",
-};
-
 export default function NotFound() {
   return (
     <>
