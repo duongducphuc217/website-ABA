@@ -6,14 +6,30 @@ import "./font.css";
 import "./globals.scss";
 
 export const metadata = {
-  title: "EduAll - LMS, Tutors, Education & Online Course NEXT JS Template",
+  title: {
+    default: "Trung tâm ABA - Hành động vì hạnh phúc hàng triệu gia đình Việt Nam",
+    template: "%s | Trung tâm ABA"
+  },
   description:
-    "EduAll is a comprehensive and modern NEXT JS template designed for online education platforms, learning management systems (LMS), tutors, educational institutions, and online courses. It’s the perfect solution for creating an engaging and interactive online learning experience for students, educators, and institutions. Whether you’re offering online courses, running a tutoring platform, or managing an educational website, EduAll provides the tools to help you succeed. This template is tailored to meet the needs of educators, administrators, and students, providing a seamless and engaging user experience.",
+    "Trung tâm giáo dục kỹ năng sống ABA - Chuyên tổ chức dã ngoại trải nghiệm, sự kiện trường học, teambuilding công nghệ Outing App 4.0 và cho thuê đạo cụ sự kiện uy tín hàng đầu.",
+  keywords: [
+    "trung tâm aba",
+    "dã ngoại học sinh",
+    "kỹ năng sống",
+    "outing app",
+    "cho thuê đạo cụ sự kiện",
+    "trại hè học sinh",
+    "sự kiện trường học"
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='vi'>
       <body suppressHydrationWarning={true}>
         <BootstrapInit />
         <LoadPhosphorIcons />

@@ -1,14 +1,14 @@
+import React, { Suspense } from "react";
 import BlogDetailsInner from "@/components/BlogDetailsInner";
 import Breadcrumb from "@/components/Breadcrumb";
-import CertificateOne from "@/components/CertificateOne";
-import FooterOne from "@/components/FooterOne";
-import HeaderOne from "@/components/HeaderOne";
+import FooterFour from "@/components/FooterFour";
+import HeaderThree from "@/components/HeaderThree";
 import Animation from "@/helper/Animation";
 
 export const metadata = {
-  title: "EduAll - LMS, Tutors, Education & Online Course NEXT JS Template",
+  title: "Chi tiết bài viết - Trung tâm ABA",
   description:
-    "EduAll is a comprehensive and modern NEXT JS template designed for online education platforms, learning management systems (LMS), tutors, educational institutions, and online courses. It’s the perfect solution for creating an engaging and interactive online learning experience for students, educators, and institutions. Whether you’re offering online courses, running a tutoring platform, or managing an educational website, EduAll provides the tools to help you succeed. This template is tailored to meet the needs of educators, administrators, and students, providing a seamless and engaging user experience.",
+    "Xem chi tiết các bài viết, chuyên đề kỹ năng sống, hoạt động giáo dục và teambuilding học sinh tại Trung tâm ABA.",
 };
 
 const page = () => {
@@ -17,20 +17,27 @@ const page = () => {
       {/* Animation */}
       <Animation />
 
-      {/* HeaderTwo */}
-      <HeaderOne />
+      {/* HeaderThree */}
+      <HeaderThree />
 
       {/* Breadcrumb */}
-      <Breadcrumb title={"Blog Details"} />
+      <Breadcrumb title={"Chi Tiết Tin Tức"} />
 
-      {/* BlogDetailsInner */}
-      <BlogDetailsInner />
+      {/* BlogDetailsInner with Suspense */}
+      <Suspense fallback={
+        <div className="blog-page-section py-120">
+          <div className="container text-center">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Đang tải...</span>
+            </div>
+          </div>
+        </div>
+      }>
+        <BlogDetailsInner />
+      </Suspense>
 
-      {/* CertificateOne */}
-      <CertificateOne />
-
-      {/* FooterOne */}
-      <FooterOne />
+      {/* FooterFour */}
+      <FooterFour />
     </>
   );
 };

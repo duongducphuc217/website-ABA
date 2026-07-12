@@ -101,12 +101,20 @@ const FooterOne = () => {
                       FAQs
                     </Link>
                   </li>
-                  <li className='mb-0'>
+                  <li className='mb-16'>
                     <Link
                       href='/blog'
                       className='text-neutral-500 hover-text-main-600 hover-text-decoration-underline'
                     >
                       Blogs
+                    </Link>
+                  </li>
+                  <li className='mb-0'>
+                    <Link
+                      href='/admin'
+                      className='text-neutral-500 hover-text-main-600 hover-text-decoration-underline'
+                    >
+                      Quản trị Admin
                     </Link>
                   </li>
                 </ul>

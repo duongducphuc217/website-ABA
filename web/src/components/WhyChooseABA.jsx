@@ -8,6 +8,9 @@ const WhyChooseABA = () => {
     <section className='py-120 border-top border-neutral-30'>
       {/* Thêm CSS tùy biến để tối ưu giao diện di động (Mobile) */}
       <style>{`
+        .why-stats-container {
+          gap: 24px !important;
+        }
         .why-stats-card {
           padding: 32px;
           flex-grow: 1;
@@ -28,6 +31,12 @@ const WhyChooseABA = () => {
           letter-spacing: 1px;
           line-height: 1.4;
           text-transform: uppercase;
+        }
+        
+        @media (min-width: 992px) {
+          .why-stats-container {
+            gap: 40px !important;
+          }
         }
         
         @media (max-width: 1199px) {
@@ -92,7 +101,7 @@ const WhyChooseABA = () => {
           {/* Cột Trái - 2 Số liệu thống kê đồng bộ CSS */}
           <div className='col-lg-5 d-flex' data-aos='fade-right'>
             {/* Trên mobile (< 992px) chuyển thành flex-row đứng song song */}
-            <div className='d-flex flex-row flex-lg-column justify-content-between w-100 gap-3 gap-sm-4'>
+            <div className='why-stats-container d-flex flex-row flex-lg-column justify-content-between w-100'>
               {/* Card 1: 15+ Năm */}
               <div
                 className='animation-item why-stats-card border rounded-16 hover-border-main-600 transition-03 bg-img position-relative overflow-hidden d-flex flex-column flex-sm-row align-items-center align-items-sm-center gap-3 gap-sm-32'

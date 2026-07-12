@@ -89,6 +89,15 @@ const FooterFour = () => {
                         Liên Hệ
                       </Link>
                     </li>
+                    <li className='item-hover position-relative mb-16'>
+                      <Link
+                        href='/admin'
+                        className='hover-margin-left d-flex align-items-center text-white text-16 fw-semibold hover-text-warning-600'
+                      >
+                        <span className='position-absolute top-50 start-0 translate-middle w-8 h-8 bg-warning-600 rounded-circle transition-03 hidden group-hover-visible' />
+                        Quản trị Admin
+                      </Link>
+                    </li>
 
                   </ul>
                 </div>
