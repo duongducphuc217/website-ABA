@@ -4,5 +4,11 @@
     "passcode": "DucNam@87",
     "role": "admin",
     "name": "Đức Nam"
+  },
+  {
+    "username": "khanhle",
+    "passcode": "aba@123456",
+    "name": "Lê Duy Khánh",
+    "role": "editor"
   }
 ]

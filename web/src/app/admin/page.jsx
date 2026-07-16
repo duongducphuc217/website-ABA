@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import QRCode from "qrcode";
 
 export default function AdminDashboard() {
   const [blogs, setBlogs] = useState([]);
@@ -23,6 +24,20 @@ export default function AdminDashboard() {
   const [userSuccess, setUserSuccess] = useState("");
   const [deletingUsername, setDeletingUsername] = useState(null);
 
+  // QR Code states
+  const [qrcodes, setQrcodes] = useState([]);
+  const [qrLoading, setQrLoading] = useState(false);
+  const [qrSearchQuery, setQrSearchQuery] = useState("");
+  const [qrName, setQrName] = useState("");
+  const [qrValue, setQrValue] = useState("");
+  const [qrDescription, setQrDescription] = useState("");
+  const [qrError, setQrError] = useState("");
+  const [qrSuccess, setQrSuccess] = useState("");
+  const [deletingQrId, setDeletingQrId] = useState(null);
+  const [editingQrId, setEditingQrId] = useState(null);
+  const [previewQr, setPreviewQr] = useState(null);
+  const [previewQrDataUrl, setPreviewQrDataUrl] = useState("");
+
   const router = useRouter();
 
   useEffect(() => {
@@ -39,6 +54,8 @@ export default function AdminDashboard() {
   useEffect(() => {
     if (activeTab === "users") {
       fetchUsers();
+    } else if (activeTab === "qrcodes") {
+      fetchQRCodes();
     }
   }, [activeTab]);
 
@@ -162,6 +179,120 @@ export default function AdminDashboard() {
     }
   };
 
+  const fetchQRCodes = async () => {
+    setQrLoading(true);
+    setQrError("");
+    setQrSuccess("");
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch("/api/qrcodes", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setQrcodes(data.qrcodes);
+      }
+    } catch (error) {
+      console.error("Lỗi lấy danh sách QR Code:", error);
+    } finally {
+      setQrLoading(false);
+    }
+  };
+
+  const handleCreateOrUpdateQr = async (e) => {
+    e.preventDefault();
+    setQrError("");
+    setQrSuccess("");
+    const token = localStorage.getItem("admin_token");
+
+    try {
+      const response = await fetch("/api/qrcodes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          id: editingQrId,
+          name: qrName,
+          value: qrValue,
+          description: qrDescription,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setQrSuccess(editingQrId ? "Cập nhật mã QR thành công!" : "Tạo mã QR mới thành công!");
+        setQrName("");
+        setQrValue("");
+        setQrDescription("");
+        setEditingQrId(null);
+        fetchQRCodes();
+      } else {
+        setQrError(data.error || "Không thể lưu mã QR!");
+      }
+    } catch (error) {
+      setQrError("Đã xảy ra lỗi kết nối API!");
+    }
+  };
+
+  const handleDeleteQr = async (id) => {
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch(`/api/qrcodes?id=${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setQrcodes(qrcodes.filter((item) => item.id !== id));
+        setDeletingQrId(null);
+      } else {
+        alert(data.error || "Không thể xóa mã QR!");
+      }
+    } catch (error) {
+      alert("Đã xảy ra lỗi khi kết nối API!");
+    }
+  };
+
+  const handleOpenPreview = async (qrcode) => {
+    try {
+      const url = await QRCode.toDataURL(qrcode.value, {
+        width: 600,
+        margin: 2,
+        color: {
+          dark: "#000000",
+          light: "#ffffff"
+        }
+      });
+      setPreviewQr(qrcode);
+      setPreviewQrDataUrl(url);
+    } catch (err) {
+      console.error("Lỗi tạo ảnh QR Code:", err);
+      alert("Lỗi khi tạo hình ảnh QR Code!");
+    }
+  };
+
+  const handleDownloadQr = () => {
+    if (!previewQrDataUrl || !previewQr) return;
+    const link = document.createElement("a");
+    link.href = previewQrDataUrl;
+    const filename = `${previewQr.name.toLowerCase().replace(/[^a-z0-9]/g, "_")}_qr.png`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const filteredQRCodes = qrcodes.filter((qr) =>
+    qr.name.toLowerCase().includes(qrSearchQuery.toLowerCase()) ||
+    qr.value.toLowerCase().includes(qrSearchQuery.toLowerCase()) ||
+    (qr.description && qr.description.toLowerCase().includes(qrSearchQuery.toLowerCase()))
+  );
+
   const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     blog.category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -249,6 +380,51 @@ export default function AdminDashboard() {
             min-width: 700px !important;
           }
         }
+        
+        /* Focus state for inputs and textareas */
+        .admin-form-input {
+          transition: all 0.2s ease-in-out !important;
+        }
+        .admin-form-input:focus {
+          border-color: #f26e3a !important;
+          box-shadow: 0 0 0 3px rgba(242, 110, 58, 0.15) !important;
+          background-color: #ffffff !important;
+        }
+        /* Hover effect for buttons */
+        .admin-btn-hover {
+          transition: all 0.2s ease-in-out !important;
+        }
+        .admin-btn-hover:hover {
+          background-color: #e25c28 !important; /* darker orange */
+          transform: translateY(-1px);
+          box-shadow: 0 6px 16px rgba(242, 110, 58, 0.35) !important;
+        }
+        .admin-btn-hover:active {
+          transform: translateY(0);
+        }
+        /* Custom styling for the table columns */
+        .qr-table th {
+          white-space: nowrap !important;
+        }
+        .qr-table td {
+          vertical-align: middle !important;
+        }
+        .qr-action-btn {
+          white-space: nowrap !important;
+          transition: all 0.2s ease !important;
+        }
+        .qr-action-btn:hover {
+          background-color: #cbd5e1 !important;
+          transform: scale(1.02);
+        }
+        .qr-delete-btn {
+          white-space: nowrap !important;
+          transition: all 0.2s ease !important;
+        }
+        .qr-delete-btn:hover {
+          background-color: #ffe4e6 !important;
+          transform: scale(1.02);
+        }
       `}</style>
       {/* Sidebar */}
       <aside style={styles.sidebar} className="admin-sidebar">
@@ -275,6 +451,15 @@ export default function AdminDashboard() {
           >
             👥 Quản lý Tài khoản
           </button>
+          <button
+            onClick={() => setActiveTab("qrcodes")}
+            style={{
+              ...styles.navLinkButton,
+              ...(activeTab === "qrcodes" ? styles.navLinkActive : {}),
+            }}
+          >
+            📱 Quản lý QR Code
+          </button>
           <Link href="/admin/new" style={styles.navLink}>
             ✍️ Viết bài mới
           </Link>
@@ -292,17 +477,40 @@ export default function AdminDashboard() {
         <header style={styles.header} className="admin-header">
           <div>
             <h1 style={styles.pageTitle}>
-              {activeTab === "blogs" ? "Dashboard Quản trị Blog" : "Quản lý tài khoản Admin/Editor"}
+              {activeTab === "blogs"
+                ? "Dashboard Quản trị Blog"
+                : activeTab === "users"
+                ? "Quản lý tài khoản Admin/Editor"
+                : "Tạo & Quản lý mã QR Code"}
             </h1>
             <p style={{ color: "#64748b", margin: "4px 0 0 0" }}>
               {activeTab === "blogs"
                 ? "Quản lý các bài viết trên hệ thống Website ABA"
-                : "Tạo và phân quyền các tài khoản cộng tác viên đăng bài"}
+                : activeTab === "users"
+                ? "Tạo và phân quyền các tài khoản cộng tác viên đăng bài"
+                : "Tạo, sửa đổi và tải xuống mã QR phục vụ truyền thông, thanh toán"}
             </p>
           </div>
-          <Link href="/admin/new" style={styles.createBtn}>
-            ➕ Thêm bài viết mới
-          </Link>
+          {activeTab === "blogs" && (
+            <Link href="/admin/new" style={styles.createBtn}>
+              ➕ Thêm bài viết mới
+            </Link>
+          )}
+          {activeTab === "qrcodes" && (
+            <button
+              onClick={() => {
+                setEditingQrId(null);
+                setQrName("");
+                setQrValue("");
+                setQrDescription("");
+                setQrError("");
+                setQrSuccess("");
+              }}
+              style={styles.createBtn}
+            >
+              ➕ Tạo QR Code mới
+            </button>
+          )}
         </header>
 
         {activeTab === "blogs" ? (
@@ -407,7 +615,7 @@ export default function AdminDashboard() {
               </div>
             </section>
           </>
-        ) : (
+        ) : activeTab === "users" ? (
           <div style={styles.usersLayout} className="admin-users-layout">
             {/* Left box: users list */}
             <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }} className="admin-user-list-card">
@@ -533,6 +741,227 @@ export default function AdminDashboard() {
               </form>
             </section>
           </div>
+        ) : (
+          <div style={styles.usersLayout} className="admin-users-layout">
+            {/* Left box: QR Code list */}
+            <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }} className="admin-user-list-card">
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách QR Code</h4>
+                <div style={styles.searchBox}>
+                  <span style={{ marginRight: "8px" }}>🔍</span>
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm mã QR..."
+                    value={qrSearchQuery}
+                    onChange={(e) => setQrSearchQuery(e.target.value)}
+                    style={styles.searchInput}
+                  />
+                </div>
+              </div>
+              <div style={{ overflowX: "auto" }} className="admin-blog-table-container">
+                <table style={styles.table} className="admin-blog-table qr-table">
+                  <thead>
+                    <tr style={styles.tableHeaderRow}>
+                      <th style={styles.th}>Tên QR Code</th>
+                      <th style={styles.th}>Nội dung / URL</th>
+                      <th style={styles.th}>Ghi chú</th>
+                      <th style={styles.th}>Ngày tạo</th>
+                      <th style={styles.th}>Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {qrLoading ? (
+                      <tr>
+                        <td colSpan="5" style={styles.noDataCell}>
+                          Đang tải danh sách QR Code...
+                        </td>
+                      </tr>
+                    ) : filteredQRCodes.length === 0 ? (
+                      <tr>
+                        <td colSpan="5" style={styles.noDataCell}>
+                          Không tìm thấy QR Code nào phù hợp.
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredQRCodes.map((qr) => (
+                        <tr key={qr.id} style={styles.tableRow}>
+                          <td style={{ ...styles.td, fontWeight: "600", color: "#334155" }}>
+                            <div style={{
+                              maxWidth: "180px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap"
+                            }} title={qr.name}>
+                              {qr.name}
+                            </div>
+                          </td>
+                          <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
+                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                              <span
+                                style={{
+                                  display: "inline-block",
+                                  maxWidth: "200px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                  color: "#0284c7",
+                                  fontWeight: "500",
+                                }}
+                              >
+                                {qr.value}
+                              </span>
+                              <button
+                                onClick={() => {
+                                  navigator.clipboard.writeText(qr.value);
+                                  alert("Đã sao chép nội dung QR Code vào clipboard!");
+                                }}
+                                style={{
+                                  background: "none",
+                                  border: "none",
+                                  cursor: "pointer",
+                                  fontSize: "14px",
+                                }}
+                                title="Sao chép"
+                              >
+                                📋
+                              </button>
+                            </div>
+                          </td>
+                          <td style={{ ...styles.td, color: "#64748b", fontSize: "13px" }}>
+                            <div style={{
+                              maxWidth: "160px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap"
+                            }} title={qr.description}>
+                              {qr.description || "—"}
+                            </div>
+                          </td>
+                          <td style={{ ...styles.td, color: "#64748b", fontSize: "13px", whiteSpace: "nowrap" }}>
+                            {qr.createdAt || qr.updatedAt || "—"}
+                          </td>
+                          <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
+                            <div style={styles.actionsBox}>
+                              <button onClick={() => handleOpenPreview(qr)} style={styles.editBtn} className="qr-action-btn">
+                                👁️ Xem & Tải
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setEditingQrId(qr.id);
+                                  setQrName(qr.name);
+                                  setQrValue(qr.value);
+                                  setQrDescription(qr.description || "");
+                                  setQrError("");
+                                  setQrSuccess("");
+                                }}
+                                style={styles.editBtn}
+                                className="qr-action-btn"
+                              >
+                                ✏️ Sửa
+                              </button>
+                              <button onClick={() => setDeletingQrId(qr.id)} style={styles.deleteBtn} className="qr-delete-btn">
+                                🗑️ Xóa
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Right box: Create/Edit QR form */}
+            <section style={{ ...styles.tableCard, flex: 1, height: "fit-content", paddingBottom: "24px" }} className="admin-user-form-card">
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>
+                  {editingQrId ? "Cập nhật QR Code" : "Tạo QR Code mới"}
+                </h4>
+              </div>
+              <form onSubmit={handleCreateOrUpdateQr} style={styles.userForm}>
+                {qrError && <div style={styles.errorAlert}>{qrError}</div>}
+                {qrSuccess && <div style={styles.successAlert}>{qrSuccess}</div>}
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Tên gợi nhớ</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ví dụ: QR đóng học phí lớp hè, QR Fanpage..."
+                    value={qrName}
+                    onChange={(e) => setQrName(e.target.value)}
+                    style={styles.formInput}
+                    className="admin-form-input"
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Nội dung / URL</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Nhập đường link website hoặc nội dung text..."
+                    value={qrValue}
+                    onChange={(e) => setQrValue(e.target.value)}
+                    style={styles.formInput}
+                    className="admin-form-input"
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Mô tả / Ghi chú</label>
+                  <textarea
+                    placeholder="Mục đích sử dụng, vị trí dán..."
+                    value={qrDescription}
+                    onChange={(e) => setQrDescription(e.target.value)}
+                    style={{
+                      ...styles.formInput,
+                      minHeight: "80px",
+                      resize: "vertical",
+                      fontFamily: "inherit"
+                    }}
+                    className="admin-form-input"
+                  />
+                </div>
+
+                <div style={{ display: "flex", gap: "10px", marginTop: "12px" }}>
+                  <button
+                    type="submit"
+                    style={{
+                      ...styles.userSubmitBtn,
+                      backgroundColor: "#f26e3a",
+                      boxShadow: "0 4px 10px rgba(242, 110, 58, 0.25)"
+                    }}
+                    className="admin-btn-hover"
+                  >
+                    {editingQrId ? "💾 Cập nhật QR" : "➕ Tạo mã QR"}
+                  </button>
+                  {editingQrId && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingQrId(null);
+                        setQrName("");
+                        setQrValue("");
+                        setQrDescription("");
+                        setQrError("");
+                        setQrSuccess("");
+                      }}
+                      style={{
+                        ...styles.userSubmitBtn,
+                        backgroundColor: "#e2e8f0",
+                        color: "#334155",
+                        boxShadow: "none"
+                      }}
+                    >
+                      Hủy sửa
+                    </button>
+                  )}
+                </div>
+              </form>
+            </section>
+          </div>
         )}
       </main>
 
@@ -570,6 +999,71 @@ export default function AdminDashboard() {
               </button>
               <button onClick={() => handleDeleteUser(deletingUsername)} style={styles.confirmDeleteBtn}>
                 Xác nhận Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Confirmation Modal (QR Codes) */}
+      {deletingQrId && (
+        <div style={styles.modalBackdrop}>
+          <div style={styles.modalCard}>
+            <h3 style={{ margin: "0 0 12px 0", color: "#0f172a" }}>Xác nhận xóa mã QR</h3>
+            <p style={{ color: "#64748b", fontSize: "15px", lineHeight: "1.5" }}>
+              Bạn có chắc chắn muốn xóa mã QR này không? Hành động này sẽ loại bỏ hoàn toàn mã khỏi danh sách quản lý.
+            </p>
+            <div style={styles.modalActions}>
+              <button onClick={() => setDeletingQrId(null)} style={styles.cancelBtn}>
+                Hủy bỏ
+              </button>
+              <button onClick={() => handleDeleteQr(deletingQrId)} style={styles.confirmDeleteBtn}>
+                Xác nhận Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* QR Code Preview Modal */}
+      {previewQr && (
+        <div style={styles.modalBackdrop}>
+          <div style={{ ...styles.modalCard, maxWidth: "480px", alignItems: "center", textAlign: "center" }}>
+            <h3 style={{ margin: "0 0 4px 0", color: "#0f172a", width: "100%" }}>{previewQr.name}</h3>
+            <p style={{ color: "#64748b", fontSize: "13px", margin: "0 0 16px 0", wordBreak: "break-all", width: "100%" }}>
+              Giá trị: <span style={{ color: "#0284c7", fontWeight: "500" }}>{previewQr.value}</span>
+            </p>
+            
+            {previewQrDataUrl && (
+              <div style={{
+                padding: "16px",
+                backgroundColor: "#ffffff",
+                border: "1px solid #e2e8f0",
+                borderRadius: "12px",
+                display: "inline-block",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
+                marginBottom: "8px"
+              }}>
+                <img
+                  src={previewQrDataUrl}
+                  alt={previewQr.name}
+                  style={{ width: "240px", height: "240px", display: "block" }}
+                />
+              </div>
+            )}
+            
+            {previewQr.description && (
+              <p style={{ color: "#64748b", fontSize: "14px", fontStyle: "italic", margin: "8px 0 16px 0" }}>
+                "{previewQr.description}"
+              </p>
+            )}
+
+            <div style={{ ...styles.modalActions, width: "100%", justifyContent: "center", gap: "16px" }}>
+              <button onClick={() => setPreviewQr(null)} style={styles.cancelBtn}>
+                Đóng
+              </button>
+              <button onClick={handleDownloadQr} style={{ ...styles.confirmDeleteBtn, backgroundColor: "#f26e3a", boxShadow: "0 4px 10px rgba(242, 110, 58, 0.25)" }}>
+                💾 Tải xuống PNG
               </button>
             </div>
           </div>
@@ -779,6 +1273,7 @@ const styles = {
     textTransform: "uppercase",
     letterSpacing: "0.5px",
     borderBottom: "1px solid #e2e8f0",
+    whiteSpace: "nowrap",
   },
   tableRow: {
     borderBottom: "1px solid #f1f5f9",
@@ -830,6 +1325,7 @@ const styles = {
     textDecoration: "none",
     cursor: "pointer",
     transition: "all 0.2s ease",
+    whiteSpace: "nowrap",
   },
   deleteBtn: {
     padding: "6px 12px",
@@ -841,6 +1337,7 @@ const styles = {
     fontWeight: "500",
     cursor: "pointer",
     transition: "all 0.2s ease",
+    whiteSpace: "nowrap",
   },
   noDataCell: {
     padding: "40px",
