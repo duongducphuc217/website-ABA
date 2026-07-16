@@ -38,6 +38,18 @@ export default function AdminDashboard() {
   const [previewQr, setPreviewQr] = useState(null);
   const [previewQrDataUrl, setPreviewQrDataUrl] = useState("");
 
+  // Link Shortener states
+  const [links, setLinks] = useState([]);
+  const [linkLoading, setLinkLoading] = useState(false);
+  const [linkSearchQuery, setLinkSearchQuery] = useState("");
+  const [linkSlug, setLinkSlug] = useState("");
+  const [linkOriginalUrl, setLinkOriginalUrl] = useState("");
+  const [linkDescription, setLinkDescription] = useState("");
+  const [linkError, setLinkError] = useState("");
+  const [linkSuccess, setLinkSuccess] = useState("");
+  const [deletingLinkId, setDeletingLinkId] = useState(null);
+  const [editingLinkId, setEditingLinkId] = useState(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -56,6 +68,8 @@ export default function AdminDashboard() {
       fetchUsers();
     } else if (activeTab === "qrcodes") {
       fetchQRCodes();
+    } else if (activeTab === "links") {
+      fetchLinks();
     }
   }, [activeTab]);
 
@@ -293,6 +307,98 @@ export default function AdminDashboard() {
     (qr.description && qr.description.toLowerCase().includes(qrSearchQuery.toLowerCase()))
   );
 
+  const fetchLinks = async () => {
+    setLinkLoading(true);
+    setLinkError("");
+    setLinkSuccess("");
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch("/api/links", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setLinks(data.links);
+      }
+    } catch (error) {
+      console.error("Lỗi lấy danh sách link rút gọn:", error);
+    } finally {
+      setLinkLoading(false);
+    }
+  };
+
+  const handleCreateOrUpdateLink = async (e) => {
+    e.preventDefault();
+    setLinkError("");
+    setLinkSuccess("");
+    const token = localStorage.getItem("admin_token");
+
+    try {
+      const response = await fetch("/api/links", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          id: editingLinkId,
+          slug: linkSlug,
+          originalUrl: linkOriginalUrl,
+          description: linkDescription,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setLinkSuccess(editingLinkId ? "Cập nhật link rút gọn thành công!" : "Tạo link rút gọn mới thành công!");
+        setLinkSlug("");
+        setLinkOriginalUrl("");
+        setLinkDescription("");
+        setEditingLinkId(null);
+        fetchLinks();
+      } else {
+        setLinkError(data.error || "Không thể lưu link rút gọn!");
+      }
+    } catch (error) {
+      setLinkError("Đã xảy ra lỗi kết nối API!");
+    }
+  };
+
+  const handleDeleteLink = async (id) => {
+    const token = localStorage.getItem("admin_token");
+    try {
+      const response = await fetch(`/api/links?id=${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        setLinks(links.filter((item) => item.id !== id));
+        setDeletingLinkId(null);
+      } else {
+        alert(data.error || "Không thể xóa link rút gọn!");
+      }
+    } catch (error) {
+      alert("Đã xảy ra lỗi khi kết nối API!");
+    }
+  };
+
+  const getShortUrl = (slug) => {
+    if (typeof window !== "undefined") {
+      return `${window.location.protocol}//${window.location.host}/s/${slug}`;
+    }
+    return `/s/${slug}`;
+  };
+
+  const filteredLinks = links.filter((item) =>
+    item.slug.toLowerCase().includes(linkSearchQuery.toLowerCase()) ||
+    item.originalUrl.toLowerCase().includes(linkSearchQuery.toLowerCase()) ||
+    (item.description && item.description.toLowerCase().includes(linkSearchQuery.toLowerCase()))
+  );
+
   const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     blog.category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -460,6 +566,15 @@ export default function AdminDashboard() {
           >
             📱 Quản lý QR Code
           </button>
+          <button
+            onClick={() => setActiveTab("links")}
+            style={{
+              ...styles.navLinkButton,
+              ...(activeTab === "links" ? styles.navLinkActive : {}),
+            }}
+          >
+            🔗 Rút gọn Link
+          </button>
           <Link href="/admin/new" style={styles.navLink}>
             ✍️ Viết bài mới
           </Link>
@@ -481,14 +596,18 @@ export default function AdminDashboard() {
                 ? "Dashboard Quản trị Blog"
                 : activeTab === "users"
                 ? "Quản lý tài khoản Admin/Editor"
-                : "Tạo & Quản lý mã QR Code"}
+                : activeTab === "qrcodes"
+                ? "Tạo & Quản lý mã QR Code"
+                : "Quản lý Link Rút gọn"}
             </h1>
             <p style={{ color: "#64748b", margin: "4px 0 0 0" }}>
               {activeTab === "blogs"
                 ? "Quản lý các bài viết trên hệ thống Website ABA"
                 : activeTab === "users"
                 ? "Tạo và phân quyền các tài khoản cộng tác viên đăng bài"
-                : "Tạo, sửa đổi và tải xuống mã QR phục vụ truyền thông, thanh toán"}
+                : activeTab === "qrcodes"
+                ? "Tạo, sửa đổi và tải xuống mã QR phục vụ truyền thông, thanh toán"
+                : "Tạo link ngắn chuyển hướng và theo dõi số lượt click"}
             </p>
           </div>
           {activeTab === "blogs" && (
@@ -509,6 +628,21 @@ export default function AdminDashboard() {
               style={styles.createBtn}
             >
               ➕ Tạo QR Code mới
+            </button>
+          )}
+          {activeTab === "links" && (
+            <button
+              onClick={() => {
+                setEditingLinkId(null);
+                setLinkSlug("");
+                setLinkOriginalUrl("");
+                setLinkDescription("");
+                setLinkError("");
+                setLinkSuccess("");
+              }}
+              style={styles.createBtn}
+            >
+              ➕ Tạo Link rút gọn mới
             </button>
           )}
         </header>
@@ -741,7 +875,7 @@ export default function AdminDashboard() {
               </form>
             </section>
           </div>
-        ) : (
+        ) : activeTab === "qrcodes" ? (
           <div style={styles.usersLayout} className="admin-users-layout">
             {/* Left box: QR Code list */}
             <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }} className="admin-user-list-card">
@@ -962,6 +1096,258 @@ export default function AdminDashboard() {
               </form>
             </section>
           </div>
+        ) : (
+          <div style={styles.usersLayout} className="admin-users-layout">
+            {/* Left box: Link list */}
+            <section style={{ ...styles.tableCard, flex: 2, paddingBottom: 0 }} className="admin-user-list-card">
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>Danh sách Link rút gọn</h4>
+                <div style={styles.searchBox}>
+                  <span style={{ marginRight: "8px" }}>🔍</span>
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm link..."
+                    value={linkSearchQuery}
+                    onChange={(e) => setLinkSearchQuery(e.target.value)}
+                    style={styles.searchInput}
+                  />
+                </div>
+              </div>
+              <div style={{ overflowX: "auto" }} className="admin-blog-table-container">
+                <table style={styles.table} className="admin-blog-table qr-table">
+                  <thead>
+                    <tr style={styles.tableHeaderRow}>
+                      <th style={styles.th}>Mã (Slug)</th>
+                      <th style={styles.th}>Link rút gọn</th>
+                      <th style={styles.th}>Đường dẫn gốc</th>
+                      <th style={styles.th}>Lượt click</th>
+                      <th style={styles.th}>Ghi chú</th>
+                      <th style={styles.th}>Ngày tạo</th>
+                      <th style={styles.th}>Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {linkLoading ? (
+                      <tr>
+                        <td colSpan="7" style={styles.noDataCell}>
+                          Đang tải danh sách link...
+                        </td>
+                      </tr>
+                    ) : filteredLinks.length === 0 ? (
+                      <tr>
+                        <td colSpan="7" style={styles.noDataCell}>
+                          Không tìm thấy link rút gọn nào phù hợp.
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredLinks.map((item) => {
+                        const shortUrl = getShortUrl(item.slug);
+                        return (
+                          <tr key={item.id} style={styles.tableRow}>
+                            <td style={{ ...styles.td, fontWeight: "600", color: "#334155" }}>
+                              <span style={{ color: "#f26e3a" }}>/{item.slug}</span>
+                            </td>
+                            <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
+                              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                <a
+                                  href={`/s/${item.slug}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{
+                                    color: "#0284c7",
+                                    fontWeight: "500",
+                                    textDecoration: "none",
+                                  }}
+                                >
+                                  {shortUrl}
+                                </a>
+                                <button
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(shortUrl);
+                                    alert("Đã sao chép link rút gọn vào clipboard!");
+                                  }}
+                                  style={{
+                                    background: "none",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    fontSize: "14px",
+                                  }}
+                                  title="Sao chép"
+                                >
+                                  📋
+                                </button>
+                              </div>
+                            </td>
+                            <td style={{ ...styles.td }}>
+                              <a
+                                href={item.originalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  display: "inline-block",
+                                  maxWidth: "200px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                  color: "#64748b",
+                                  textDecoration: "none",
+                                }}
+                                title={item.originalUrl}
+                              >
+                                {item.originalUrl}
+                              </a>
+                            </td>
+                            <td style={styles.td}>
+                              <span
+                                style={{
+                                  ...styles.categoryBadge,
+                                  backgroundColor: "rgba(242, 110, 58, 0.1)",
+                                  color: "#f26e3a",
+                                  fontWeight: "600",
+                                }}
+                              >
+                                📊 {item.clicks || 0}
+                              </span>
+                            </td>
+                            <td style={{ ...styles.td, color: "#64748b", fontSize: "13px" }}>
+                              <div style={{
+                                maxWidth: "120px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap"
+                              }} title={item.description}>
+                                {item.description || "—"}
+                              </div>
+                            </td>
+                            <td style={{ ...styles.td, color: "#64748b", fontSize: "13px", whiteSpace: "nowrap" }}>
+                              {item.createdAt || item.updatedAt || "—"}
+                            </td>
+                            <td style={{ ...styles.td, whiteSpace: "nowrap" }}>
+                              <div style={styles.actionsBox}>
+                                <button
+                                  onClick={() => {
+                                    setEditingLinkId(item.id);
+                                    setLinkSlug(item.slug);
+                                    setLinkOriginalUrl(item.originalUrl);
+                                    setLinkDescription(item.description || "");
+                                    setLinkError("");
+                                    setLinkSuccess("");
+                                  }}
+                                  style={styles.editBtn}
+                                  className="qr-action-btn"
+                                >
+                                  ✏️ Sửa
+                                </button>
+                                <button onClick={() => setDeletingLinkId(item.id)} style={styles.deleteBtn} className="qr-delete-btn">
+                                  🗑️ Xóa
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Right box: Create/Edit form */}
+            <section style={{ ...styles.tableCard, flex: 1, height: "fit-content", paddingBottom: "24px" }} className="admin-user-form-card">
+              <div style={styles.tableHeader}>
+                <h4 style={{ margin: 0, fontWeight: "600", color: "#1e293b" }}>
+                  {editingLinkId ? "Cập nhật Link rút gọn" : "Tạo Link rút gọn"}
+                </h4>
+              </div>
+              <form onSubmit={handleCreateOrUpdateLink} style={styles.userForm}>
+                {linkError && <div style={styles.errorAlert}>{linkError}</div>}
+                {linkSuccess && <div style={styles.successAlert}>{linkSuccess}</div>}
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Mã rút gọn (Slug)</label>
+                  <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                    <span style={{ color: "#94a3b8", fontSize: "14px", fontWeight: "500" }}>/s/</span>
+                    <input
+                      type="text"
+                      required
+                      placeholder="dangky, he2026..."
+                      value={linkSlug}
+                      onChange={(e) => setLinkSlug(e.target.value)}
+                      style={{ ...styles.formInput, flex: 1 }}
+                      className="admin-form-input"
+                    />
+                  </div>
+                  <span style={{ fontSize: "11px", color: "#64748b", marginTop: "2px" }}>
+                    Chỉ dùng chữ không dấu, số, dấu gạch ngang (-) và gạch dưới (_).
+                  </span>
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Đường dẫn gốc (Original URL)</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="https://docs.google.com/forms/..."
+                    value={linkOriginalUrl}
+                    onChange={(e) => setLinkOriginalUrl(e.target.value)}
+                    style={styles.formInput}
+                    className="admin-form-input"
+                  />
+                </div>
+
+                <div style={styles.formGroup}>
+                  <label style={styles.formLabel}>Ghi chú / Mô tả</label>
+                  <textarea
+                    placeholder="Ví dụ: Link form đăng ký khoá học hè..."
+                    value={linkDescription}
+                    onChange={(e) => setLinkDescription(e.target.value)}
+                    style={{
+                      ...styles.formInput,
+                      minHeight: "80px",
+                      resize: "vertical",
+                      fontFamily: "inherit"
+                    }}
+                    className="admin-form-input"
+                  />
+                </div>
+
+                <div style={{ display: "flex", gap: "10px", marginTop: "12px" }}>
+                  <button
+                    type="submit"
+                    style={{
+                      ...styles.userSubmitBtn,
+                      backgroundColor: "#f26e3a",
+                      boxShadow: "0 4px 10px rgba(242, 110, 58, 0.25)"
+                    }}
+                    className="admin-btn-hover"
+                  >
+                    {editingLinkId ? "💾 Cập nhật Link" : "➕ Tạo Link"}
+                  </button>
+                  {editingLinkId && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingLinkId(null);
+                        setLinkSlug("");
+                        setLinkOriginalUrl("");
+                        setLinkDescription("");
+                        setLinkError("");
+                        setLinkSuccess("");
+                      }}
+                      style={{
+                        ...styles.userSubmitBtn,
+                        backgroundColor: "#e2e8f0",
+                        color: "#334155",
+                        boxShadow: "none"
+                      }}
+                    >
+                      Hủy sửa
+                    </button>
+                  )}
+                </div>
+              </form>
+            </section>
+          </div>
         )}
       </main>
 
@@ -1064,6 +1450,26 @@ export default function AdminDashboard() {
               </button>
               <button onClick={handleDownloadQr} style={{ ...styles.confirmDeleteBtn, backgroundColor: "#f26e3a", boxShadow: "0 4px 10px rgba(242, 110, 58, 0.25)" }}>
                 💾 Tải xuống PNG
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Confirmation Modal (Links) */}
+      {deletingLinkId && (
+        <div style={styles.modalBackdrop}>
+          <div style={styles.modalCard}>
+            <h3 style={{ margin: "0 0 12px 0", color: "#0f172a" }}>Xác nhận xóa Link rút gọn</h3>
+            <p style={{ color: "#64748b", fontSize: "15px", lineHeight: "1.5" }}>
+              Bạn có chắc chắn muốn xóa link rút gọn này không? Hành động này sẽ loại bỏ hoàn toàn link rút gọn khỏi hệ thống và không thể khôi phục.
+            </p>
+            <div style={styles.modalActions}>
+              <button onClick={() => setDeletingLinkId(null)} style={styles.cancelBtn}>
+                Hủy bỏ
+              </button>
+              <button onClick={() => handleDeleteLink(deletingLinkId)} style={styles.confirmDeleteBtn}>
+                Xác nhận Xóa
               </button>
             </div>
           </div>

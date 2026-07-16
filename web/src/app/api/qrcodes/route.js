@@ -1,39 +1,31 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs/promises";
-
-const filePath = path.join(process.cwd(), "src", "data", "qrcodes.json");
-
-async function readQRCodes() {
-  try {
-    const data = await fs.readFile(filePath, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return [];
-  }
-}
-
-async function writeQRCodes(qrcodes) {
-  await fs.writeFile(filePath, JSON.stringify(qrcodes, null, 2), "utf-8");
-}
+import { supabase } from "@/helper/supabase";
 
 function checkAuth(request) {
   const authHeader = request.headers.get("authorization");
   return authHeader === "Bearer admin_token_website_aba";
 }
 
-// GET: Lấy danh sách mã QR
+// GET: Lấy danh sách mã QR từ Supabase
 export async function GET(request) {
   try {
-    const qrcodes = await readQRCodes();
+    const { data: qrcodes, error } = await supabase
+      .from("qrcodes")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
     return NextResponse.json({ success: true, qrcodes });
   } catch (error) {
-    console.error("Lỗi đọc file qrcodes.json:", error);
+    console.error("Lỗi lấy danh sách QR Code từ Supabase:", error);
     return NextResponse.json({ success: false, error: "Không thể lấy danh sách QR Code!" }, { status: 500 });
   }
 }
 
-// POST: Tạo mới hoặc cập nhật mã QR
+// POST: Tạo mới hoặc cập nhật mã QR trên Supabase
 export async function POST(request) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
@@ -47,7 +39,6 @@ export async function POST(request) {
       return NextResponse.json({ success: false, error: "Vui lòng nhập Tên gợi nhớ và Nội dung QR Code!" }, { status: 400 });
     }
 
-    const qrcodes = await readQRCodes();
     const formattedDate = new Date().toLocaleString("vi-VN", {
       day: "2-digit",
       month: "2-digit",
@@ -57,22 +48,24 @@ export async function POST(request) {
     });
 
     if (id) {
-      // Cập nhật QR code đã tồn tại
-      const index = qrcodes.findIndex((item) => item.id === id);
-      if (index === -1) {
-        return NextResponse.json({ success: false, error: "Không tìm thấy mã QR cần cập nhật!" }, { status: 404 });
+      // Cập nhật QR code
+      const { data, error } = await supabase
+        .from("qrcodes")
+        .update({
+          name: name.trim(),
+          value: value.trim(),
+          description: description ? description.trim() : "",
+          updated_at: formattedDate,
+        })
+        .eq("id", id)
+        .select()
+        .single();
+
+      if (error) {
+        throw error;
       }
 
-      qrcodes[index] = {
-        ...qrcodes[index],
-        name: name.trim(),
-        value: value.trim(),
-        description: description ? description.trim() : "",
-        updatedAt: formattedDate,
-      };
-
-      await writeQRCodes(qrcodes);
-      return NextResponse.json({ success: true, qrcode: qrcodes[index] });
+      return NextResponse.json({ success: true, qrcode: data });
     } else {
       // Tạo mới QR code
       const newQRCode = {
@@ -80,21 +73,35 @@ export async function POST(request) {
         name: name.trim(),
         value: value.trim(),
         description: description ? description.trim() : "",
-        createdAt: formattedDate,
+        created_at: formattedDate,
       };
 
-      qrcodes.unshift(newQRCode); // Thêm lên đầu danh sách
-      await writeQRCodes(qrcodes);
+      const { data, error } = await supabase
+        .from("qrcodes")
+        .insert(newQRCode)
+        .select()
+        .single();
 
-      return NextResponse.json({ success: true, qrcode: newQRCode });
+      if (error) {
+        throw error;
+      }
+
+      // Map snake_case created_at to camelCase createdAt for compatibility
+      const responseQR = {
+        ...data,
+        createdAt: data.created_at,
+        updatedAt: data.updated_at
+      };
+
+      return NextResponse.json({ success: true, qrcode: responseQR });
     }
   } catch (error) {
-    console.error("Lỗi tạo/cập nhật QR Code:", error);
+    console.error("Lỗi tạo/cập nhật QR Code trên Supabase:", error);
     return NextResponse.json({ success: false, error: "Lưu QR Code thất bại!" }, { status: 500 });
   }
 }
 
-// DELETE: Xóa mã QR qua query parameter (?id=xyz)
+// DELETE: Xóa mã QR qua query parameter (?id=xyz) từ Supabase
 export async function DELETE(request) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
@@ -108,17 +115,18 @@ export async function DELETE(request) {
       return NextResponse.json({ success: false, error: "Thiếu ID của mã QR cần xóa!" }, { status: 400 });
     }
 
-    const qrcodes = await readQRCodes();
-    const updatedQRCodes = qrcodes.filter((item) => item.id !== idToDelete);
+    const { error } = await supabase
+      .from("qrcodes")
+      .delete()
+      .eq("id", idToDelete);
 
-    if (qrcodes.length === updatedQRCodes.length) {
-      return NextResponse.json({ success: false, error: "Không tìm thấy mã QR cần xóa!" }, { status: 404 });
+    if (error) {
+      throw error;
     }
 
-    await writeQRCodes(updatedQRCodes);
     return NextResponse.json({ success: true, message: "Xóa QR Code thành công!" });
   } catch (error) {
-    console.error("Lỗi xóa QR Code:", error);
+    console.error("Lỗi xóa QR Code trên Supabase:", error);
     return NextResponse.json({ success: false, error: "Xóa QR Code thất bại!" }, { status: 500 });
   }
 }

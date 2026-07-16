@@ -1,66 +1,56 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs/promises";
-
-const filePath = path.join(process.cwd(), "src", "data", "blogs.json");
-
-async function readBlogs() {
-  try {
-    const data = await fs.readFile(filePath, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return [];
-  }
-}
-
-async function writeBlogs(blogs) {
-  await fs.writeFile(filePath, JSON.stringify(blogs, null, 2), "utf-8");
-}
+import { supabase } from "@/helper/supabase";
 
 function checkAuth(request) {
   const authHeader = request.headers.get("authorization");
   return authHeader === "Bearer admin_token_website_aba";
 }
 
+// GET: Lấy thông tin bài viết theo ID hoặc Slug từ Supabase
 export async function GET(request, { params }) {
   try {
-    const id = params.id;
-    const blogs = await readBlogs();
-    const blog = blogs.find((b) => b.id === id || b.slug === id);
+    const { id } = await params;
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .or(`id.eq.${id},slug.eq.${id}`)
+      .maybeSingle();
 
-    if (!blog) {
+    if (error) {
+      throw error;
+    }
+
+    if (!data) {
       return NextResponse.json({ success: false, error: "Không tìm thấy bài viết!" }, { status: 404 });
     }
 
+    const blog = {
+      ...data,
+      commentsCount: data.comments_count || 0
+    };
+
     return NextResponse.json({ success: true, blog });
   } catch (error) {
+    console.error("Lỗi lấy thông tin blog:", error);
     return NextResponse.json({ success: false, error: "Lỗi hệ thống!" }, { status: 500 });
   }
 }
 
+// PUT: Cập nhật bài viết theo ID
 export async function PUT(request, { params }) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
   }
 
   try {
-    const id = params.id;
+    const { id } = await params;
     const body = await request.json();
     const { title, slug, category, author, image, description, content } = body;
-
-    const blogs = await readBlogs();
-    const blogIndex = blogs.findIndex((b) => b.id === id);
-
-    if (blogIndex === -1) {
-      return NextResponse.json({ success: false, error: "Không tìm thấy bài viết!" }, { status: 404 });
-    }
 
     if (!title || !category || !content) {
       return NextResponse.json({ success: false, error: "Vui lòng điền đầy đủ các trường bắt buộc!" }, { status: 400 });
     }
 
-    const currentBlog = blogs[blogIndex];
-    
     // Auto-generate slug if not provided or changed
     const finalSlug = slug || title
       .toLowerCase()
@@ -73,8 +63,17 @@ export async function PUT(request, { params }) {
       .replace(/-+/g, "-")
       .trim();
 
-    blogs[blogIndex] = {
-      ...currentBlog,
+    const { data: currentBlog, error: fetchError } = await supabase
+      .from("blogs")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (fetchError || !currentBlog) {
+      return NextResponse.json({ success: false, error: "Không tìm thấy bài viết!" }, { status: 404 });
+    }
+
+    const updatedBlog = {
       title,
       slug: finalSlug,
       category,
@@ -84,30 +83,49 @@ export async function PUT(request, { params }) {
       content
     };
 
-    await writeBlogs(blogs);
+    const { data, error } = await supabase
+      .from("blogs")
+      .update(updatedBlog)
+      .eq("id", id)
+      .select()
+      .single();
 
-    return NextResponse.json({ success: true, blog: blogs[blogIndex] });
+    if (error) {
+      if (error.code === "23505") { // Unique constraint violation (duplicate slug)
+        return NextResponse.json({ success: false, error: "Slug (Đường dẫn tĩnh) này đã tồn tại!" }, { status: 400 });
+      }
+      throw error;
+    }
+
+    const responseBlog = {
+      ...data,
+      commentsCount: data.comments_count || 0
+    };
+
+    return NextResponse.json({ success: true, blog: responseBlog });
   } catch (error) {
     console.error("Lỗi cập nhật blog:", error);
     return NextResponse.json({ success: false, error: "Cập nhật bài viết thất bại!" }, { status: 500 });
   }
 }
 
+// DELETE: Xóa bài viết theo ID
 export async function DELETE(request, { params }) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
   }
 
   try {
-    const id = params.id;
-    const blogs = await readBlogs();
-    const filteredBlogs = blogs.filter((b) => b.id !== id);
+    const { id } = await params;
+    const { error } = await supabase
+      .from("blogs")
+      .delete()
+      .eq("id", id);
 
-    if (blogs.length === filteredBlogs.length) {
-      return NextResponse.json({ success: false, error: "Không tìm thấy bài viết!" }, { status: 404 });
+    if (error) {
+      throw error;
     }
 
-    await writeBlogs(filteredBlogs);
     return NextResponse.json({ success: true, message: "Xóa bài viết thành công!" });
   } catch (error) {
     console.error("Lỗi xóa blog:", error);

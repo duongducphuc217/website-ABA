@@ -1,38 +1,22 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs/promises";
-
-const usersPath = path.join(process.cwd(), "src", "data", "users.json");
-
-async function readUsers() {
-  try {
-    const data = await fs.readFile(usersPath, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return [
-      {
-        username: "admin",
-        passcode: process.env.ADMIN_PASSCODE || "DucNam@87",
-        role: "admin",
-        name: "Đức Nam",
-      },
-    ];
-  }
-}
+import { supabase } from "@/helper/supabase";
 
 export async function POST(request) {
   try {
     const { username, passcode } = await request.json();
-    const loginUsername = username || "admin";
+    const loginUsername = (username || "admin").trim().toLowerCase();
 
-    const users = await readUsers();
-    const user = users.find(
-      (u) =>
-        u.username.toLowerCase() === loginUsername.toLowerCase() &&
-        u.passcode === passcode
-    );
+    const { data: user, error } = await supabase
+      .from("users")
+      .select("*")
+      .eq("username", loginUsername)
+      .maybeSingle();
 
-    if (user) {
+    if (error) {
+      throw error;
+    }
+
+    if (user && user.passcode === passcode) {
       return NextResponse.json({
         success: true,
         token: "admin_token_website_aba",

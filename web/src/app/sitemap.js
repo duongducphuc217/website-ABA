@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/helper/supabase";
 
 export default async function sitemap() {
   const baseUrl = "https://aba.edu.vn";
@@ -22,26 +21,24 @@ export default async function sitemap() {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  // Đọc danh sách blog động từ tệp blogs.json để đẩy vào sitemap
+  // Đọc danh sách blog động từ Supabase để đẩy vào sitemap
   try {
-    const blogsPath = path.join(process.cwd(), "src/data/blogs.json");
-    if (fs.existsSync(blogsPath)) {
-      const blogsJson = fs.readFileSync(blogsPath, "utf8");
-      const blogs = JSON.parse(blogsJson);
+    const { data: blogs, error } = await supabase
+      .from("blogs")
+      .select("id");
 
-      if (Array.isArray(blogs)) {
-        const blogRoutes = blogs.map((blog) => ({
-          url: `${baseUrl}/blog-details?id=${blog.id}`,
-          lastModified: new Date().toISOString(),
-          changeFrequency: "monthly",
-          priority: 0.6,
-        }));
-        
-        return [...staticRoutes, ...blogRoutes];
-      }
+    if (!error && Array.isArray(blogs)) {
+      const blogRoutes = blogs.map((blog) => ({
+        url: `${baseUrl}/blog-details?id=${blog.id}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      }));
+      
+      return [...staticRoutes, ...blogRoutes];
     }
   } catch (error) {
-    console.error("Lỗi đọc danh sách blog tạo sitemap:", error);
+    console.error("Lỗi đọc danh sách blog tạo sitemap từ Supabase:", error);
   }
 
   return staticRoutes;

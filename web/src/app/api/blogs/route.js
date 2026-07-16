@@ -1,36 +1,37 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs/promises";
-
-const filePath = path.join(process.cwd(), "src", "data", "blogs.json");
-
-async function readBlogs() {
-  try {
-    const data = await fs.readFile(filePath, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return [];
-  }
-}
-
-async function writeBlogs(blogs) {
-  await fs.writeFile(filePath, JSON.stringify(blogs, null, 2), "utf-8");
-}
+import { supabase } from "@/helper/supabase";
 
 function checkAuth(request) {
   const authHeader = request.headers.get("authorization");
   return authHeader === "Bearer admin_token_website_aba";
 }
 
+// GET: Lấy danh sách toàn bộ bài viết từ Supabase
 export async function GET(request) {
   try {
-    const blogs = await readBlogs();
-    return NextResponse.json({ success: true, blogs });
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    // Map database column names to match frontend expectations
+    const formattedBlogs = (data || []).map(({ comments_count, ...rest }) => ({
+      ...rest,
+      commentsCount: comments_count || 0
+    }));
+
+    return NextResponse.json({ success: true, blogs: formattedBlogs });
   } catch (error) {
+    console.error("Lỗi lấy danh sách blog từ Supabase:", error);
     return NextResponse.json({ success: false, error: "Không thể lấy danh sách bài viết!" }, { status: 500 });
   }
 }
 
+// POST: Tạo bài viết mới trên Supabase
 export async function POST(request) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
@@ -44,7 +45,6 @@ export async function POST(request) {
       return NextResponse.json({ success: false, error: "Vui lòng điền các trường bắt buộc (Tiêu đề, Danh mục, Nội dung)!" }, { status: 400 });
     }
 
-    const blogs = await readBlogs();
     const newId = String(Date.now());
     
     // Auto-generate slug if not provided
@@ -70,17 +70,32 @@ export async function POST(request) {
       date: formattedDate,
       image: image || "assets/images/thumbs/blog-two-img1.png",
       views: "0",
-      commentsCount: 0,
+      comments_count: 0,
       description: description || "",
       content
     };
 
-    blogs.unshift(newBlog);
-    await writeBlogs(blogs);
+    const { data, error } = await supabase
+      .from("blogs")
+      .insert(newBlog)
+      .select()
+      .single();
 
-    return NextResponse.json({ success: true, blog: newBlog });
+    if (error) {
+      if (error.code === "23505") { // Unique constraint violation (duplicate slug)
+        return NextResponse.json({ success: false, error: "Slug (Đường dẫn tĩnh) này đã tồn tại!" }, { status: 400 });
+      }
+      throw error;
+    }
+
+    const responseBlog = {
+      ...data,
+      commentsCount: data.comments_count || 0
+    };
+
+    return NextResponse.json({ success: true, blog: responseBlog });
   } catch (error) {
-    console.error("Lỗi tạo blog:", error);
+    console.error("Lỗi tạo blog trên Supabase:", error);
     return NextResponse.json({ success: false, error: "Tạo bài viết thất bại!" }, { status: 500 });
   }
 }

@@ -1,54 +1,34 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs/promises";
+import { supabase } from "@/helper/supabase";
 
-const usersPath = path.join(process.cwd(), "src", "data", "users.json");
-
-// Helper function to read users
-async function readUsers() {
-  try {
-    const data = await fs.readFile(usersPath, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    return [
-      {
-        username: "admin",
-        passcode: process.env.ADMIN_PASSCODE || "DucNam@87",
-        role: "admin",
-        name: "Đức Nam",
-      },
-    ];
-  }
-}
-
-// Helper function to write users
-async function writeUsers(users) {
-  await fs.writeFile(usersPath, JSON.stringify(users, null, 2), "utf-8");
-}
-
-// Helper to check authentication
 function checkAuth(request) {
   const authHeader = request.headers.get("authorization");
   return authHeader === "Bearer admin_token_website_aba";
 }
 
-// GET: Lấy danh sách toàn bộ người dùng (ẩn mật khẩu)
+// GET: Lấy danh sách toàn bộ người dùng từ Supabase (ẩn mật khẩu)
 export async function GET(request) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
   }
 
   try {
-    const users = await readUsers();
-    // Ẩn mật khẩu khi gửi về Client để bảo mật
-    const safeUsers = users.map(({ passcode, ...rest }) => rest);
-    return NextResponse.json({ success: true, users: safeUsers });
+    const { data: users, error } = await supabase
+      .from("users")
+      .select("username, name, role");
+
+    if (error) {
+      throw error;
+    }
+
+    return NextResponse.json({ success: true, users });
   } catch (error) {
+    console.error("Lỗi đọc dữ liệu người dùng từ Supabase:", error);
     return NextResponse.json({ success: false, error: "Lỗi đọc dữ liệu người dùng!" }, { status: 500 });
   }
 }
 
-// POST: Tạo tài khoản mới
+// POST: Tạo tài khoản mới trên Supabase
 export async function POST(request) {
   if (!checkAuth(request)) {
     return NextResponse.json({ success: false, error: "Không có quyền truy cập!" }, { status: 401 });
@@ -66,17 +46,7 @@ export async function POST(request) {
     }
 
     const cleanUsername = username.trim().toLowerCase();
-    const users = await readUsers();
 
-    // Kiểm tra tên đăng nhập đã tồn tại chưa
-    if (users.some((u) => u.username.toLowerCase() === cleanUsername)) {
-      return NextResponse.json(
-        { success: false, error: "Tên đăng nhập này đã tồn tại trên hệ thống!" },
-        { status: 400 }
-      );
-    }
-
-    // Thêm user mới
     const newUser = {
       username: cleanUsername,
       passcode: passcode.trim(),
@@ -84,12 +54,23 @@ export async function POST(request) {
       role: role,
     };
 
-    users.push(newUser);
-    await writeUsers(users);
+    const { error } = await supabase
+      .from("users")
+      .insert(newUser);
+
+    if (error) {
+      if (error.code === "23505") { // Unique constraint violation (duplicate username)
+        return NextResponse.json(
+          { success: false, error: "Tên đăng nhập này đã tồn tại trên hệ thống!" },
+          { status: 400 }
+        );
+      }
+      throw error;
+    }
 
     return NextResponse.json({ success: true, message: "Tạo người dùng mới thành công!" });
   } catch (error) {
-    console.error("Lỗi tạo người dùng:", error);
+    console.error("Lỗi tạo người dùng trên Supabase:", error);
     return NextResponse.json({ success: false, error: "Lỗi hệ thống!" }, { status: 500 });
   }
 }
@@ -113,17 +94,18 @@ export async function DELETE(request) {
       return NextResponse.json({ success: false, error: "Không thể xóa tài khoản Quản trị viên mặc định!" }, { status: 400 });
     }
 
-    const users = await readUsers();
-    const updatedUsers = users.filter((u) => u.username.toLowerCase() !== usernameToDelete);
+    const { error, count } = await supabase
+      .from("users")
+      .delete({ count: "planned" })
+      .eq("username", usernameToDelete);
 
-    if (users.length === updatedUsers.length) {
-      return NextResponse.json({ success: false, error: "Không tìm thấy tài khoản cần xóa!" }, { status: 404 });
+    if (error) {
+      throw error;
     }
 
-    await writeUsers(updatedUsers);
     return NextResponse.json({ success: true, message: "Xóa tài khoản thành công!" });
   } catch (error) {
-    console.error("Lỗi xóa người dùng:", error);
+    console.error("Lỗi xóa người dùng trên Supabase:", error);
     return NextResponse.json({ success: false, error: "Lỗi hệ thống!" }, { status: 500 });
   }
 }
