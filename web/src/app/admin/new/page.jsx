@@ -23,6 +23,64 @@ const RichTextEditor = dynamic(() => import("@/components/RichTextEditor"), {
   ),
 });
 
+// Helper function to compress images client-side to prevent Vercel payload too large (413) errors
+const compressImage = (file, maxWidth = 1600, maxHeight = 1600, quality = 0.85) => {
+  return new Promise((resolve) => {
+    if (!file || !file.type.startsWith("image/")) {
+      resolve(file);
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (event) => {
+      const img = new Image();
+      img.src = event.target.result;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+        } else {
+          if (height > maxHeight) {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              resolve(file);
+              return;
+            }
+            const compressedFile = new File([blob], file.name, {
+              type: file.type || "image/jpeg",
+              lastModified: Date.now(),
+            });
+            resolve(compressedFile);
+          },
+          file.type || "image/jpeg",
+          quality
+        );
+      };
+      img.onerror = () => resolve(file);
+    };
+    reader.onerror = () => resolve(file);
+  });
+};
+
 export default function NewBlogPost() {
   const router = useRouter();
 
@@ -88,11 +146,20 @@ export default function NewBlogPost() {
   };
 
   const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const rawFile = e.target.files[0];
+    if (!rawFile) return;
 
     setUploading(true);
     setError("");
+
+    let file = rawFile;
+    if (rawFile.type.startsWith("image/")) {
+      try {
+        file = await compressImage(rawFile);
+      } catch (compressErr) {
+        console.error("Lỗi tối ưu ảnh:", compressErr);
+      }
+    }
 
     const formData = new FormData();
     formData.append("file", file);
