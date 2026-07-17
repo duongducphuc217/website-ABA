@@ -120,14 +120,21 @@ export default function EditBlogPost() {
         method: "POST",
         body: formData,
       });
-      const data = await response.json();
-      if (data.success) {
+      
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonErr) {
+        throw new Error(`Máy chủ phản hồi lỗi không xác định (Mã trạng thái: ${response.status})`);
+      }
+
+      if (response.ok && data.success) {
         setImage(data.url);
       } else {
         setError(data.error || "Tải ảnh lên thất bại!");
       }
     } catch (err) {
-      setError("Đã xảy ra lỗi khi tải ảnh lên!");
+      setError(err.message || "Đã xảy ra lỗi khi tải ảnh lên!");
     } finally {
       setUploading(false);
     }
