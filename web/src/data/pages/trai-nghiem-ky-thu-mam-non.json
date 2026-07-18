@@ -1,0 +1,87 @@
+{
+  "title": "Trai Nghiem Ky Thu Mầm Non",
+  "meta_title": "Trai Nghiem Ky Thu Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Trai Nghiem Ky Thu Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "trai-nghiem-ky-thu-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "TRAI NGHIEM KY THU MẦM NON",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Mầm non",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khởi Động Năng Lực Cùng MC",
+          "subtitle": "Tại sân khấu chính - Khởi động cùng MC vui nhộn",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/trai-nghiem-ky-thu/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động ngày hội dã ngoại tưng bừng. Mỗi tập thể lớp kết hợp thành 1 đội hình đoàn kết, cùng chơi các game hoạt náo tập thể vui nhộn cùng chú hề MC."
+        },
+        {
+          "title": "Chặng Vận Động Vui Nhộn Ngoài Trời",
+          "subtitle": "Thu hoạch nông sản, đua xe chòi chân & nhà phao hơi",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/trai-nghiem-ky-thu/challenge_teambuilding.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Các bé tham gia chuỗi vận động thể chất dẻo dai: Vượt chướng ngại vật nhà phao liên hoàn hơi, đua xe đạp chòi chân thăng bằng kịch tính, đua hươu raindee hơi, nhảy bao bố sắc màu, ném bóng rổ và thu hoạch nông sản dã ngoại."
+        },
+        {
+          "title": "Sáng Tạo Nghệ Thuật Độc Đáo",
+          "subtitle": "Vẽ tranh bằng ngón tay, in tranh Đông Hồ & làm gà bông",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/trai-nghiem-ky-thu/challenge_art.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Khơi mở khiếu hội họa màu sắc của trẻ: vẽ tranh sáng tạo bằng ngón tay nhỏ nhắn, in tranh Đông Hồ truyền thống, in tranh bóng bong bóng xà phòng xốp, kể chuyện rối bóng thần tiên và tự làm gà con bằng bông xinh xắn."
+        },
+        {
+          "title": "Khám Phá Khoa Học Ống Hút Kỳ Diệu",
+          "subtitle": "Thực nghiệm kèn ống hút & phóng tên lửa ống hút",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/trai-nghiem-ky-thu/challenge_science.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Kích thích trí tò mò logic khoa học của bé qua các bài thực nghiệm trực quan sinh động: Bé tự tay làm chiếc kèn phát ra âm thanh từ ống hút giấy, chế tạo mô hình tên lửa hơi phóng cao từ ống hút."
+        }
+      ]
+    }
+  }
+}

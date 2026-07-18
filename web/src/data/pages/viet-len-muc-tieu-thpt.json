@@ -1,0 +1,166 @@
+{
+  "title": "Viết Lên Mục Tiêu - Chương trình dã ngoại trải nghiệm THPT",
+  "meta_title": "Viết Lên Mục Tiêu - Chương trình dã ngoại trải nghiệm THPT",
+  "meta_description": "Chương trình dã ngoại giáo dục trải nghiệm Viết Lên Mục Tiêu dành riêng cho học sinh Trung học phổ thông (THPT) của Trung tâm ABA. Giúp các em thiết lập mục tiêu cuộc đời.",
+  "meta_keywords": [
+    "viết lên mục tiêu thpt",
+    "giáo dục trải nghiệm thpt",
+    "teambuilding thpt",
+    "kỹ năng sống thpt",
+    "mục tiêu cuộc sống",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "VIẾT LÊN MỤC TIÊU\nXÂY DỰNG TƯƠNG LAI",
+      "subtitle": "Truyền cảm hứng mạnh mẽ cho học sinh THPT khám phá điểm mạnh bản thân, rèn luyện tư duy tích cực và học cách thiết lập mục tiêu cuộc sống hiệu quả cùng chuyên gia, diễn giả giàu kinh nghiệm.",
+      "duration": "mỗi khối 1 buổi",
+      "target": "Học sinh THPT",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/goals_hero_bg.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất cho học sinh theo khung chương trình giáo dục trải nghiệm năm 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "icon": "ph-bold ph-star",
+          "description": "Nuôi dưỡng suy nghĩ tích cực, lòng tự tin và củng cố các giá trị tình cảm gia đình vững chắc cho học sinh THPT.",
+          "points": [
+            "Học sinh luôn suy nghĩ tích cực, có niềm tin vào bản thân, gia đình và cuộc sống.",
+            "Học sinh yêu quý và biết cách trân trọng bản thân mình hơn."
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "icon": "ph-bold ph-users-three",
+          "description": "Thúc đẩy phát triển khả năng thấu hiểu bản thân, rèn luyện kỹ năng truyền đạt giao tiếp và làm việc nhóm hiệu quả.",
+          "points": [
+            "Học sinh nhận diện, phát huy được các điểm mạnh cá nhân.",
+            "Nhận biết hạn chế điểm yếu để chủ động cải thiện.",
+            "Rèn luyện kỹ năng giao tiếp tự tin và khả năng hợp tác trong các nhiệm vụ tập thể."
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "icon": "ph-bold ph-barbell",
+          "description": "Bồi dưỡng phương pháp thiết lập mục tiêu khoa học, rèn luyện sức bền thể chất thông qua các hoạt động dã ngoại.",
+          "points": [
+            "Học sinh định hướng sống có mục tiêu, ước mơ rõ ràng.",
+            "Bắt đầu hình thành thói quen ghi ra những điều mình muốn đạt được.",
+            "Thực hành nhuần nhuyễn kỹ năng phối hợp làm việc nhóm dã ngoại.",
+            "Rèn luyện thể lực bền bỉ và kỹ năng vận động linh hoạt."
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Kết hợp hài hòa giữa hội thảo chuyên gia truyền cảm hứng và các hoạt động teambuilding vận động thể chất bùng nổ.",
+      "items": [
+        {
+          "title": "Khởi Động Toàn Trường Cùng MC Vui Nhộn",
+          "subtitle": "Tại sân trường - Khởi động teambuilding tưng bừng",
+          "image": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/challenge_ball.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "MC hoạt náo của ABA tạo không khí sôi động, phấn khởi. Tất cả các lớp tham gia chặng đua Sức mạnh đồng đội: chuyền quả bóng yoga khổng lồ qua đầu lớp mình nhanh nhất để giành chiến thắng."
+        },
+        {
+          "title": "Trải Nghiệm: Sức Mạnh Của Mục Tiêu",
+          "subtitle": "Hội thảo chia sẻ cùng Chuyên gia ABA",
+          "image": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/goals_hero_bg.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Chuyên gia chia sẻ sâu sắc về vai trò của ước mơ trong cuộc sống học sinh THPT. Tương tác qua trò chơi 'Bịt mắt ném bóng' rút ra bài học kinh nghiệm, thắp sáng động lực hành động."
+        },
+        {
+          "title": "Trải Nghiệm 1: Viết Lên Mục Tiêu Cuộc Đời",
+          "subtitle": "Phân tích điểm mạnh & Phương pháp khoa học SMART",
+          "image": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/challenge_worm.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Học sinh khám phá bản thân qua các chủ đề: Bạn chính là những gì bạn nghĩ; Câu chuyện tờ giấy trắng và điểm đen; Viết ra 30 điểm mạnh cá nhân; Khám phá 9 loại hình trí thông minh và học cách lập mục tiêu công thức 'Từ X -> Y + Khi nào'."
+        },
+        {
+          "title": "Trải Nghiệm 2: Vượt Qua Thử Thách",
+          "subtitle": "Con đường thành công & Hướng tới mục tiêu",
+          "image": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/challenge_pipes.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Thử thách 1 'Con đường thành công': Đội chơi dùng vật dụng giới hạn xây dựng con đường đưa cả đội về đích. Thử thách 2 'Hướng tới mục tiêu': Vận chuyển ống hơi và ném bóng yoga trúng các ô điểm số mục tiêu."
+        },
+        {
+          "title": "Trải Nghiệm 3: Teambuilding Chinh Phục Mục Tiêu",
+          "subtitle": "Đồng đội ăn ý & Vượt núi hơi khổng lồ",
+          "image": "/assets/images/trai-nghiem/cap-thpt/viet-len-muc-tieu/challenge_climbing.png",
+          "badgeColor": "bg-pink-50 text-pink-650 border-pink-200",
+          "description": "Thử thách 1 'Đồng đội ăn ý': Tâng bóng yoga bằng nệm tâng không chạm tay lọt vào lưới của đồng đội. Thử thách 2 'Chinh phục mục tiêu': Từng thành viên vượt chướng ngại vật liên hoàn và leo lên núi hơi giành lấy vật tích điểm về cho lớp."
+        }
+      ]
+    },
+    "timeline": {
+      "kicker": "LỊCH TRÌNH CHI TIẾT",
+      "heading": "Khung Thời Gian Vận Hành Chương Trình",
+      "subtitle": "Thời lượng 1 buổi sáng trọn vẹn từ 7h15 đến 11h00, đảm bảo nhịp độ học hỏi lý thú và vận động sảng khoái tối đa.",
+      "items": [
+        {
+          "time": "07:15 – 07:30",
+          "title": "Tập Trung Ổn Định",
+          "icon": "ph-bold ph-users-three",
+          "badgeColor": "bg-blue-50 text-blue-650 border-blue-100",
+          "details": "Học sinh tập trung tại vị trí tập kết sân trường theo đơn vị lớp, mỗi lớp ngồi theo 2 hàng ghế trước sân khấu lớn."
+        },
+        {
+          "time": "07:30 – 08:05",
+          "title": "Khai Mạc & Sức Mạnh Của Mục Tiêu",
+          "icon": "ph-bold ph-microphone-stage",
+          "badgeColor": "bg-purple-50 text-purple-700 border-purple-100",
+          "details": "Khởi động náo nhiệt toàn trường cùng MC ABA. Tuyên bố lý do, giới thiệu đại biểu và khai mạc chương trình. Chuyên gia ABA xuất hiện chia sẻ các bài học ý nghĩa, giúp các em nhận biết tầm quan trọng của việc xây dựng mục tiêu trong học tập và cuộc sống."
+        },
+        {
+          "time": "08:05 – 08:30",
+          "title": "Thách Thức Tinh Thần Đoàn Kết",
+          "icon": "ph-bold ph-trophy",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-100",
+          "details": "Thi đấu giao lưu toàn trường các trò chơi teambuilding gắn kết: Bóng chuyền đồng đội, Con đường đoàn kết."
+        },
+        {
+          "time": "08:30 – 08:35",
+          "title": "Phân Nhóm Trải Nghiệm",
+          "icon": "ph-bold ph-arrows-split",
+          "badgeColor": "bg-slate-100 text-slate-650 border-slate-200",
+          "details": "MC phân chia học sinh toàn trường thành 3 nhóm lớn. Phổ biến quy trình di chuyển luân phiên qua 3 trạm thử thách chính."
+        },
+        {
+          "time": "08:40 – 09:10",
+          "title": "Vòng Xoay Trải Nghiệm - Lượt 1",
+          "icon": "ph-bold ph-number-one",
+          "badgeColor": "bg-emerald-50 text-emerald-700 border-emerald-100",
+          "details": "Nhóm 1: Học viết mục tiêu SMART tại phòng học truyền cảm hứng. Nhóm 2: Teambuilding Chinh phục mục tiêu (đồng đội ăn ý & núi hơi). Nhóm 3: Teambuilding Vượt qua thử thách (con đường thành công & hướng tới mục tiêu)."
+        },
+        {
+          "time": "09:20 – 10:00",
+          "title": "Vòng Xoay Trải Nghiệm - Lượt 2",
+          "icon": "ph-bold ph-number-two",
+          "badgeColor": "bg-emerald-50 text-emerald-700 border-emerald-100",
+          "details": "Nhóm 1: Teambuilding Vượt qua thử thách. Nhóm 2: Học viết mục tiêu SMART. Nhóm 3: Teambuilding Chinh phục mục tiêu."
+        },
+        {
+          "time": "10:10 – 10:50",
+          "title": "Vòng Xoay Trải Nghiệm - Lượt 3",
+          "icon": "ph-bold ph-number-three",
+          "badgeColor": "bg-emerald-50 text-emerald-700 border-emerald-100",
+          "details": "Nhóm 1: Teambuilding Chinh phục mục tiêu. Nhóm 2: Teambuilding Vượt qua thử thách. Nhóm 3: Học viết mục tiêu SMART."
+        },
+        {
+          "time": "11:00",
+          "title": "Bế Mạc Chương Trình",
+          "icon": "ph-bold ph-flag-banner",
+          "badgeColor": "bg-red-50 text-red-650 border-red-100",
+          "details": "Tập trung học sinh tại sân khấu chính. MC tuyên bố bế mạc chương trình, gửi thông điệp động lực năm học mới và chào tạm biệt toàn trường."
+        }
+      ]
+    }
+  }
+}

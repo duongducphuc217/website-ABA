@@ -1,0 +1,47 @@
+{
+  "title": "Thu Thach Sinh Ton THCS",
+  "meta_title": "Thu Thach Sinh Ton THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Thu Thach Sinh Ton THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "thu-thach-sinh-ton-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khởi Động Đồng Đội",
+          "subtitle": "Phá băng khoảng cách cùng MC cuồng nhiệt",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thu-thach-sinh-ton/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Thử sức tinh thần đồng đội đầu giờ: Khởi động vui nhộn, các trò chơi gắn kết đồng lòng. Truyền nước tiếp sức rèn luyện tinh thần 'Muốn đi nhanh hãy đi một mình, muốn đi xa hãy đi cùng nhau' trước khi chia nhóm tham gia xoay vòng hoạt động."
+        },
+        {
+          "title": "Trải Nghiệm 1: Kiến Thức Sinh Tồn",
+          "subtitle": "Chuyên đề nhận diện thiên nhiên và định hướng",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thu-thach-sinh-ton/challenge_knowledge.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Học sinh tìm hiểu kiến thức và kỹ năng sinh tồn cơ bản: Kiến thức thường thức về cuộc sống (nhận diện các loại rau củ dại ăn được). Thực hành xác định phương hướng bằng cách sử dụng la bàn cơ học, chế tạo la bàn tự chế từ kim nhiễm từ và đọc phương hướng bằng mặt trời, mặt trăng."
+        },
+        {
+          "title": "Trải Nghiệm 2: Thử Thách Sinh Tồn",
+          "subtitle": "Chuyên đề tự lực chế tạo và xử lý tài nguyên",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thu-thach-sinh-ton/challenge_survival.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Đối mặt trực tiếp với các bài toán sinh tồn cốt lõi: Học cách tạo lửa bằng các dụng cụ dã ngoại chuyên dụng (đá lửa, thanh gỗ xoay) và tự tay nướng chín thực phẩm. Tự thiết kế và chế tạo các ống lọc nước thô sơ nhiều tầng từ cát, sỏi, và than hoạt tính."
+        },
+        {
+          "title": "Trải Nghiệm 3: Đội Cứu Hộ Tài Ba",
+          "subtitle": "Chặng đua teambuilding liên hoàn cứu trợ",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thu-thach-sinh-ton/challenge_rescue.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh kết hợp sức mạnh thể chất và tư duy tổ chức trong trò chơi teambuilding mô phỏng cứu hộ: Tổ chức giải cứu đồng đội bị nạn, phối hợp vận chuyển lương thực tiếp tế qua các chướng ngại vật và vượt qua khu vực nhà phao liên hoàn khổng lồ."
+        }
+      ]
+    }
+  }
+}

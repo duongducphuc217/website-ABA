@@ -1,0 +1,47 @@
+{
+  "title": "Ngay Hoi Nuoc Vui Nhon Mầm Non",
+  "meta_title": "Ngay Hoi Nuoc Vui Nhon Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Ngay Hoi Nuoc Vui Nhon Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "ngay-hoi-nuoc-vui-nhon-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khởi Động MC Vui Nhộn & Lưu Ý An Toàn",
+          "subtitle": "Bật nhạc sôi động & trò chơi hoạt náo ngoài trời",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/ngay-hoi-nuoc-vui-nhon/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động ngày hội với các trò chơi tập thể lớn vui nhộn. Chú hề MC ABA tận tâm nhắc nhở các quy tắc an toàn nước quan trọng trước khi các bé mầm non tham gia vào lễ hội nước."
+        },
+        {
+          "title": "Cầu Trượt Nước Hơi & Ma Trận Bong Bóng",
+          "subtitle": "Chinh phục cầu trượt nước khổng lồ & tắm bong bóng xà phòng",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/ngay-hoi-nuoc-vui-nhon/challenge_bubbles.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Bé thỏa sức chinh phục cầu trượt hơi nước mát lạnh trượt dài cực đã. Đắm mình trong 'Ma trận bong bóng xà phòng' xốp xinh xắn ngập tràn nụ cười sảng khoái."
+        },
+        {
+          "title": "Tay Súng Nước Thiện Xạ & Câu Cá Vui Vẻ",
+          "subtitle": "Bắn súng phun nước tiêu diệt bia quái vật & góc câu cá",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/ngay-hoi-nuoc-vui-nhon/challenge_shooting.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Rèn luyện sự khéo léo kết hợp tay mắt: Bé ngắm bắn phun súng nước hạ gục các bia quái vật ngộ nghĩnh. Tham gia chặng câu cá sắc màu đầy kiên trì lý thú."
+        },
+        {
+          "title": "Đua Thuyền Rùa & Bowling Nước Kịch Tính",
+          "subtitle": "Đua thuyền phao hơi, bowling nước & vận chuyển nước",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/ngay-hoi-nuoc-vui-nhon/challenge_boat.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Bé cùng đồng đội tham gia thi đấu đua thuyền rùa phao hơi tốc độ trên cạn. Chơi bowling nước ném đổ chai đổ nước và chặng thi vận chuyển nước khéo léo đổ đầy xô."
+        }
+      ]
+    }
+  }
+}

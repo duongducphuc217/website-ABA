@@ -1,0 +1,47 @@
+{
+  "title": "Merry Christmas Tiểu Học",
+  "meta_title": "Merry Christmas Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Merry Christmas Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "merry-christmas-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Ông Già Noel & Công Chúa Tuyết Xuất Hiện",
+          "subtitle": "Khai mạc hoạt cảnh giáng sinh kịch tính",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/merry-christmas/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi đầu chương trình đầy bất ngờ với hoạt cảnh giáng sinh hoành tráng. Ông già Noel vui tính và Công chúa Tuyết nhân hậu xuất hiện từ xa chào mừng, giao lưu và phát động không khí giáng sinh an lành."
+        },
+        {
+          "title": "Ảo Thuật Xiếc Tôn Ngộ Không Đặc Sắc",
+          "subtitle": "Biểu diễn xiếc khỉ dí dỏm vui nhộn",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/merry-christmas/challenge_monkey.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Đón xem màn xuất hiện vô cùng độc đáo của Tôn Ngộ Không đi kèm chú khỉ tinh nghịch biểu diễn đi xe đạp tí hon, giữ thăng bằng và nhào lộn điêu luyện trên sân khấu khiến các bé thích thú reo hò."
+        },
+        {
+          "title": "Bartender Xiếc Lửa Duy Khánh",
+          "subtitle": "Màn trình diễn tung hứng ngọn lửa mãn nhãn",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/merry-christmas/challenge_show.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Thưởng thức màn biểu diễn nghệ thuật tung hứng chai và biểu diễn xiếc lửa đầy hồi hộp của nghệ sĩ bartender Duy Khánh. Những ngọn lửa rực sáng trong sự bảo đảm an toàn tuyệt đối sẽ mang lại trải nghiệm đáng nhớ."
+        },
+        {
+          "title": "Đố Vui Có Thưởng & Bốc Thăm Santa",
+          "subtitle": "Giao lưu tương tác nhận quà giáng sinh hấp dẫn",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/merry-christmas/challenge_santa.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Gia nhập cuộc chơi đố vui sân khấu hóa phản xạ nhanh cùng Ông già Noel để rinh về các túi quà giáng sinh dễ thương. Hồi hộp chờ đón phần bốc thăm may mắn trúng thưởng cực kỳ kịch tính và trao quà cuối chương trình."
+        }
+      ]
+    }
+  }
+}

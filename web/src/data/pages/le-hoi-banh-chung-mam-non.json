@@ -1,0 +1,87 @@
+{
+  "title": "Le Hoi Banh Chung Mầm Non",
+  "meta_title": "Le Hoi Banh Chung Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Banh Chung Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-banh-chung-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "LE HOI BANH CHUNG MẦM NON",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Mầm non",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khai Mạc Lễ Hội Bánh Chưng",
+          "subtitle": "Múa lân chào xuân & Khởi động cùng MC",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-banh-chung/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Tiết mục văn nghệ mở màn từ các bạn nhỏ nhà trường. Trống hội lân sư rồng khai hội rực rỡ và phát biểu chúc Tết ấm cúng từ BGH."
+        },
+        {
+          "title": "Trải Nghiệm Gói Bánh Chưng Nghĩa Tình",
+          "subtitle": "Bé đong gạo, đỗ, thịt gói bánh chung cùng đội nhóm",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-banh-chung/hero_bg.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Nghệ nhân hướng dẫn tỉ mỉ các bước làm bánh dã ngoại. Các bé mầm non ngồi chiếu tre cùng bạn học thực hành đong gạo đong đỗ và cùng thầy cô, phụ huynh gói hoàn chỉnh chiếc bánh chưng mang về."
+        },
+        {
+          "title": "Phiên Chợ Quê Gắn Kết",
+          "subtitle": "Khám phá quầy hàng tết & học kỹ năng tài chính cơ bản",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-banh-chung/challenge_market.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Bé khám phá các gian hàng chợ quê tết cổ truyền rực rỡ sắc màu do các cô giáo bày bán. Thực hành mua sắm lịch sự giúp bé nhận biết mệnh giá và kỹ năng giao dịch sơ khởi."
+        },
+        {
+          "title": "Lễ Hội Mùa Xuân & Trò Chơi Trúng Thưởng",
+          "subtitle": "Ném vòng, bắn pháo, ném bao và lâu đài hơi vui nhộn",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-banh-chung/challenge_festival.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Mở khu trò chơi hấp dẫn: Nỏ Thần Liên Châu bắn pháo hơi, Gieo lộc đầu xuân quay số, Vòng tròn đồng bào ném vòng, Tiêu diệt quái vật ném bao, nhà hơi ném bóng rổ và chinh phục lâu đài hơi."
+        }
+      ]
+    }
+  }
+}

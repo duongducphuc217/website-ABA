@@ -1,0 +1,47 @@
+{
+  "title": "Water Safe And Fun Tiểu Học",
+  "meta_title": "Water Safe And Fun Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Water Safe And Fun Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "water-safe-and-fun-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Sóng Thần Vui Nhộn & Cứu Hộ Nhí",
+          "subtitle": "Khởi động MC & Học kỹ năng an toàn nước",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/water-safe-and-fun/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động cuồng nhiệt cùng MC qua các game Sóng thần vui nhộn, Đoàn tàu ra khơi. Trải nghiệm biệt đội cứu hộ nhí: học sinh lớp 1,2,3 thực hành gọi cứu hộ, cách nắm phao cứu sinh; lớp 4,5 thực hành hô hấp nhân tạo cho nạn nhân."
+        },
+        {
+          "title": "Cầu Phao Bồng Bềnh & Ngư Dân Dũng Cảm",
+          "subtitle": "Thử thách thăng bằng & Vượt rào giải cứu cá cua",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/water-safe-and-fun/challenge_cpr.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Học sinh vượt qua cầu phao đung đưa liên tục trên mặt nước để rèn luyện thăng bằng. Tham gia chặng đua 'Ngư dân dũng cảm' vượt qua chướng ngại vật để giải cứu những chú cua, chú cá mắc kẹt trong môi trường nước ô nhiễm."
+        },
+        {
+          "title": "Ma Trận Nước & Dũng Sĩ Can Đảm",
+          "subtitle": "Đạp xe ma trận & Vượt nhà phao khổng lồ",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/water-safe-and-fun/challenge_boat.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Phối hợp đạp xe đạp vượt qua ma trận nước phun mát lạnh đầy kịch tính. Trải nghiệm dũng sĩ can đảm leo qua nhà phao khổng lồ vượt chướng ngại vật, né tránh vòi rồng phun nước ác liệt để mang ngọc rồng về đích."
+        },
+        {
+          "title": "Đua Thuyền Tự Chế & Trận Đấu Súng Nước",
+          "subtitle": "Thiết kế thuyền buồm & Đại chiến súng nước",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/water-safe-and-fun/challenge_battle.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh tự tay lắp ghép, chế tạo mô hình thuyền buồm từ các vật liệu đơn giản và thả đua để học nguyên lý di chuyển vật lý của gió. Bùng nổ năng lượng ngày hè với trận chiến súng nước, câu cá trúng thưởng."
+        }
+      ]
+    }
+  }
+}

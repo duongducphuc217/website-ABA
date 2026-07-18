@@ -1,0 +1,87 @@
+{
+  "title": "Le Hoi Xuan Mầm Non",
+  "meta_title": "Le Hoi Xuan Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Xuan Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-xuan-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "LE HOI XUAN MẦM NON",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Mầm non",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khai Mạc Lễ Hội & Xiếc Hài Nghệ Thuật",
+          "subtitle": "Múa lân khai mạc & Biểu diễn xiếc chuyên nghiệp",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-xuan/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Tiết mục văn nghệ mở màn tự tin. Trống hội rộn ràng, múa lân sư rồng sôi động. MC chúc Tết mừng xuân và biểu diễn xiếc nghệ thuật, ảo thuật hấp dẫn lôi cuốn các bé."
+        },
+        {
+          "title": "Trải Nghiệm Văn Hóa Dân Gian Độc Đáo",
+          "subtitle": "Bé tự tay nặn tò he, in tranh Đông Hồ & làm xôi",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-xuan/challenge_history.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Bé chia nhóm xoay vòng trải nghiệm thực tế cùng nghệ nhân dân gian: tự tay nặn những chú tò he đất sét nhiều hình thù, in những bức tranh Đông Hồ đầy màu sắc và thực hành làm xôi Đông Hồ xôm tụ."
+        },
+        {
+          "title": "Hội Chợ Xuân: Kết Nối Những Yêu Thương",
+          "subtitle": "Tại sân trường - Mở cửa các gian hàng tết quê",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-xuan/challenge_sports.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Bé dạo bước quanh các quầy hàng trang trí rực rỡ do các cô giáo bày bán. Khám phá ẩm thực ngày xuân và tham gia các trò chơi dân gian ném vòng, nhảy lò cò, bịt mắt đánh trống."
+        },
+        {
+          "title": "Trò Chơi Trúng Thưởng Vận Động Hơi",
+          "subtitle": "Nỏ thần liên châu, ném bao, nhà hơi & lâu đài hơi",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-xuan/challenge_booths.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Thỏa sức vận động thể chất dẻo dai tại các cụm game trúng thưởng: Bắn pháo nỏ thần liên châu, gieo lộc quay số, bắt ngựa ném vòng, tiêu diệt quái vật ném bao, ném bóng rổ và chinh phục lâu đài hơi."
+        }
+      ]
+    }
+  }
+}

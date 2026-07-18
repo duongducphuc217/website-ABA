@@ -1,0 +1,47 @@
+{
+  "title": "Trai Nghiem Sang Tao Tiểu Học",
+  "meta_title": "Trai Nghiem Sang Tao Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Trai Nghiem Sang Tao Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "trai-nghiem-sang-tao-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "MC Vui Nhộn Khởi Động Sân Trường",
+          "subtitle": "Bật nhạc sôi động & các cụm game teambuilding nhanh",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/trai-nghiem-sang-tao/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động ngày hội với các hoạt động tập thể náo nhiệt: chơi chuyền bóng yoga đồng đội, thử thách 'Con đường đoàn kết' (Khối 3-5) hoặc nhảy dân vũ tập thể vui vẻ (Khối 1-3)."
+        },
+        {
+          "title": "Team Building Kết Nối Đồng Đội",
+          "subtitle": "Tại sân trường - Đua sâu hơi siêu tốc & Đua ngựa",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/trai-nghiem-sang-tao/challenge_teambuilding.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Các lớp cùng nhau phối hợp vận động nhịp nhàng vượt chướng ngại vật: chặng đua sâu hơi siêu tốc, đua ngựa hơi 'Kỵ sĩ tài ba' và cuộc đua rùa và thỏ hơi đầy hài hước kịch tính."
+        },
+        {
+          "title": "Nghệ Thuật Thủ Công Truyền Thống",
+          "subtitle": "Tri thức văn hóa - In tranh Đông Hồ & Chuồn chuồn tre",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/trai-nghiem-sang-tao/challenge_art.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Các em tham gia Rung Chuông Vàng tìm hiểu lịch sử Đông Hồ. Tự tay thực hành kỹ thuật in tranh Đông Hồ nhiều màu, trang trí chuồn chuồn tre thủ công và cùng xây tháp gỗ đoàn kết khổng lồ."
+        },
+        {
+          "title": "Khoa Học Cuộc Sống & Lửa Nước Sinh Tồn",
+          "subtitle": "Thực nghiệm khoa học lực đẩy & bộ lọc nước mini",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/trai-nghiem-sang-tao/challenge_science.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Khám phá nguyên lý phản lực: đua ô tô tái chế tự chế chạy bằng động cơ phản lực cánh quạt, phóng tên lửa nước hơi. Học cách tạo lửa nướng thịt và thực hành thiết kế bình lọc nước mini sinh tồn."
+        }
+      ]
+    }
+  }
+}

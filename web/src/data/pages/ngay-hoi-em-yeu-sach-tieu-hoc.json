@@ -1,0 +1,47 @@
+{
+  "title": "Ngay Hoi Em Yeu Sach Tiểu Học",
+  "meta_title": "Ngay Hoi Em Yeu Sach Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Ngay Hoi Em Yeu Sach Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "ngay-hoi-em-yeu-sach-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Trạm 1: Đường Tăng Đi Thỉnh Kinh",
+          "subtitle": "Tại sân trường - Vận động Teambuilding phao hơi",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/ngay-hoi-em-yeu-sach/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Học sinh phối hợp đồng đội vượt qua chặng nhà phao hơi khổng lồ để mang về các rương sách ý nghĩa. Trò chơi vận động rèn tinh thần đoàn kết, giúp các em cảm nhận sâu sắc giá trị quý giá của từng cuốn sách."
+        },
+        {
+          "title": "Trạm 2 & 3: Đọc Sách Thông Minh & Độc Giả Thông Thái",
+          "subtitle": "Tại lớp học và Nhà thể chất - Học thuật & Vui chơi",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/ngay-hoi-em-yeu-sach/challenge_basics.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Thực hành phương pháp đọc sách khoa học để trích xuất và ghi nhớ thông tin nhanh chóng. Tranh tài đố vui hỏi đáp tại nhà thể chất giúp học sinh tích lũy, trao đổi kiến thức từ những cuốn sách thiếu nhi kinh điển."
+        },
+        {
+          "title": "Trạm 4: Sáng Tác Bìa Sách",
+          "subtitle": "Tại lớp học - Vẽ mỹ thuật & Sáng tác nghệ thuật",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/ngay-hoi-em-yeu-sach/challenge_crafts.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Phát huy tối đa trí tưởng tượng bay bổng: học sinh tự tay tô màu, vẽ trang trí bìa của những cuốn sách, truyện tranh mình đã được học hoặc sáng tạo bìa cho các tác phẩm tự sáng tác. Được mang sản phẩm về làm kỷ niệm."
+        },
+        {
+          "title": "Trạm 5: Góc Đọc Sách & Trưng Bày Poster",
+          "subtitle": "Thời gian tự do trải nghiệm văn hóa đọc",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/ngay-hoi-em-yeu-sach/challenge_reading.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh cùng ngồi đọc cuốn sách yêu thích mang theo trong không gian tự do thoải mái. Kết thúc ngày hội bằng buổi triển lãm trưng bày các poster tuyên truyền đọc sách và báo tường độc đáo do các lớp tự thiết kế."
+        }
+      ]
+    }
+  }
+}

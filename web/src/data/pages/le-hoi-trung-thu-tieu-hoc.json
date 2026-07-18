@@ -1,0 +1,87 @@
+{
+  "title": "Le Hoi Trung Thu Tiểu Học",
+  "meta_title": "Le Hoi Trung Thu Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Trung Thu Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-trung-thu-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "LE HOI TRUNG THU TIỂU HỌC",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Tiểu học",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Hoạt Cảnh Hài Hước: AI Là Chú Cuội",
+          "subtitle": "Chú Cuội mải chơi và chú Cuội AI độc đáo",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-trung-thu/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Hoạt cảnh sân khấu hóa dí dỏm: Chú Cuội tạo ra Cuội AI để thay mình đi cùng chị Hằng xuống trần gian. Chị Hằng phát hiện ra và giúp chú Cuội hiểu về trách nhiệm của bản thân, cùng nhau tổ chức trung thu."
+        },
+        {
+          "title": "Khai Mạc Lễ Hội & Múa Lân Sư Rồng",
+          "subtitle": "Trống hội rộn ràng & Xiếc nghệ thuật hấp dẫn",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-trung-thu/challenge_market.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Đoàn lân sư rồng biểu diễn khai mạc náo nhiệt. MC Cuội Hằng tổ chức giải mã câu đố nhận thưởng lớn từ Trung thu diệu kỳ và thưởng thức các tiết mục xiếc nghệ thuật ảo thuật vui mắt."
+        },
+        {
+          "title": "Hội Chợ Trung Thu & Trò Chơi Trúng Thưởng",
+          "subtitle": "Trải nghiệm gian hàng dân gian & trò chơi trúng thưởng",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-trung-thu/hero_bg.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Học sinh tham gia hội chợ mua bán và vui chơi 9 gian hàng trúng thưởng: Phản xạ đỉnh cao, Tay ném số 1, Phi tiêu bóng bóng, Bịt mắt đánh trống, Vòng quay may mắn. Trải nghiệm nặn tò he, tô tượng, lâu đài hơi."
+        },
+        {
+          "title": "Hội Thi Làm Bánh Dẻo & Làm Đèn Ông Sao",
+          "subtitle": "Thi thố tài năng khéo tay giữa các khối lớp",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-trung-thu/challenge_contest.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Khối lớp cử thành viên tranh tài làm bánh dẻo ngon nhất và lắp ghép trang trí đèn ông sao đẹp nhất từ khung tre chuẩn bị sẵn. BGK tổ chức chấm điểm, trưng bày sản phẩm lung linh cuối đêm hội."
+        }
+      ]
+    }
+  }
+}

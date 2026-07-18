@@ -1,0 +1,47 @@
+{
+  "title": "Vu Khuc Giang Sinh Mầm Non",
+  "meta_title": "Vu Khuc Giang Sinh Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Vu Khuc Giang Sinh Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "vu-khuc-giang-sinh-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Ông Già Noel & Công Chúa Tuyết Xuất Hiện",
+          "subtitle": "Hoạt cảnh Giáng Sinh vui nhộn & Thử thách bất ngờ",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/vu-khuc-giang-sinh/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khai mạc tưng bừng: Ông già Noel và Công chúa Tuyết xuất hiện vui vẻ trên sân khấu, gửi lời chào mừng các bạn nhỏ và tổ chức game sân khấu khởi động, trao quà khuyến khích các bé hăng hái."
+        },
+        {
+          "title": "Xiếc Hề Châu Âu Vui Nhộn Mãn Nhãn",
+          "subtitle": "Anh hề châu Âu với các pha tung hứng thăng bằng",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/vu-khuc-giang-sinh/challenge_clown.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Chào đón anh hề xiếc đến từ châu Âu xa xôi mang tới những pha biểu diễn tung hứng bóng, giữ thăng bằng trên xe đạp một bánh vô cùng đặc sắc đầy ắp tiếng cười giòn giã."
+        },
+        {
+          "title": "Đại Hội Xiếc Thú & Tôn Ngộ Không Biểu Diễn",
+          "subtitle": "Xiếc chó/khỉ tài năng & ảo thuật Tôn Ngộ Không",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/vu-khuc-giang-sinh/challenge_monkey.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Những người bạn nhỏ cực kỳ đáng yêu (chú chó thông minh nhảy qua vòng, chú khỉ đi xe đạp) biểu diễn xiếc thú vui nhộn. Tôn Ngộ Không đại náo sân trường thể hiện các tiết mục ảo thuật kỳ ảo."
+        },
+        {
+          "title": "Đoán Tên Bài Hát & Bốc Thăm Trúng Quà Lớn",
+          "subtitle": "Trò chơi đố vui giai điệu & 10 phần quà giáng sinh may mắn",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/vu-khuc-giang-sinh/challenge_santa.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Tham gia chặng đoán tên bài hát Noel nhận quà từ Ông già Noel. Kết thúc bằng hoạt động bốc thăm trúng thưởng 10 phần quà may mắn đặc biệt cho bé và lời chúc Noel bình an."
+        }
+      ]
+    }
+  }
+}

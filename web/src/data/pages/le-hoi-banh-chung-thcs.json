@@ -1,0 +1,47 @@
+{
+  "title": "Le Hoi Banh Chung THCS",
+  "meta_title": "Le Hoi Banh Chung THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Banh Chung THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-banh-chung-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Gói Bánh Chưng - Trọn Vẹn Yêu Thương",
+          "subtitle": "Huấn luyện gói bánh chưng truyền thống",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-banh-chung/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Học sinh xem hướng dẫn gói bánh trực tiếp trên sân khấu từ nghệ nhân. Dưới sự hỗ trợ của điều phối viên ABA và thầy cô giáo, các em tự tay gói hoàn chỉnh chiếc bánh chưng xanh để mang về luộc chín."
+        },
+        {
+          "title": "Hội Chợ Tết - Kết Nối Yêu Thương",
+          "subtitle": "Gian hàng trang trí & Bày bán sản phẩm Tết",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-banh-chung/challenge_market.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Không khí chợ Tết cổ truyền ngập tràn sân trường với các trại chợ quê. Các lớp trang trí sáng tạo gian trại và bày bán các sản phẩm Tết cổ truyền theo chủ đề tự lên kế hoạch."
+        },
+        {
+          "title": "Hội Thi Xuân Đất Việt",
+          "subtitle": "Tranh tài Sử học & Đấu Sumo hơi",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-banh-chung/challenge_contest.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Cuộc thi tranh tài liên khối: Toàn trường thi tài gói bánh chưng nhanh đẹp, thi Rung chuông vàng tìm hiểu kiến thức Tết cổ truyền lịch sử hoặc thi đấu vật Sumo hơi hài hước."
+        },
+        {
+          "title": "Lễ Hội Trò Chơi Ngày Xuân",
+          "subtitle": "Tổng hợp gian hàng nghệ thuật & Trúng thưởng",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-banh-chung/challenge_festival.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Tham gia các khu trò chơi trúng thưởng thú vị: ném vòng, bắn máy bay, nặn tò he, viết thư pháp ông đồ, in tranh Đông Hồ, gắp gấu bông và các hoạt động vượt chướng ngại vật núi hơi."
+        }
+      ]
+    }
+  }
+}

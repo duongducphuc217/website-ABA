@@ -1,0 +1,47 @@
+{
+  "title": "Le Hoi Halloween Tiểu Học",
+  "meta_title": "Le Hoi Halloween Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Halloween Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-halloween-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Hóa Trang Check-in & Gian Hàng Trò Chơi",
+          "subtitle": "Hội chợ hóa trang và thử thách trúng thưởng",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-halloween/challenge_booths.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Học sinh hóa trang lộng lẫy check-in tại các bối cảnh ma quái, rùng rợn. Tham gia chuỗi 5 gian hàng trò chơi trúng thưởng sôi động: Tiêu diệt bí ngô (phi tiêu), Vẽ mặt nạ Halloween, Động xà không đáy, Angry bird và Thần sấm."
+        },
+        {
+          "title": "Khai Mạc Sân Khấu Hóa Ma Cà Rồng",
+          "subtitle": "Kịch ma mị rùng rợn cùng MC ABA",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-halloween/challenge_ghosts.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Sân khấu bừng sáng với âm nhạc ma mị đầy lôi cuốn. MC xuất hiện ấn tượng trong trang phục Ma Cà Rồng huyền bí, kể câu chuyện Halloween ý nghĩa và tổ chức trò chơi tương tác sân khấu thu hút toàn trường."
+        },
+        {
+          "title": "Thi Văn Nghệ: Twilight Hoàng Hôn Đỏ",
+          "subtitle": "Trình diễn các tiết mục văn nghệ hóa trang đặc sắc",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-halloween/challenge_dance.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Cuộc so tài nghệ thuật rực rỡ giữa 10 lớp học. Các lớp tự tin trình diễn các tiết mục văn nghệ được dàn dựng công phu theo các tiêu chí thú vị: Dị (kinh dị), Rộn (vui nhộn), Ảo ma Canada (sáng tạo) và Đông thành viên."
+        },
+        {
+          "title": "Đuổi Hình Bắt Chữ & Tiệc Buffet Tối",
+          "subtitle": "Đố vui trí tuệ giành quà & Bữa tối sum vầy",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-halloween/challenge_buffet.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Thử tài nhanh trí cùng game đố vui Đuổi hình bắt chữ chủ đề Halloween giành phần quà hấp dẫn từ BTC. Thưởng thức tiết mục kịch câm handmine độc đáo từ học sinh lớp 4,5 và bùng nổ năng lượng với tiệc buffet tối vui vẻ."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Water Safe And Fun THCS",
+  "meta_title": "Water Safe And Fun THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Water Safe And Fun THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "water-safe-and-fun-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Sóng Thần Vui Nhộn & Đội Cứu Hộ",
+          "subtitle": "Phá băng đầu giờ & Chuyên đề cứu nạn",
+          "image": "/assets/images/trai-nghiem/cap-thcs/water-safe-and-fun/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động cuồng nhiệt dưới sự dẫn dắt của MC với trò chơi Sóng thần vui nhộn, Đoàn tàu ra khơi. Trải nghiệm biệt đội cứu hộ nhí: học kỹ năng gọi điện cứu trợ, cách nắm phao cứu sinh đúng tiêu chuẩn, thực hành kỹ thuật hô hấp nhân tạo sơ cứu."
+        },
+        {
+          "title": "Dũng Sĩ Can Đảm & Cầu Phao Bồng Bềnh",
+          "subtitle": "Vượt chướng ngại vật & Thử thách thăng bằng",
+          "image": "/assets/images/trai-nghiem/cap-thcs/water-safe-and-fun/challenge_safety.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Vượt qua mô hình nhà phao khổng lồ đầy thử thách dưới vòi phun nước rồng cản trở để thu hoạch ngọc rồng. Thực hành thăng bằng cơ thể khi di chuyển qua cầu phao bập bềnh chênh vênh trên mặt nước."
+        },
+        {
+          "title": "Sân Bóng Bì Bõm & Con Đường Ướt Sũng",
+          "subtitle": "Bóng đá phao nước & Chuyền nước tiếp sức",
+          "image": "/assets/images/trai-nghiem/cap-thcs/water-safe-and-fun/challenge_games.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Trận đấu bóng đá kịch tính trên sân phao ngập nước trơn trượt đầy ắp tiếng cười. Cả lớp cùng phối hợp chuyển nước từ điểm xuất phát về bể chứa bằng các dụng cụ đặc thù theo quy tắc nghiêm ngặt của quản trò."
+        },
+        {
+          "title": "Bowling Nước & Trận Chiến Súng Nước",
+          "subtitle": "Trượt phao húc ki & Đại chiến súng nước",
+          "image": "/assets/images/trai-nghiem/cap-thcs/water-safe-and-fun/challenge_battle.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh hóa thân thành các quả bóng bowling khổng lồ trượt dài trên thảm nước húc đổ các con ki hơi khổng lồ. Tham gia trận chiến súng nước liên khối vui nhộn bùng nổ năng lượng ngày hè."
+        }
+      ]
+    }
+  }
+}

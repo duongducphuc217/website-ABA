@@ -84,3 +84,36 @@ Các thẻ (Tags) được đánh theo từng thành phần vì ba thành phần
 ## Lưu ý cho Người đóng góp
 
 Không chỉnh sửa trực tiếp các tệp nhà cung cấp được tạo tự động trừ khi bạn đang cố tình vá đầu ra được tạo ra như một phần của thay đổi hệ thống xây dựng. Hãy ưu tiên sửa đổi mã nguồn gốc trong `skill/`, `scripts/`, hoặc `cli/`, sau đó tạo lại các sản phẩm tự động để xác thực. Chỉ đưa các sản phẩm phân phối được tạo ra vào phân đoạn lưu trữ (stage) cho các công việc phát hành/đồng bộ hóa nhánh chính hoặc làm việc hệ thống xây dựng.
+
+## Quy tắc Thiết kế & Đồng bộ CSS cho các Trang Trải Nghiệm (Landing Pages)
+
+Khi xây dựng các trang chuyên đề, sự kiện hoặc chương trình trải nghiệm mới (như trang Ngày Hội Team Work Day, Viết Lên Mục Tiêu, v.v.), bắt buộc phải đảm bảo sự đồng bộ tuyệt đối về giao diện và phong cách thiết kế với hệ thống hiện tại của dự án:
+
+1. **Cấu trúc & Màu sắc Section**:
+   - Sử dụng các màu sắc thương hiệu chính: `abaBlue` (Primary - `hsl(209, 94%, 41%)`), `abaOrange` (Secondary - `hsl(20, 89%, 59%)`), và `abaGreen` (Tertiary - `hsl(144, 56%, 42%)`).
+   - Phân đoạn nền (Section Background) xen kẽ đồng bộ:
+     - Hero: `bg-slate-50` với ảnh nền blur opacity ~0.8.
+     - Mục tiêu/Ý nghĩa (Core Objectives): `bg-slate-50`.
+     - Hoạt động thực tế (Challenges/Gallery): `bg-slate-50` hoặc `bg-white` tương ứng.
+     - Lịch trình chi tiết (Timeline): `bg-white`.
+
+2. **Thiết kế Hero Banner**:
+   - Sử dụng kicker nhãn phụ có icon `ph-bold` phía trên tiêu đề chính.
+   - Tiêu đề H1 sử dụng `display2 line-height-96 mb-24 font-heading` với các thẻ `span` tô màu chuẩn dự án (`text-success-600` và `text-warning-800`).
+   - Sử dụng các nút hành động (CTA) mặc định của Bootstrap trong dự án (`btn btn-main rounded-pill` và `btn btn-outline-main rounded-pill`) có hiệu ứng scale khi di chuột (`hover:scale-102 active:scale-98 transition-all`).
+   - Bao gồm SVG trang trí dạng làn sóng (wave path) ở đáy section: `<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-0"><svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[25px] fill-slate-100"><path d="..."></path></svg></div>`.
+
+3. **Thiết kế Card Mục Tiêu & Hoạt Động Key**:
+   - Đặt padding trong các thẻ card là `p-[20px]`.
+   - Đối với card mục tiêu, thêm dải màu gradient trên đỉnh card xuất hiện khi di chuột (`absolute top-0 left-0 right-0 h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-abaBlue to-abaOrange`).
+   - Đánh số thứ tự góc card dưới dạng `01`, `02`, `03` cạnh icon tiêu biểu.
+   - Sử dụng check icon `ph-bold ph-check` trong border nhỏ thay cho bullet mặc định của danh sách.
+
+4. **Thiết kế Lịch Trình (Timeline)**:
+   - Sử dụng thanh trượt chuyển tab với Framer Motion `layoutId="activeTabBg"` để tạo hiệu ứng mượt mà.
+   - Thêm đường nối dọc gradient (`w-px bg-gradient-to-b from-abaBlue via-abaOrange to-transparent`).
+   - Căn lề thời gian tuyệt đối bên trái trên màn hình desktop (`hidden md:block absolute -left-48 top-2 text-right w-36`), và dùng nhãn badge tròn trên mobile.
+
+5. **Dropdown Menu Level 3**:
+   - Đảm bảo độ rộng của menu cấp 3 tự động giãn nở theo nội dung và không ngắt dòng trên desktop: `.nav-subsubmenu` sử dụng `min-width: max-content`, và các thẻ link con sử dụng `white-space: nowrap`.
+   - Trên mobile (`max-width: 991px`), ghi đè reset lại `.nav-subsubmenu` thành `min-width: unset` và `white-space: normal` để tránh tràn màn hình.

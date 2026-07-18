@@ -1,0 +1,87 @@
+{
+  "title": "Le Hoi Trung Thu Mầm Non",
+  "meta_title": "Le Hoi Trung Thu Mầm Non - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Trung Thu Mầm Non cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-trung-thu-mam-non",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "LE HOI TRUNG THU MẦM NON",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Mầm non",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Hoạt Cảnh Trăng Báo Động Hài Hước",
+          "subtitle": "Chú Cuội bị lừa bắt cóc & chị Hằng giải cứu",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-trung-thu/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Hoạt cảnh mở màn vui nhộn mang thông điệp cảnh giác: Chú Cuội bị kẻ gian gọi điện lừa bắt cóc sang Campuchia, chị Hằng xuất hiện kịp thời vạch mặt kẻ xấu giải cứu Cuội an toàn."
+        },
+        {
+          "title": "Khai Mạc Đêm Hội & Lân Trống Hội",
+          "subtitle": "Trống hội tưng bừng & Chúc mừng tết Trung Thu",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-trung-thu/challenge_market.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Đoàn lân sư rồng biểu diễn múa khai hội tưng bừng. Đại diện Ban giám hiệu phát biểu ngắn gọn khai mạc chương trình, lan tỏa năng lượng tích cực tới các bạn nhỏ."
+        },
+        {
+          "title": "Giải Mã Bí Ẩn: Ai Thông Minh Hơn Chú Cuội",
+          "subtitle": "Bé giải đố cùng Cuội Hằng & Trò chơi phản xạ",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-trung-thu/hero_bg.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Bé tham gia trò chơi tương tác giải đáp câu đố dân gian thú vị trên sân khấu cùng chú Cuội chị Hằng để rinh những món quà bất ngờ. Rèn luyện phản xạ nhanh qua game sân khấu náo nhiệt."
+        },
+        {
+          "title": "Đêm Hội Kỳ Ảo & Tiết Mục Xiếc Ảo Thuật",
+          "subtitle": "Xiếc hề tung hứng bong bóng & Ảo thuật gia bí ẩn",
+          "image": "/assets/images/trai-nghiem/cap-mam-non/le-hoi-trung-thu/challenge_contest.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Hòa mình vào tiết mục xiếc nghệ thuật bùng nổ sân khấu từ các nghệ sĩ xiếc chuyên nghiệp và tiết mục ảo thuật kỳ diệu. Bốc thăm trúng thưởng 10 phần quà may mắn gửi tặng bé."
+        }
+      ]
+    }
+  }
+}

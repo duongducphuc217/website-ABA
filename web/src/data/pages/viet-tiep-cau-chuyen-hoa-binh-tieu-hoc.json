@@ -1,0 +1,87 @@
+{
+  "title": "Viet Tiep Cau Chuyen Hoa Binh Tiểu Học",
+  "meta_title": "Viet Tiep Cau Chuyen Hoa Binh Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Viet Tiep Cau Chuyen Hoa Binh Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "viet-tiep-cau-chuyen-hoa-binh-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "VIET TIEP CAU CHUYEN HOA BINH TIỂU HỌC",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Tiểu học",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Vệ Quốc Quân Tuyên Ngôn Độc Lập",
+          "subtitle": "Khởi động hào hùng & Chặng đua sâu phao hơi",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/viet-tiep-cau-chuyen-hoa-binh/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khai mạc ngày hội với MC mặc trang phục vệ quốc quân hướng dẫn khởi động. Học sinh phối hợp đồng đội cưỡi sâu phao hơi vượt chướng ngại vật thu thập mảnh ghép hoàn thiện bức tranh lịch sử dân tộc."
+        },
+        {
+          "title": "Trải Nghiệm Tại Lớp & Đấu Trường Trí Tuệ",
+          "subtitle": "Phân chia khối 1,2 và khối 3,4,5 học sử",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/viet-tiep-cau-chuyen-hoa-binh/challenge_folding.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Khối 1,2 trải nghiệm tại lớp: tìm hiểu hình ảnh anh bộ đội, thực hành gấp chiếc mũ ca lô giấy. Khối 3,4,5 tham gia Đấu trường trí tuệ 'Bản lĩnh Việt Nam' thảo luận trả lời nhanh các câu hỏi lịch sử Hà Nội."
+        },
+        {
+          "title": "Sống Mãi Với Thủ Đô",
+          "subtitle": "Tái hiện trận địa phòng thủ Trung đoàn Thủ đô",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/viet-tiep-cau-chuyen-hoa-binh/challenge_defend.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Học sinh các lớp cùng nhau chung tay đắp lũy cát giả định phòng tuyến của các chiến sĩ bảo vệ Hà Nội mùa đông năm 1946 - 1947. Các lớp tự hào chụp hình check-in cùng trận địa do mình dựng nên."
+        },
+        {
+          "title": "Điện Biên Phủ Trên Không & Tiến Về Sài Gòn",
+          "subtitle": "Bắn tên lửa mô phỏng & Đẩy xe tăng hơi",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/viet-tiep-cau-chuyen-hoa-binh/challenge_victory.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh thực hành bắn tên lửa nước phao tiêu diệt máy bay địch, tìm hiểu lực đẩy phản lực. Chặng đua xe tăng bơm hơi khổng lồ đưa quân tiến thẳng húc đổ cổng chào Dinh Độc Lập giành chiến thắng hoàn toàn."
+        }
+      ]
+    }
+  }
+}

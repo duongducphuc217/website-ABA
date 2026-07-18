@@ -1,0 +1,47 @@
+{
+  "title": "Le Hoi Trung Thu THCS",
+  "meta_title": "Le Hoi Trung Thu THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Trung Thu THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-trung-thu-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Hoạt Cảnh Cuội AI & Lân Sư Rồng",
+          "subtitle": "Nghệ thuật sân khấu Trung Thu hiện đại",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-trung-thu/challenge_arts.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Hoạt cảnh vui nhộn về Chú Cuội tạo ra Cuội AI để trốn đi chơi cùng Chị Hằng, mang lại tiếng cười sảng khoái và bài học giáo dục công nghệ sâu sắc. Múa lân sư rồng khai mạc rộn rã trống hội."
+        },
+        {
+          "title": "Hội Chợ & Trò Chơi Trúng Thưởng",
+          "subtitle": "Gian hàng trải nghiệm vận động dân gian",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-trung-thu/challenge_games.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Khám phá các trò chơi nhận quà lý thú tại các gian hàng: phản xạ đỉnh cao, vòng quay may mắn, tinh thần thép, chân sút siêu hạng, bắn thỏ ngọc, búa tạ nghìn cân, phi tiêu bong bóng."
+        },
+        {
+          "title": "Lâu Đài Hơi & Gian Hàng Dân Gian",
+          "subtitle": "Tô tượng, nặn tò he & in tranh Đông Hồ",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-trung-thu/challenge_crafts.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Vui chơi thả ga tại lâu đài hơi khổng lồ và tham gia hoạt động dân gian nghệ thuật: tự tay tô tượng thạch cao, học nặn tò he truyền thống từ bột màu và trải nghiệm kỹ thuật in tranh Đông Hồ."
+        },
+        {
+          "title": "Cuộc Thi Đèn Ông Sao & Làm Bánh Dẻo",
+          "subtitle": "Thi thâu tóm giải thưởng liên khối lớp",
+          "image": "/assets/images/trai-nghiem/cap-thcs/le-hoi-trung-thu/challenge_cooking.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh khối 8, 9 tranh tài tự thiết kế và trang trí đèn ông sao khổng lồ từ khung tre. Học sinh khối 6, 7 thi nhào bột bánh dẻo truyền thống, ép khuôn tạo cặp bánh dẻo sắc nét."
+        }
+      ]
+    }
+  }
+}

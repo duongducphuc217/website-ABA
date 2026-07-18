@@ -1,0 +1,47 @@
+{
+  "title": "Viet Tiep Cau Chuyen Hoa Binh THCS",
+  "meta_title": "Viet Tiep Cau Chuyen Hoa Binh THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Viet Tiep Cau Chuyen Hoa Binh THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "viet-tiep-cau-chuyen-hoa-binh-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Bản Hùng Ca Bất Hủ",
+          "subtitle": "Khai mạc ngày hội & Khởi động vệ quốc",
+          "image": "/assets/images/trai-nghiem/cap-thcs/viet-tiep-cau-chuyen-hoa-binh/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Khởi động ngắn cùng MC trong trang phục Vệ quốc quân tái hiện không khí kháng chiến. Học sinh nghe giới thiệu về chặng đường vẻ vang của Quân đội Nhân dân Việt Nam đấu tranh giành tự do."
+        },
+        {
+          "title": "Thử Thách: Tuyên Ngôn Độc Lập",
+          "subtitle": "Vận động thu thập mảnh ghép tranh lịch sử",
+          "image": "/assets/images/trai-nghiem/cap-thcs/viet-tiep-cau-chuyen-hoa-binh/challenge_knowledge.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Các thành viên phối hợp cưỡi sâu phao hơi dài vượt chướng ngại vật để mang về các mảnh ghép lịch sử quan trọng: Bác Hồ đọc Tuyên ngôn độc lập, Chiến thắng Điện Biên Phủ, Giải phóng Sài Gòn."
+        },
+        {
+          "title": "Đấu Trường Trí Tuệ & Sống Mãi Thủ Đô",
+          "subtitle": "Tái hiện trận địa & Hỏi đáp lịch sử Hà Nội",
+          "image": "/assets/images/trai-nghiem/cap-thcs/viet-tiep-cau-chuyen-hoa-binh/challenge_defend.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Tìm hiểu lịch sử Hà Nội hào hùng qua hai cuộc kháng chiến chống Pháp và chống Mỹ qua game giơ bảng đáp án thông minh. Tự tay đắp lũy cát tái hiện phòng tuyến Trung đoàn Thủ đô 1946-1947."
+        },
+        {
+          "title": "Điện Biên Phủ Trên Không & Tiến Về Sài Gòn",
+          "subtitle": "Bắn tên lửa phao & Phối hợp đẩy xe tăng hơi",
+          "image": "/assets/images/trai-nghiem/cap-thcs/viet-tiep-cau-chuyen-hoa-binh/challenge_victory.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Trải nghiệm phóng tên lửa nước tiêu diệt máy bay Mỹ, tìm hiểu nguyên lý phản lực. Chặng cuối cùng đồng lòng phối hợp đẩy xe tăng bơm hơi khổng lồ tiến thẳng về đích giải phóng Sài Gòn."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "title": "Le Hoi Banh Chung Tiểu Học",
+  "meta_title": "Le Hoi Banh Chung Tiểu Học - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Le Hoi Banh Chung Tiểu Học cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "le-hoi-banh-chung-tieu-hoc",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "hero": {
+      "kicker": "Chương Trình Giáo Dục Trải Nghiệm",
+      "heading": "LE HOI BANH CHUNG TIỂU HỌC",
+      "subtitle": "Học sinh tham gia dã ngoại hoạt động trải nghiệm thực hành giáo dục kỹ năng sống và phẩm chất bổ ích.",
+      "duration": "1 buổi",
+      "target": "Học sinh Tiểu học",
+      "location": "Tại trường",
+      "bgImage": "/assets/images/placeholder.png"
+    },
+    "objectives": {
+      "kicker": "MỤC TIÊU & Ý NGHĨA",
+      "heading": "Kết Quả Đạt Được Của Học Sinh",
+      "subtitle": "Thực hiện các mục tiêu giáo dục năng lực và phẩm chất theo khung chương trình dã ngoại trải nghiệm giáo dục 2018.",
+      "items": [
+        {
+          "title": "Phẩm Chất",
+          "description": "Bồi dưỡng tinh thần tích cực, tự lập và lòng tự tin cho học sinh.",
+          "points": [
+            "Học sinh suy nghĩ lạc quan và yêu bản thân",
+            "Gia tăng tình cảm yêu quý thầy cô, gia đình"
+          ]
+        },
+        {
+          "title": "Năng Lực Chung",
+          "description": "Rèn luyện các kỹ năng giao tiếp và làm việc nhóm dã ngoại.",
+          "points": [
+            "Kỹ năng truyền tải thông điệp",
+            "Hợp tác ăn ý với bạn bè đồng đội"
+          ]
+        },
+        {
+          "title": "Năng Lực Đặc Thù",
+          "description": "Thúc đẩy các kỹ năng vận động thể chất và hướng nghiệp xã hội.",
+          "points": [
+            "Kỹ năng tự vệ an toàn dã ngoại",
+            "Vượt chướng ngại vật khéo léo"
+          ]
+        }
+      ]
+    },
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khai Mạc Lễ Hội: Mùa Xuân Chiến Thắng",
+          "subtitle": "Trống hội rộn ràng & múa lân chào xuân",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-banh-chung/challenge_opening.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Chào đón toàn trường với văn nghệ mở màn rộn rã. Lời phát biểu chúc Tết của đại diện BGH nhà trường và tiết mục trống hội, múa lân truyền thống tưng bừng tạo không khí hào hứng khởi đầu lễ hội."
+        },
+        {
+          "title": "Gói Bánh Chưng - Gói Trọn Yêu Thương",
+          "subtitle": "Nghệ nhân hướng dẫn gói bánh bằng khuôn gỗ",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-banh-chung/hero_bg.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Học sinh xem hướng dẫn gói bánh trên sân khấu chính từ nghệ nhân. Dưới sự hỗ trợ của điều phối viên ABA và thầy cô giáo, các em ngồi quanh chiếu cùng nhau thực hành tự tay gói hoàn thiện chiếc bánh chưng xanh."
+        },
+        {
+          "title": "Hội Chợ Tết - Kết Nối Những Yêu Thương",
+          "subtitle": "Gian hàng chợ quê rực rỡ sắc màu xuân",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-banh-chung/challenge_market.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Các lớp trang trí trại sáng tạo và bày bán các sản phẩm Tết cổ truyền theo chủ đề. Các em sử dụng coupon hoặc tiền mặt mua bán để rèn luyện kỹ năng sử dụng tiền tệ và giao tiếp thương mại cơ bản."
+        },
+        {
+          "title": "Hội Thi Xuân Đất Việt & Lễ Hội Ngày Xuân",
+          "subtitle": "Rung chuông vàng, thư pháp, nhảy bao bố và vui chơi",
+          "image": "/assets/images/trai-nghiem/cap-tieu-hoc/le-hoi-banh-chung/challenge_contest.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Các cuộc thi liên khối thú vị: Khối 5 thi viết thư pháp, Khối 3-4 thi Rung chuông vàng tìm hiểu lịch sử Tết, Khối 1-2 thi nhảy bao bố. Đồng thời mở khu trò chơi trúng thưởng ném vòng, vượt núi hơi, gắp gấu bông."
+        }
+      ]
+    }
+  }
+}

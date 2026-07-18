@@ -1,0 +1,47 @@
+{
+  "title": "Thoat Hiem Khoi Dam Chay THCS",
+  "meta_title": "Thoat Hiem Khoi Dam Chay THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Thoat Hiem Khoi Dam Chay THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "thoat-hiem-khoi-dam-chay-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Lính Cứu Hỏa Vui Tính",
+          "subtitle": "Phá băng đầu giờ & Gắn kết toàn trường",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thoat-hiem-khoi-dam-chay/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "Học sinh cùng MC lính cứu hỏa ABA tham gia game warm-up siêu nhộn. Chơi game lớn 'Sức mạnh đồng đội' chuyền bóng yoga tiếp sức, tạo không khí hừng hực hào hứng trước khi bước vào các bài học sinh tồn."
+        },
+        {
+          "title": "Kỹ Năng Thoát Hiểm Cơ Bản & Khói Phòng Tối",
+          "subtitle": "Huấn luyện lý thuyết kết hợp đi khom rờ tường",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thoat-hiem-khoi-dam-chay/challenge_basics.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Chuyên gia PCCC hướng dẫn cách tìm lối thoát, mở cửa khi cháy, che mũi miệng tránh ngạt khói. Học sinh trực tiếp thực hành chiến thuật đi khom rờ tường thoát hiểm qua phòng tối ngập tràn khói nhân tạo an toàn."
+        },
+        {
+          "title": "Thoát Hiểm Tầng Cao & Tiêu Lệnh Chữa Cháy",
+          "subtitle": "Thực hành đu dây hạ chậm & Chữa cháy 114",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thoat-hiem-khoi-dam-chay/challenge_escape.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Huấn luyện cách sử dụng dây hạ chậm để tự thoát nạn từ tầng 2 xuống mặt đất an toàn dưới sự giám sát chặt chẽ của các huấn luyện viên chuyên nghiệp. Thi đấu teambuilding chữa cháy dập lửa, vượt chướng ngại vật."
+        },
+        {
+          "title": "Sơ Cấp Cứu Vết Thương & Tổng Kết",
+          "subtitle": "Thực hành băng bó y tế cơ bản",
+          "image": "/assets/images/trai-nghiem/cap-thcs/thoat-hiem-khoi-dam-chay/challenge_firstaid.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Học sinh học cách xử lý sơ cứu vết thương do bỏng, va đập hoặc ngạt. Chia cặp thực hành 2 kỹ thuật băng bó cơ bản quan trọng: băng bó bàn tay và băng bó cánh tay."
+        }
+      ]
+    }
+  }
+}

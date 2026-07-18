@@ -1,0 +1,47 @@
+{
+  "title": "Team Work Day THCS",
+  "meta_title": "Team Work Day THCS - Chương trình dã ngoại trải nghiệm ABA",
+  "meta_description": "Chương trình dã ngoại trải nghiệm giáo dục kỹ năng sống Team Work Day THCS cho học sinh, tổ chức bởi Trung tâm ABA.",
+  "meta_keywords": [
+    "team-work-day-thcs",
+    "dã ngoại trải nghiệm",
+    "trung tâm aba"
+  ],
+  "sections": {
+    "challenges": {
+      "kicker": "TRẠM TRẢI NGHIỆM",
+      "heading": "Các Chặng Trải Nghiệm Giáo Dục",
+      "subtitle": "Các chặng thử thách gắn kết học sinh vô cùng đặc sắc và hấp dẫn.",
+      "items": [
+        {
+          "title": "Khởi Động Toàn Trường",
+          "subtitle": "Gắn kết đầu giờ cùng MC náo nhiệt",
+          "image": "/assets/images/trai-nghiem/cap-thcs/team-work-day/challenge_launch.png",
+          "badgeColor": "bg-orange-50 text-abaOrange border-orange-200",
+          "description": "MC hoạt náo tạo nguồn năng lượng hứng khởi đầu giờ. Game khởi động toàn trường: Sức mạnh đồng đội - các lớp chuyền quả bóng yoga của mình được nhiều vòng nhất để giành chiến thắng."
+        },
+        {
+          "title": "Trải Nghiệm 1: Sức Mạnh Hợp Lực",
+          "subtitle": "Chuỗi thử thách vận động liên hoàn sân trường",
+          "image": "/assets/images/trai-nghiem/cap-thcs/team-work-day/challenge_synergy.png",
+          "badgeColor": "bg-blue-50 text-abaBlue border-blue-200",
+          "description": "Chuyên gia ABA chia sẻ về kỹ năng làm việc nhóm. Thi đấu: Thử thách 1: Con đường gian nan (phao sâu hơi), Thử thách 2: Chung một mục tiêu (rùa/thỏ hơi), Thử thách 3: Ngọn tháp đồng đội (vượt núi hơi xếp tháp)."
+        },
+        {
+          "title": "Trải Nghiệm 2: Hợp Tác, Sẻ Chia",
+          "subtitle": "Chuyên đề kỹ năng làm việc nhóm trong lớp học",
+          "image": "/assets/images/trai-nghiem/cap-thcs/team-work-day/challenge_share.png",
+          "badgeColor": "bg-emerald-50 text-abaGreen border-emerald-200",
+          "description": "Hoạt động 55 phút trong phòng học. Học sinh hiểu: Tổng quát về kỹ năng làm việc nhóm (10p); Phương pháp thông tin trong làm việc nhóm (20p); Tôn trọng và lắng nghe đồng đội (20p)."
+        },
+        {
+          "title": "Trải Nghiệm 3: Đồng Đội Ăn Ý",
+          "subtitle": "Thi đua chiến thuật tại sân hoặc nhà thi đấu đa năng",
+          "image": "/assets/images/trai-nghiem/cap-thcs/team-work-day/challenge_unity.png",
+          "badgeColor": "bg-purple-50 text-purple-650 border-purple-200",
+          "description": "Mỗi lớp chia 4 tổ vượt qua: Thử thách 1: Kế hoạch tuyệt hảo (vai trò đội trưởng), Thử thách 2: Con đường đồng đội (chuyền bóng qua bạt nhiều lỗ), Thử thách 3: Mọi người vì 1 người (thả bóng trúng tâm)."
+        }
+      ]
+    }
+  }
+}
